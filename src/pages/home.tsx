@@ -64,7 +64,7 @@ export function Home() {
                             <DocIcon/>
                             <p>Documentation</p>
                         </button>
-                        <NavLink to={"/login"}>
+                        <NavLink to={"/dashboard/sign-in"}>
                             <button className="login-hiro">
                                 <p>Sign in</p>
                             </button>

@@ -64,10 +64,10 @@ export function Login() {
                                 <input type="password" placeholder="********"/>
                             </div>
                             <button className="btn_login">
-                                <p>Sign Up</p>
+                                <p>Sign In</p>
                             </button>
 
-                            <span className="create-acc">Don't have an account? <a href="/register">Sign Up Now</a></span>
+                            <span className="create-acc">Don't have an account? <a href="/dashboard/sign-up">Sign Up Now</a></span>
                         </form>
                     </section>
                 </div>

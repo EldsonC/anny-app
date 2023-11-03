@@ -59,10 +59,10 @@ export function Register() {
                                 <input type="password" placeholder="********"/>
                             </div>
                             <button className="btn_login">
-                                <p>Sign In</p>
+                                <p>Sign Up</p>
                             </button>
 
-                            <span className="create-acc">Have an account? <a href="/register">Sign In Now</a></span>
+                            <span className="create-acc">Have an account? <a href="/dashboard/sign-in">Sign In Now</a></span>
                         </form>
                     </section>
                 </div>
