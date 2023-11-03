@@ -8,8 +8,8 @@ export function Routers() {
     return (
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
+            <Route path="/dashboard/sign-in" element={<Login/>}/>
+            <Route path="/dashboard/sign-up" element={<Register/>}/>
             <Route path="*" element={<NotFound/>}/>
         </Routes>
     );

@@ -59,12 +59,12 @@ export function HeaderComponent() {
                 </div>
 
                 <div className="buttons">
-                    <NavLink to={"/register"}>
+                    <NavLink to={"/dashboard/sign-up"}>
                         <button className="btns_header btn-hide">
                             Start your plan
                         </button>
                     </NavLink>
-                    <NavLink to={"/login"}>
+                    <NavLink to={"/dashboard/sign-in"}>
                         <button className="btns_header void btn-hide">
                             Sign in
                         </button>

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HomeStyle = styled.main `
     margin-top: 50px;
-    
     .content_main {
         margin: 0 auto;
         max-width: calc(100% - 46px);
