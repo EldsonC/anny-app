@@ -115,6 +115,10 @@ export function Register() {
                         </form>
                     </section>
                 </div>
+
+                <div className="container_right">
+                    <h1>Ready to take control of your schedule? <span>Sign up</span> now and <span>unlock</span> a world of seamless appointment <span>management</span>.</h1>
+                </div>
             </div>
         </LoginStyle>
     );

@@ -16,7 +16,6 @@ export const LoginStyle = styled.main `
         }
     } 
     .content_main {
-        
         .left_container {
             width: 560px;
             height: auto;
@@ -33,6 +32,26 @@ export const LoginStyle = styled.main `
             }
         }
 
+        .container_right {
+            width: calc(100vw - 561px);
+            height: calc(100vh - 50px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                max-width: 500px;
+                color: #bdbbbb;
+                letter-spacing: 2px;
+
+                span {
+                    color: #707070;
+                }
+            }
+
+        }
+
         max-width: calc(100% - 46px);
         width: 100vw;
         height: auto;
@@ -41,7 +60,7 @@ export const LoginStyle = styled.main `
         border-right: 1px solid #141414;
 
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
 
         section {
             width: 100%;
@@ -280,7 +299,15 @@ export const LoginStyle = styled.main `
         }
     }
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 1190px){
+        .content_main {
+            .container_right {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 630px) {
         .top-note {
             height: 50px;
             width: 100%;

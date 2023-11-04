@@ -103,6 +103,10 @@ export function Login() {
                         </form>
                     </section>
                 </div>
+
+                <div className="container_right">
+                    <h1>Effortless and <span>precise</span> scheduling in just one <span>click</span>. Welcome to our scheduling <span>software</span>.</h1>
+                </div>
             </div>
         </LoginStyle>
     );
