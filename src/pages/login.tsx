@@ -4,12 +4,28 @@ import { AppleIcon } from "../assets/icon/apple";
 import GoogleLogin from "react-google-login";
 import { LogoIcon } from "../assets/icon/logo";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { zodSignIn } from "../services/zod";
 
 export function Login() {
     const navigation = useNavigate()
+    
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
         console.log(response)
+    }
+
+    const {
+        register,
+        handleSubmit,
+        formState: {errors}
+    } = useForm({
+        resolver: zodResolver(zodSignIn)
+    })
+
+    const ApiSubmit = () => {
+
     }
     return (
         <LoginStyle>
@@ -51,17 +67,27 @@ export function Login() {
                             <span></span>
                         </div>
 
-                        <form>
+                        <form onSubmit={handleSubmit(ApiSubmit)}>
                             <div className="input_container">
                                 <label htmlFor="">Email</label>
-                                <input type="email" placeholder="you@example.com"/>
+                                <input 
+                                    className={errors.email ? "error_field" : "verity"}
+                                    type="email" 
+                                    placeholder="you@example.com"
+                                    {...register("email")}
+                                />
                             </div>
                             <div className="input_container">
                                 <div className="label_container">
                                     <label htmlFor="">Password</label>
                                     <a href="">Forgot Password?</a>
                                 </div>
-                                <input type="password" placeholder="********"/>
+                                <input 
+                                    className={errors.email ? "error_field" : "verity"}
+                                    type="password" 
+                                    placeholder="********"
+                                    {...register("password")}
+                                />
                             </div>
                             <button className="btn_login">
                                 <p>Sign In</p>

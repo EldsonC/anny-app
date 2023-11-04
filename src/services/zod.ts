@@ -1,0 +1,21 @@
+import { z } from "zod";
+
+export const zodSchema = z.object({
+    email: z.string().nonempty("Email is a required field").email("Must be a valid email"),
+    password: z
+        .string()
+        .nonempty("Password is a required field")
+        .regex(/(?=.*?[A-Z])/, "Uppercase letter")
+        .regex(/(?=.*?[a-z])/, "Lowercase letter")
+        .regex(/(?=.*?[0-9])/, "Number")
+        .regex(/(?=.*?[!@#$%^&*])/, "Special character (e.g. !?<>@#$%)")
+        .min(8, "> 7 characters")
+})
+
+export const zodSignIn = z.object({
+    email: z.string().nonempty("Email is a required field").email("Must be a valid email"),
+    password: z
+        .string()
+        .nonempty("Password is a required field")
+})
+

@@ -3,6 +3,15 @@ import { GoogleIcon } from "../assets/icon/google";
 import { LogoIcon } from "../assets/icon/logo";
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
+import { EyeIcon } from "../assets/icon/eye";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { zodSchema } from "../services/zod";
+
+interface SignUpProps {
+    email: string;
+    password: string;
+}
 
 export function Register() {
     const navigation = useNavigate()
@@ -11,6 +20,29 @@ export function Register() {
     const responseGoogle = (response: {}) => {
         console.log(response)
     }
+
+    const {
+        register,
+        handleSubmit,
+        formState: {errors}
+    } = useForm({
+        resolver: zodResolver(zodSchema)
+    })
+
+    const ApiSubmit = () => {
+
+    }
+
+    const revealPassword = () => {
+        const passwordField = document.querySelector("#passwordField") as HTMLInputElement;
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+
     return (
         <LoginStyle>
             <div className="top-note">
@@ -47,16 +79,34 @@ export function Register() {
                             <span></span>
                         </div>
 
-                        <form>
+                        <form onSubmit={handleSubmit(ApiSubmit)}>
                             <div className="input_container">
                                 <label htmlFor="">Email</label>
-                                <input type="email" placeholder="you@example.com"/>
+                                <input 
+                                    className={errors.email ? "error_field" : "verity"}
+                                    type="text" 
+                                    placeholder="you@example.com"
+                                    {...register("email")}
+                                />
+                                {errors.email ? <p className="error_label">{errors.email.message}</p> : null}
                             </div>
                             <div className="input_container">
                                 <div className="label_container">
                                     <label htmlFor="">Password</label>
                                 </div>
-                                <input type="password" placeholder="********"/>
+                                <div className={errors.password ? "error_field input-eye" : "input-eye"}>
+                                    <input 
+                                        id="passwordField"
+                                        type="password" 
+                                        placeholder="********"
+                                    {...register("password")}
+                                    />
+                                    <button onClick={revealPassword}>
+                                        <EyeIcon/>
+                                    </button>
+                                </div>
+                                {errors.password ? <p className="error_label">{errors.password.message}</p> : null}
+
                             </div>
                             <button className="btn_login">
                                 <p>Sign Up</p>

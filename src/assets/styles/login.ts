@@ -164,9 +164,15 @@ export const LoginStyle = styled.main `
                         font-size: 14px;
                         color: #d3d0d0;
                     }
-                    input {
-                        padding: 0px 23px;
-                        width: calc(100% - 46px);
+                    .input-eye {
+                        padding-left: 23px;
+                        padding-right: 10px;
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        width: calc(100% - 33px);
                         height: 45px;
     
                         border-radius: 5px;
@@ -174,9 +180,50 @@ export const LoginStyle = styled.main `
                         color: #4D4D4D;
     
                         background-color: #222222;
+
+                        input {
+                            padding: 0px;
+                            background-color: transparent;
+                            border: none;
+                            height: 100%;
+                        }
+
+                        button {
+                            display: flex;
+                            
+                            padding: 5px 7px;
+                            border-radius: 5px;
+                            background-color: transparent;
+                            border: 1px solid #4D4D4D;
+
+                            cursor: pointer;
+                        }
+                    }
+                    .error_field {
+                        background-color: #1F1315;
+                        border: 1px solid #822025;
+                        color: #802936;
+                    } 
+                    .error_label {
+                        margin: 0px;
+                        margin-bottom: 10px;
+                        display: flex;
+
+                        color: #c23d43;
+                    }
+                    input {
+                        padding: 0px 23px;
+                        width: calc(100% - 46px);
+                        height: 45px;
+    
+                        border-radius: 5px;
+                        border: 1px solid #4D4D4D;
+                        color: #7a7878;
+    
+                        background-color: #222222;
     
                         &:focus {
-                            border-color: #4D4D4D;
+                            border-color: #8d8d8d;
                         }
                     }
                 }
