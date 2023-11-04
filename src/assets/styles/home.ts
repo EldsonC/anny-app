@@ -472,6 +472,7 @@ export const HomeStyle = styled.main `
                     }
 
                     .pro {
+                        
                         border: 1px solid #33996B;
                         background-color: #33996B;
                         color: #fff;

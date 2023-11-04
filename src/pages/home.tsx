@@ -241,7 +241,7 @@ export function Home() {
                         <div className="card">
                             <div className="text_plan">
                                 <div className="header_plan">
-                                    <p>Pro Plus</p>
+                                    <p>Plus</p>
                                 </div>
 
                                 <p className="description">Enjoy advanced features and exclusive benefits for maximum productivity. Boost your efficiency and achieve your goals. Try Pro Plus now and elevate your experience to the next level!</p>
