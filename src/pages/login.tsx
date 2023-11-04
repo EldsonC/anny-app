@@ -76,6 +76,9 @@ export function Login() {
                                     placeholder="you@example.com"
                                     {...register("email")}
                                 />
+                                {errors.email ? <p className="error_label">{typeof errors.email.message === "string" ? (
+                                    <span>{errors.email.message}</span>
+                                ) : null}</p> : null}
                             </div>
                             <div className="input_container">
                                 <div className="label_container">
@@ -88,6 +91,9 @@ export function Login() {
                                     placeholder="********"
                                     {...register("password")}
                                 />
+                                {errors.password ? <p className="error_label">{typeof errors.password.message === "string" ? (
+                                    <span>{errors.password.message}</span>
+                                ) : null}</p> : null}
                             </div>
                             <button className="btn_login">
                                 <p>Sign In</p>
