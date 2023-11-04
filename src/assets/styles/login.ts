@@ -233,7 +233,7 @@ export const LoginStyle = styled.main `
         }
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 500px) {
         .top-note {
             height: 50px;
             width: 100%;
@@ -257,7 +257,7 @@ export const LoginStyle = styled.main `
                 /* min-height: calc(100vh - 50px); */
 
                 background-color: #1C1C1C;
-                border-right: 1px solid #353535;
+                border-right: none;
 
                 .header_login {
                     padding-top: 40px;
