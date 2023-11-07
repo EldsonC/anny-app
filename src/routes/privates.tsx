@@ -3,8 +3,9 @@ import { Navigate, Outlet } from "react-router-dom"
 
 
 export const Privates = () => {
-    const hasPermission = useState(false)
-
+    const [hasPermission, setHasPermission] = useState(false)
+    setHasPermission(false)
+    
     if(!hasPermission) {
         return <Navigate to="/dashboard/sign-in"/>
     }
