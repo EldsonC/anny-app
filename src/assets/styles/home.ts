@@ -98,7 +98,7 @@ export const HomeStyle = styled.main `
                 }
 
                 button {
-                    margin-bottom: 100px;
+                    margin-bottom: 50px;
                     padding: 8px 20px;
     
                     display: flex;
