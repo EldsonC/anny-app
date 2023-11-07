@@ -34,15 +34,16 @@ export function Login() {
     // vai por agua abaixo. e tudo que planeja com ela tambem.
 
     const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
-        try {
-            await signIn({
-                email: data.email,
-                password: data.password
-            });
+        await signIn({
+            email: data.email,
+            password: data.password
+        })
+        .then(() => {
             toDashboard();
-        } catch (error) {
-            console.log(`Eror: ${error}`)
-        }
+        })
+        .catch((error) => {
+            console.log(`Error: ${error}`)
+        })
     }
     return (
         <LoginStyle>
