@@ -4,16 +4,22 @@ import { AppleIcon } from "../assets/icon/apple";
 import GoogleLogin from "react-google-login";
 import { LogoIcon } from "../assets/icon/logo";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { zodSignIn } from "../services/zod";
+import { useAuth } from "../context/context";
 
 export function Login() {
     const navigation = useNavigate()
+    const { signIn } = useAuth()
     
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
         console.log(response)
+    }
+
+    const toDashboard = () => {
+        navigation("/dashboard/overview")
     }
 
     const {
@@ -27,8 +33,16 @@ export function Login() {
     // Voce nao pode errar ou tudo que sonha
     // vai por agua abaixo. e tudo que planeja com ela tambem.
 
-    const ApiSubmit = () => {
-
+    const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
+        try {
+            await signIn({
+                email: data.email,
+                password: data.password
+            });
+            toDashboard();
+        } catch (error) {
+            console.log(`Eror: ${error}`)
+        }
     }
     return (
         <LoginStyle>

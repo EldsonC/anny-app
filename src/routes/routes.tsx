@@ -5,6 +5,7 @@ import { Login } from "../pages/login";
 import { Register } from "../pages/register";
 import { Privates } from "./privates";
 import { Overview } from "../pages/app/pages/overview";
+import { Schedule } from "../pages/app/pages/schedule";
 
 export function Routers() {
     return (
@@ -15,6 +16,7 @@ export function Routers() {
 
             <Route path="/" element={<Privates/>}>
                 <Route path="/dashboard/overview" element={<Overview/>}/>
+                <Route path="/dashboard/schedule" element={<Schedule/>}/>
             </Route>
             
             <Route path="*" element={<NotFound/>}/>
