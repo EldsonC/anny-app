@@ -33,6 +33,8 @@ export function Home() {
         }
     }
 
+    // Isso tudo é por ela
+
     useEffect(() => {
         const stateCookies = localStorage.getItem("@cookies")
         if (stateCookies) {
