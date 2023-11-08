@@ -4,7 +4,7 @@ import { useAuth } from "../context/context"
 export const Privates = () => {
     const { userLogged } = useAuth();
     
-    if(!userLogged) {
+    if(!userLogged()) {
         return <Navigate to="/dashboard/sign-in"/>
     }
 

@@ -46,7 +46,7 @@ export const AuthProvider: React.FC<InputProps> = ({children}) => {
     }, [])
 
     const userLogged = useCallback(() => {
-        const token = localStorage.getItem('@PermissionMRY:token');
+        const token = localStorage.getItem('@MRYTOKEN:token');
         if(token) {
             return true;
         }
