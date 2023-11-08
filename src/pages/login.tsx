@@ -8,10 +8,13 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { zodSignIn } from "../services/zod";
 import { useAuth } from "../context/context";
+import { Loading } from "../components/loaging";
+import { useState } from "react";
 
 export function Login() {
     const navigation = useNavigate()
     const { signIn } = useAuth()
+    const [ loadState, setLoadState ] = useState(false)
     
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
@@ -34,19 +37,22 @@ export function Login() {
     // vai por agua abaixo. e tudo que planeja com ela tambem.
 
     const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
+        setLoadState(true)
         await signIn({
             email: data.email,
             password: data.password
         })
         .then(() => {
             toDashboard();
+            setLoadState(false)
         })
-        .catch((error) => {
-            console.log(`Error: ${error}`)
+        .catch(() => {
+            setLoadState(false)
         })
     }
     return (
         <LoginStyle>
+            {loadState ? <Loading/> : false}
             <div className="top-note">
                 <p>We are constantly improving our systems for your better experience.</p>
             </div>
