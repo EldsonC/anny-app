@@ -9,17 +9,23 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { zodSignIn } from "../services/zod";
 import { useAuth } from "../context/context";
 import { Loading } from "../components/loaging";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Login() {
     const navigation = useNavigate()
-    const { signIn } = useAuth()
+    const { signIn, userLogged } = useAuth()
     const [ loadState, setLoadState ] = useState(false)
     
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
         console.log(response)
     }
+
+    useEffect(() => {
+        if(userLogged()) {
+            navigation("/dashboard/overview")
+        }
+    }, [])
 
     const toDashboard = () => {
         navigation("/dashboard/overview")
@@ -32,9 +38,6 @@ export function Login() {
     } = useForm({
         resolver: zodResolver(zodSignIn)
     })
-
-    // Voce nao pode errar ou tudo que sonha
-    // vai por agua abaixo. e tudo que planeja com ela tambem.
 
     const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
         setLoadState(true)
