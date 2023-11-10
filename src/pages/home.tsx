@@ -102,39 +102,13 @@ export function Home() {
                         </div>
                     </div>
 
-                    <NavLink to={"/register"}>
+                    <NavLink to={"/dashboard/sign-up"}>
                         <button>
-                            <p>Try for free</p>
+                            <p>Trial for 30 days</p>
                         </button>
                     </NavLink>
                 </section>
 
-                <section className="faqs" id="faqs">
-                    <h2>FAQs</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-                    <div className="cards_faqs">
-                        <div className="card_faqs">
-                            <p>Lorem Ipsum is simply dummy text of the?</p>
-                        </div>
-
-                        <div className="card_faqs">
-                            <p>Lorem Ipsum is simply dummy text?</p>
-                        </div>
-
-                        <div className="card_faqs">
-                            <p>Lorem Ipsum is simply dummy text of the?</p>
-                        </div>
-
-                        <div className="card_faqs">
-                            <p>Lorem Ipsum is simply?</p>
-                        </div>
-
-                        <div className="card_faqs">
-                            <p>Lorem Ipsum is simply?</p>
-                        </div>
-                    </div>
-                </section>
 
                 <section className="faqs">
                     <div className="card_platform">
@@ -277,6 +251,33 @@ export function Home() {
                             <button>
                                 Get started
                             </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="faqs" id="faqs">
+                    <h2>FAQs</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+                    <div className="cards_faqs">
+                        <div className="card_faqs">
+                            <p>Lorem Ipsum is simply dummy text of the?</p>
+                        </div>
+
+                        <div className="card_faqs">
+                            <p>Lorem Ipsum is simply dummy text?</p>
+                        </div>
+
+                        <div className="card_faqs">
+                            <p>Lorem Ipsum is simply dummy text of the?</p>
+                        </div>
+
+                        <div className="card_faqs">
+                            <p>Lorem Ipsum is simply?</p>
+                        </div>
+
+                        <div className="card_faqs">
+                            <p>Lorem Ipsum is simply?</p>
                         </div>
                     </div>
                 </section>

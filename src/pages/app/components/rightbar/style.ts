@@ -7,4 +7,8 @@ export const RightBarStyle = styled.aside `
 
     background-color: #0F1012;
     border-left: 1px solid #2B2B2B;
+
+    @media screen and (max-width: 1410px) {
+        display: none;
+    }
 `;

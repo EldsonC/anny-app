@@ -17,11 +17,11 @@ export function Cookies() {
             <div className="container_cookie">
                 <div className="first_content">
                     <CookieIcon/>
-                    <p className="headline">We use cookies to enhance your browsing expirience. By clicking ‘Accept all,’ you agree to the use of cookies</p>
+                    <p className="headline">We use cookies to enhance your browsing expirience. By clicking ‘Accept all cookies,’ you agree to the use of cookies</p>
                 </div>
                 <div className="second_content">
                     <Button title="Accept all cookies" clickAction={cookiePermission}/>
-                    <Button title="Cookie settings" type="void-button"/>
+                    <Button title="Reject all cookies" type="void-button"/>
                 </div>
             </div>
         </CookieStyle>

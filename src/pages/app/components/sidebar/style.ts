@@ -1,5 +1,30 @@
 import styled from "styled-components";
 
+export const FloatSidebarStyle = styled.div `
+    padding-top: 20px;
+    display: none;
+
+    .button_side {
+        margin-left: 16px;
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #1D1E20;
+        border: 1px solid #2B2B2B;
+        border-radius: 15px;
+
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 1050px) {
+        display: flex;
+    }
+`;
+
 export const SideBarStyle = styled.aside `
     padding: 1.12rem 0.75rem;
     width: calc(15.625rem - 1.5rem) ;
@@ -93,5 +118,9 @@ export const SideBarStyle = styled.aside `
             }
         }
 
+    }
+
+    @media screen and (max-width: 1050px) {
+        display: none;
     }
 `;
