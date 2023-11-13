@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.0",
+    "chart.js": "^4.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-login": "^5.2.2",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/chart.js": "^2.9.40",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",

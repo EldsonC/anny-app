@@ -29,14 +29,14 @@ export const SideBarStyle = styled.aside `
     padding: 1.12rem 0.75rem;
     width: calc(15.625rem - 1.5rem) ;
     min-width: calc(15.625rem - 1.5rem);
-    height: calc(100vh - 6.053rem);
+    height: calc(100% - 3rem);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     background-color: #181818;
-    border: 0rem 0.3125rem 0.3125rem 0rem;
+    border-radius: 0rem 0.3125rem 0.3125rem 0rem;
     border: 1px solid #2B2B2B;
 
     header {

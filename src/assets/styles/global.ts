@@ -29,17 +29,17 @@ export default createGlobalStyle`
         scroll-behavior: smooth;
     }
 
-    body::-webkit-scrollbar {
+    ::-webkit-scrollbar {
         width: 5px;
     }
 
-    body::-webkit-scrollbar-track {
-        background: #151515;
+    ::-webkit-scrollbar-track {
+        background: #0c0c0c;
     }
 
-    body::-webkit-scrollbar-thumb {
-        background-color: #4D4D4D;
+    ::-webkit-scrollbar-thumb {
+        background-color: transparent;
         border-radius: 5px;
-        border: 3px solid #4D4D4D;
+        border: 3px solid transparent;
     }
 `;

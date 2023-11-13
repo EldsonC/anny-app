@@ -8,6 +8,8 @@ import { ChartIcon } from "../../assets/icons/content/chart";
 import { Content } from "./style";
 import { TrillBtn } from "../../components/selectbtn";
 import { CardLine } from "../../components/cardline";
+import Chart from "chart.js/auto";
+import { useEffect } from "react";
 
 export function Overview() {
     const buttonsData = [
@@ -23,6 +25,60 @@ export function Overview() {
         {label: "Oldest", onClick: () => console.log("")},
     ]
 
+    
+    useEffect(() => {
+        const ctx = document.querySelector("#myChart") as HTMLCanvasElement;
+
+        if (!ctx) {
+            console.log('Canvas element not found');
+            return
+        }
+
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun','Jul','Ago'],
+            datasets: [{
+                data: [12, 19, 3, 5, 2, 3, 6, 10],
+                backgroundColor: "#6CEBA6",
+                borderColor: "#6CEBA6",
+                pointBorderWidth: 1, 
+                borderWidth: 2,
+
+            }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: false,
+                    },
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        position: "nearest",
+                    }
+                },
+
+                interaction: {
+                    intersect: false
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 15
+                    },
+                },
+            }
+        });
+
+        return () => {
+            myChart.destroy()
+        }
+    }, [])
     return (
         <MainStyle>
             <Header/>
@@ -48,6 +104,12 @@ export function Overview() {
                                     <ChartIcon/>
                                 </div>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <span>type and.</span></p>
+                            </section>
+
+                            <section className="transaction_section">
+                               <div className="content_chart">
+                                    <canvas id="myChart"></canvas>
+                               </div>
                             </section>
 
                             <section className="transaction_section">

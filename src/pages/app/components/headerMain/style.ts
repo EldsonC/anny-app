@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 export const HeaderMainStyle = styled.header `
+    padding-bottom: 15px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    background-color: #0F1012;
 
     ul {
         display: flex;
