@@ -75,6 +75,11 @@ export const Content = styled.div `
                 color: #6CEBA6;
             }
         }
+
+        .container_cards {
+            margin-top: 15px;
+            width: 100%;
+        }
     }
 
     @media screen and (max-width: 720px) {
