@@ -35,13 +35,13 @@ export function Overview() {
         }
 
         const myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
             labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun','Jul','Ago'],
             datasets: [{
                 data: [12, 19, 3, 5, 2, 3, 6, 10],
-                backgroundColor: "#DBDBDB",
-                borderColor: "transparent",
+                backgroundColor: "#6CEBA6",
+                borderColor: "#6CEBA6",
                 hoverBackgroundColor: "#6CEBA6",
                 borderWidth: 1,
 
