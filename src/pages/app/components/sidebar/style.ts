@@ -9,6 +9,8 @@ export const FloatSidebarStyle = styled.div `
         width: 50px;
         height: 50px;
 
+        position: fixed;
+
         display: flex;
         justify-content: center;
         align-items: center;
