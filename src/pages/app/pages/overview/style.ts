@@ -10,6 +10,7 @@ export const Content = styled.div `
         margin-top: 28px;
 
         .banner {
+            margin-top: 46px;
             margin-bottom: 46px;
             width: 100%;
             height: 244px;

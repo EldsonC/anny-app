@@ -11,7 +11,7 @@ export function SideBar() {
     const logout = () => {
         localStorage.removeItem("@MRYTOKEN:token")
         navigate("/")
-    }
+    };
 
     return (
         <>
@@ -65,7 +65,7 @@ export function SideBar() {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/settings"}>
+                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/profile"}>
                                         <p>Profile</p>
                                     </NavLink>
                                 </li>

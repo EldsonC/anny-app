@@ -32,6 +32,19 @@ export const MainStyle = styled.main `
 
                 display: flex;
                 flex-direction: column;
+
+                .card-manager {
+                    padding-bottom: 20px;
+                    margin-bottom: 40px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+
+                    position: sticky;
+                    top: 55px;
+
+                    background-color: #0F1012;
+                }
             }
         }
 
