@@ -31,7 +31,7 @@ export const SideBarStyle = styled.aside `
     padding: 1.12rem 0.75rem;
     width: calc(15.625rem - 1.5rem) ;
     min-width: calc(15.625rem - 1.5rem);
-    height: calc(100% - 3rem);
+    height: calc(100% - 2.5rem);
 
     display: flex;
     flex-direction: column;
