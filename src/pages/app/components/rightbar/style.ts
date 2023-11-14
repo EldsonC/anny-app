@@ -4,7 +4,7 @@ export const RightBarStyle = styled.aside `
     padding: 21px 0px;
     width: calc(22.1875rem - 42px) ;
     min-width:calc(22.1875rem - 42px) ;
-    height: calc(100vh - 5.625rem);
+    height: calc(100vh - 6.625rem);
 
     display: flex;
     flex-direction: column;

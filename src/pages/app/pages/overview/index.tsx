@@ -81,59 +81,61 @@ export function Overview() {
         }
     }, [])
     return (
-        <MainStyle>
+        <>
             <Header/>
-            <div className="container_main">
-                <SideBar/>
-                <div className="content_main">
-                    <HeaderMain/>
-                    <div className="content_display">
-                        <Breadcrumb
-                            title="Overview"
-                        />
-                        <Content>
-                            <section className="value_section">
-                                {/* <div className="banner">
-                                    
-                                </div> */}
-                                <h3>Total USD / BRL</h3>
-                                <div className="content_data">
-                                    <h1>6.000 <span className="divider">/</span><span className="convert_value"> 30.000</span></h1>
-                                    <TrillBtn
-                                        buttons={buttonsData}
-                                    />
-                                </div>
-                                <div className="content_pa">
-                                    <p>7.46% growth trades. (Past 2 month)</p>
-                                    <ChartIcon/>
-                                </div>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <span>type and.</span></p>
-                            </section>
+            <MainStyle>
+                <div className="container_main">
+                    <SideBar/>
+                    <div className="content_main">
+                        <HeaderMain/>
+                        <div className="content_display">
+                            <Breadcrumb
+                                title="Overview"
+                            />
+                            <Content>
+                                <section className="value_section">
+                                    <div className="banner">
+                                        
+                                    </div>
+                                    <h3>Total USD / BRL</h3>
+                                    <div className="content_data">
+                                        <h1>6.000 <span className="divider">/</span><span className="convert_value"> 30.000</span></h1>
+                                        <TrillBtn
+                                            buttons={buttonsData}
+                                        />
+                                    </div>
+                                    <div className="content_pa">
+                                        <p>7.46% growth trades. (Past 2 month)</p>
+                                        <ChartIcon/>
+                                    </div>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <span>type and.</span></p>
+                                </section>
 
-                            <section className="transaction_section">
-                                <div className="content_chart">
-                                    <canvas id="myChart"></canvas>
-                                </div>
-                            </section>
+                                <section className="transaction_section">
+                                    <div className="content_chart">
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                </section>
 
-                            <section className="transaction_section">
-                                <div className="content_p">
-                                    <p>Transaction Archive</p>
-                                    <TrillBtn
-                                        buttons={buttonsTransactions}
-                                    />
-                                </div>
-                                <div className="container_cards">
-                                    <CardLine/>
-                                    <CardLine/>
-                                    <CardLine/>
-                                </div>
-                            </section>
-                        </Content>
+                                <section className="transaction_section">
+                                    <div className="content_p">
+                                        <p>Transaction Archive</p>
+                                        <TrillBtn
+                                            buttons={buttonsTransactions}
+                                        />
+                                    </div>
+                                    <div className="container_cards">
+                                        <CardLine/>
+                                        <CardLine/>
+                                        <CardLine/>
+                                    </div>
+                                </section>
+                            </Content>
+                        </div>
                     </div>
+                    <RightBar/>
                 </div>
-                <RightBar/>
-            </div>
-        </MainStyle>
+            </MainStyle>
+        </>
     );
 }

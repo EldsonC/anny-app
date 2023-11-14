@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const MainStyle = styled.main `
     width:  100vw;
-    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -11,7 +10,7 @@ export const MainStyle = styled.main `
 
     .container_main {
         width: 100vw;
-        height: calc(100vh - 40px);
+        height: calc(100vh - 60px);
 
         display: flex;
         justify-content: space-between;
