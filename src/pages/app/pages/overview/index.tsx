@@ -37,13 +37,14 @@ export function Overview() {
         const myChart = new Chart(ctx, {
             type: 'line',
             data: {
-            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun','Jul','Ago'],
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun','Jul','Ago','Ago','Ago','Ago','Ago'],
             datasets: [{
-                data: [12, 19, 3, 5, 2, 3, 6, 10],
-                backgroundColor: "#6CEBA6",
-                borderColor: "#6CEBA6",
-                hoverBackgroundColor: "#6CEBA6",
-                borderWidth: 1,
+                data: [0, 0, 0, 0, 0, -10, 11, 0, 0, 0, 0, 0],
+            
+                borderColor: "#333333",
+
+                hoverBorderColor: "#6CEBA6",
+                borderWidth: 3,
 
             }]
             },
@@ -92,6 +93,9 @@ export function Overview() {
                         />
                         <Content>
                             <section className="value_section">
+                                {/* <div className="banner">
+                                    
+                                </div> */}
                                 <h3>Total USD / BRL</h3>
                                 <div className="content_data">
                                     <h1>6.000 <span className="divider">/</span><span className="convert_value"> 30.000</span></h1>
@@ -107,9 +111,9 @@ export function Overview() {
                             </section>
 
                             <section className="transaction_section">
-                               <div className="content_chart">
+                                <div className="content_chart">
                                     <canvas id="myChart"></canvas>
-                               </div>
+                                </div>
                             </section>
 
                             <section className="transaction_section">

@@ -9,6 +9,14 @@ export const Content = styled.div `
     .value_section {
         margin-top: 28px;
 
+        .banner {
+            margin-bottom: 46px;
+            width: 100%;
+            height: 244px;
+
+            border: 1px solid #2B2B2B;
+            border-radius: 10px;
+        }
         h3 {
             font-size: 16px;
             font-weight: 600;
@@ -73,6 +81,16 @@ export const Content = styled.div `
                 font-size: 14px;
                 font-weight: 600;
                 color: #6CEBA6;
+            }
+        }
+
+        .content_chart {
+            width: 100%;
+            height: 400px;
+
+            #myChart {
+                width: 100%;
+                height: 100%;
             }
         }
 

@@ -22,13 +22,13 @@ export const MainStyle = styled.main `
             padding-bottom: 1.5rem;
             padding-left: 3rem;
             padding-right: 3rem;
-            width: calc(68% - 6rem);
+            width: calc(100% - 6rem);
             height: calc(100% - 3rem);
 
             overflow-y: auto;
 
             .content_display {
-                width: 702px;
+                width: 100%;
                 height: calc(100% - 35px);
 
                 display: flex;

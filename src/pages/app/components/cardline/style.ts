@@ -1,14 +1,22 @@
 import styled from "styled-components";
 
 export const CardLineStyle = styled.div `
-    padding: 6px 0;
+    padding: 6px 15px;
     margin-bottom: 15px;
-    width: 100%;
+    width: calc(100% - 30px);
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: #1a1a1a;
+        border-radius: 5px;
+        transition: .5s;
+    }
 
     .number {
         min-width: 50px;

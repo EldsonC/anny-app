@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { LogoIcon } from "../../assets/icons/sidebar/logo";
 import { MenuSIcon } from "../../assets/icons/sidebar/menuS";
 
@@ -6,6 +6,13 @@ import { GetPro } from "../getpro";
 import { FloatSidebarStyle, SideBarStyle } from "./style";
 
 export function SideBar() {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem("@MRYTOKEN:token")
+        navigate("/")
+    }
+
     return (
         <>
             <FloatSidebarStyle>
@@ -41,6 +48,11 @@ export function SideBar() {
                                         <p>Anny Boarding</p>
                                     </NavLink>
                                 </li>
+                                <li>
+                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/boarding"}>
+                                        <p>Billing</p>
+                                    </NavLink>
+                                </li>
                             </ul>
                         </div>
 
@@ -53,12 +65,12 @@ export function SideBar() {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/notification"}>
-                                        <p>Notification</p>
+                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/settings"}>
+                                        <p>Profile</p>
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/logout"}>
+                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/"} onClick={logout}>
                                         <p>Logout</p>
                                     </NavLink>
                                 </li>
