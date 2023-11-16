@@ -8,7 +8,7 @@ export const HeaderMainStyle = styled.header `
     align-items: center;
 
     position: sticky;
-    top: 0;
+    top: 0px;
 
     background-color: #0F1012;
 
@@ -27,7 +27,7 @@ export const HeaderMainStyle = styled.header `
                 gap: 0.62rem;
 
                 background-color: transparent;
-                border-right: 1px solid #303030;
+                border-right: 1px solid #282A2D;
 
                 cursor: pointer;
 
@@ -76,6 +76,14 @@ export const HeaderMainStyle = styled.header `
 
                 object-fit: cover;
             }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        position: fixed;
+        top: 60px;
+        .right_content {
+            display: none;
         }
     }
 `;

@@ -6,8 +6,85 @@ export const Content = styled.div `
         width: 100%;
     }
 
+    .container_over {
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .card_over {
+            padding: 15px;
+            width: calc(290px - 30px);
+            height: calc(150px - 30px);
+
+            border-radius: 10px;
+
+            border: 1px solid #282A2D;
+
+            .header_over {
+                width: 100%;
+                height: 40px;
+
+                .left {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    h4 {
+                        color: #FBFBFB;
+                    }
+                }
+            }
+
+            .body_over {
+                padding: 0px 15px;
+                width: calc(100% - 30px);
+                height: 80px;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                border-radius: 10px;
+
+                background-color: #1D1E20;
+                border: 1px solid #2B2B2B;
+
+                p {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #FBFBFB;
+
+                    span {
+                        color: #555555;
+                    }
+                }
+
+                .growth {
+                    color: #6CEBA6;
+                }
+
+                .cont {
+                    width: 70px;
+                    height: 60px;
+
+                    border-radius: 10px;
+                    background-color: #282A2D;
+                }
+            }
+        }
+    }
+
     .value_section {
+        padding: 20px;
         margin-top: 28px;
+
+        width: calc(100% - 40px);
+
+        border-radius: 10px;
+        border: 1px solid #282A2D;
+        background-color: #1D1E20;
 
         .banner {
             margin-top: 46px;
@@ -15,6 +92,7 @@ export const Content = styled.div `
             width: 100%;
             height: 244px;
 
+            background-color: #F3F3F3;
             border: 1px solid #2B2B2B;
             border-radius: 10px;
         }
@@ -73,6 +151,12 @@ export const Content = styled.div `
     }
 
     .transaction_section {
+        padding: 15px;
+
+        width: calc(100% - 30px);
+        border: 1px solid #282A2D;
+        border-radius: 10px;
+
         .content_p {
             display: flex;
             justify-content: space-between;
@@ -81,7 +165,7 @@ export const Content = styled.div `
             p {
                 font-size: 14px;
                 font-weight: 600;
-                color: #6CEBA6;
+                color: #FBFBFB;
             }
         }
 

@@ -10,7 +10,7 @@ export const MainStyle = styled.main `
 
     .container_main {
         width: 100vw;
-        height: calc(100vh - 60px);
+        height: 100vh;
 
         display: flex;
         justify-content: space-between;

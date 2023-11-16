@@ -37,9 +37,9 @@ export const SideBarStyle = styled.aside `
     flex-direction: column;
     justify-content: space-between;
 
-    background-color: #181818;
+    background-color: #191919;
     border-radius: 0rem 0.3125rem 0.3125rem 0rem;
-    border: 1px solid #2B2B2B;
+    border-right: 1px solid #282A2D;
 
     header {
         margin-bottom: 2rem;
@@ -49,7 +49,7 @@ export const SideBarStyle = styled.aside `
 
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #303030;
+        border-bottom: 1px solid #282A2D;
 
         button {
             background-color: transparent;
@@ -86,14 +86,14 @@ export const SideBarStyle = styled.aside `
                     align-items: center;
                     gap: 0.75rem;
 
-                    border-left: 2px solid #6CEBA6;
+                    border-left: 2px solid #FBFBFB;
 
                     cursor: pointer;
     
                     p {
-                        font-size: 0.875rem;
+                        font-size: 12px;
                         font-weight: 500;
-                        color: #6CEBA6;
+                        color: #FBFBFB;
                     }
                 }
 
@@ -112,7 +112,7 @@ export const SideBarStyle = styled.aside `
                     cursor: pointer;
     
                     p {
-                        font-size: 0.875rem;
+                        font-size: 12px;
                         font-weight: 500;
                         color: #A5A5A5;
                     }

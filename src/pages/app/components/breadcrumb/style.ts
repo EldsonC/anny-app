@@ -28,4 +28,8 @@ export const BreadCrumbStyle = styled.div `
             color: #FFFFFF;
         }
     }
+
+    @media screen and (max-width: 480px) {
+        display: none;
+    }
 `;
