@@ -14,13 +14,13 @@ import { UserIcon } from "../../assets/icons/content/user";
 import { ChartIcon } from "../../assets/icons/content/chart";
 
 export function Overview() {
-    const buttonsData = [
-        {label: "24H", onClick: () => console.log("")},
-        {label: "2D", onClick: () => console.log("")},
-        {label: "2W", onClick: () => console.log("")},
-        {label: "2M", onClick: () => console.log("")},
-        {label: "2Y", onClick: () => console.log("")}
-    ]
+    // const buttonsData = [
+    //     {label: "24H", onClick: () => console.log("")},
+    //     {label: "2D", onClick: () => console.log("")},
+    //     {label: "2W", onClick: () => console.log("")},
+    //     {label: "2M", onClick: () => console.log("")},
+    //     {label: "2Y", onClick: () => console.log("")}
+    // ]
 
     const buttonsTransactions = [
         {label: "Newest", onClick: () => console.log("")},
