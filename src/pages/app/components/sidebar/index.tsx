@@ -1,84 +1,42 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { SideBarStyle } from "./style";
 import { LogoIcon } from "../../assets/icons/sidebar/logo";
-import { MenuSIcon } from "../../assets/icons/sidebar/menuS";
-
-import { GetPro } from "../getpro";
-import { FloatSidebarStyle, SideBarStyle } from "./style";
+import { SearchIcon } from "../../assets/icons/sidebar/search";
+import { OverviewIcon } from "../../assets/icons/sidebar/overview";
+import { ScheduleIcon } from "../../assets/icons/sidebar/schedule";
+import { RocketIcon } from "../../assets/icons/sidebar/rocket";
+import { NavLink } from "react-router-dom";
 
 export function SideBar() {
-    const navigate = useNavigate();
-
-    const logout = () => {
-        localStorage.removeItem("@MRYTOKEN:token")
-        navigate("/")
-    };
 
     return (
         <>
-            <FloatSidebarStyle>
-                <div className="button_side">
-                    <MenuSIcon/>
-                </div>
-            </FloatSidebarStyle>
-            
             <SideBarStyle>
-                <div>
-                    <header>
+                <div className="top_side width">
+                    <div className="header_side width center border">
                         <LogoIcon/>
-                        <button>
-                            <MenuSIcon/>
-                        </button>
-                    </header>
-                    <nav>
-                        <div className="container_">
-                            <h3>DASHBOARD</h3>
-                            <ul>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/overview"}>
-                                        <p>Overview</p>
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/schedule"}>
-                                        <p>Schedule</p>
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/boarding"}>
-                                        <p>Anny Boarding</p>
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/boarding"}>
-                                        <p>Billing</p>
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div className="search_side center border cursor">
+                        <SearchIcon/>
+                    </div>
 
-                        <div className="container_">
-                            <h3>ACCOUNT</h3>
-                            <ul>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/settings"}>
-                                        <p>Settings</p>
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/dashboard/profile"}>
-                                        <p>Profile</p>
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink className={({isActive}) => isActive ? "li-base" : "li-none"} to={"/"} onClick={logout}>
-                                        <p>Logout</p>
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                    <ul className="width">
+                        <li className="width">
+                            <NavLink className={"width center cursor hight color"} to={"/dashboard/overview"}>
+                                <OverviewIcon/>
+                            </NavLink>
+                        </li>
+                        <li className="width">
+                            <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
+                                <ScheduleIcon/>
+                            </NavLink>
+                        </li>
+                    </ul>
                 </div>
-                <GetPro/>
+                <div className="bottom_side width center">
+                    <button className="cursor">
+                        <RocketIcon/>
+                    </button>
+                </div>
             </SideBarStyle>
         </>
     );
