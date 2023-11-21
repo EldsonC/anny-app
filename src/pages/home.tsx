@@ -9,7 +9,6 @@ import { DigitalIcon } from "../assets/icon/digital";
 import MockupPc from "../assets/img/pc-mockup.png";
 import Iphone from "../assets/img/phone.png"
 
-import { StripeIcon } from "../assets/icon/stripe";
 import { CheckIcon } from "../assets/icon/check";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
 import { UserIcon } from "../assets/icon/user";
@@ -50,19 +49,19 @@ export function Home() {
                 <section className="hiro">
                     <div className="tag">
                         <StarIcon/>
-                        <p>NEXT-TIME TECH</p>
+                        <p>BEM-VINDO(A)</p>
                     </div>
-                    <h1>Enhancing daily efficiency with our <span>time management app</span></h1>
-                    <p>In today's busy world, effective time management is crucial. AnnyApp simplifies this challenge, helping people boost productivity.</p>
+                    <h1>O tempo molda nossa jornada <span>Gerencie cada momento</span></h1>
+                    <p>Seja o arquiteto do seu tempo, construindo uma jornada alinhada aos seus objetivos. Cada instante bem utilizado é um passo em direção ao sucesso.</p>
                     <div className="buttons-hiro">
                         <a href="#plans">
                             <button>
-                                <p>Start your plan</p>
+                                <p>Comece Agora</p>
                             </button>
                         </a>
                         <button className="doc_btn">
                             <DocIcon/>
-                            <p>Documentation</p>
+                            <p>Docs for devs</p>
                         </button>
                         <NavLink to={"/dashboard/sign-in"}>
                             <button className="login-hiro">
@@ -77,38 +76,38 @@ export function Home() {
                 </section>
 
                 <section className="about" id="about">
-                    <h2>Your most experienced time task with AnnyApp.</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <h2>Seus horários eficientes com o AnnyApp.</h2>
+                    <p>Maximize sua eficiência diária com o AnnyA. Simplifique o gerenciamento do tempo e concentre-se no que realmente importa. Comece agora!</p>
 
                     <div className="container_about_text cards">
                         <div className="card">
                             <TimeIcon/>
-                            <p className="title">Save Time</p>
-                            <p>AnnyApp helps users streamline daily routines, focus on important tasks, and reduce time waste, ultimately aiming to help people 'Save Time' and boost productivity in their lives.</p>
+                            <p className="title">Poupe Tempo</p>
+                            <p>Economize preciosos minutos do seu dia com nossa solução intuitiva. O AnnyA simplifica tarefas complexas, permitindo que você alcance mais em menos tempo.</p>
                         </div>
 
                         <div className="card">
                             <FlashIcon/>
-                            <p className="title">Save Time</p>
-                            <p>AnnyApp helps users streamline daily routines, focus on important tasks, and reduce time waste, ultimately aiming to help people 'Save Time' and boost productivity in their lives.</p>
+                            <p className="title">Agilidade</p>
+                            <p>Ganhe agilidade em suas atividades diárias. O AnnyA foi projetado para proporcionar uma experiência rápida e eficiente, garantindo que você possa realizar suas tarefas com facilidade e velocidade.</p>
                         </div>
 
                         <div className="card">
                             <DigitalIcon/>
-                            <p className="title">Save Time</p>
-                            <p>AnnyApp helps users streamline daily routines, focus on important tasks, and reduce time waste, ultimately aiming to help people 'Save Time' and boost productivity in their lives.</p>
+                            <p className="title">Estilização</p>
+                            <p>Adicione estilo à sua produtividade. O AnnyA não apenas otimiza o seu tempo, mas também oferece uma interface elegante e personalizável, tornando sua experiência de gerenciamento de tempo eficiente e visualmente agradável.</p>
                         </div>
                     </div>
 
                     <NavLink to={"/dashboard/sign-up"}>
                         <button>
-                            <p>Trial for 30 days</p>
+                            <p>Teste por 15 dias</p>
                         </button>
                     </NavLink>
                 </section>
 
 
-                <section className="faqs">
+                {/* <section className="faqs">
                     <div className="card_platform">
                         <h2>One AI platform - over 30 industries leading lenders</h2>
 
@@ -121,7 +120,7 @@ export function Home() {
                             <StripeIcon/>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 <section className="plans" id="plans">
                     <h2>Princing & plans</h2>
@@ -131,13 +130,13 @@ export function Home() {
                         <div className="card">
                             <div className="text_plan">
                                 <div className="header_plan">
-                                    <p>Free</p>
+                                    <p>Start</p>
                                 </div>
 
-                                <p className="description">Try before committing to a paid plan and discover how we can help you achieve your goals.</p>
+                                <p className="description">Experimente antes de se comprometer com um plano pago e descubra como podemos ajudar você.</p>
 
                                 <p className="price">
-                                    <span>$0</span>
+                                    <span>$0.00</span>
                                     <span className="size_date">/month</span>
                                 </p>
 
@@ -162,7 +161,7 @@ export function Home() {
                             </div>
 
                             <button>
-                                Get started
+                                Assinar agora
                             </button>
                         </div>
 
@@ -172,7 +171,7 @@ export function Home() {
                                     <p>Pro</p>
                                 </div>
 
-                                <p className="description">Boost your productivity with our Pro plan. Unlock advanced features and exclusive benefits to enhance your efficiency. Elevate your experience today!</p>
+                                <p className="description">Desbloqueie recursos avançados e benefícios exclusivos para aprimorar sua eficiência.</p>
 
                                 <p className="price">
                                     <span>$29</span>
@@ -209,7 +208,7 @@ export function Home() {
                             </div>
 
                             <button className="pro">
-                                Get started
+                                Assinar agora
                             </button>
                         </div>
                         <div className="card">
@@ -218,7 +217,7 @@ export function Home() {
                                     <p>Plus</p>
                                 </div>
 
-                                <p className="description">Enjoy advanced features and exclusive benefits for maximum productivity. Boost your efficiency and achieve your goals. Try Pro Plus now and elevate your experience to the next level!</p>
+                                <p className="description">Experimente o Pro Plus agora e eleve sua experiência para o próximo nível!</p>
 
                                 <p className="price">
                                     <span>$243</span>
@@ -247,13 +246,13 @@ export function Home() {
                             </div>
 
                             <button>
-                                Get started
+                                Em breve
                             </button>
                         </div>
                     </div>
                 </section>
 
-                <section className="faqs" id="faqs">
+                {/* <section className="faqs" id="faqs">
                     <h2>FAQs</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
@@ -278,7 +277,7 @@ export function Home() {
                             <p>Lorem Ipsum is simply?</p>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
 
             <footer>

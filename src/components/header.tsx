@@ -37,7 +37,7 @@ export function HeaderComponent() {
                     <ul className="ul-hide">
                         <li>
                             <a href="#about">
-                                About
+                                Sobre
                             </a>
                         </li>
                         <li>
@@ -52,7 +52,7 @@ export function HeaderComponent() {
                         </li>
                         <li>
                             <a href="#plans">
-                                Princing
+                                Planos
                             </a>
                         </li>
                     </ul>
@@ -61,12 +61,12 @@ export function HeaderComponent() {
                 <div className="buttons">
                     <NavLink to={"/dashboard/sign-up"}>
                         <button className="btns_header btn-hide">
-                            Start your plan
+                            Começar agora
                         </button>
                     </NavLink>
                     <NavLink to={"/dashboard/sign-in"}>
                         <button className="btns_header void btn-hide">
-                            Sign in
+                            Entrar
                         </button>
                     </NavLink>
                     <button className="menu-hide">

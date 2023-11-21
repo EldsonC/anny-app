@@ -138,7 +138,7 @@ export const HomeStyle = styled.main `
         }
 
         .about {
-            padding-top: 60px;
+            padding-top: 150px;
             display: flex;
             flex-direction: column;
             align-items: center;
