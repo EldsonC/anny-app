@@ -1,81 +1,96 @@
 import styled from "styled-components";
 
 export const CardStyle = styled.div `
-    padding: 13px 16px;
-    width: calc(323px - 32px);
-    height: calc(246px - 26px);
+    padding: 0px 32px;
+    width: calc(504px - 63px);
+    height: 113px;
 
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 
-    background-color: #1D1E20;
-    border-radius: 10px;
-    border: 1px solid #2B2B2B;
+    border-radius: 18px;
+    border: 1px solid #292929;
+    background-color: #141414;
 
-    .top {
-        header {
+    .date {
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        border-right: 1px solid #292929;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+    }
+
+    .data {
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+    }
+
+    .employee {
+        margin-left: 58px;
+        width: 57px;
+        height: 57px;
+
+        border-radius: 50%;
+
+        img {
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-    
-            .left {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-    
-                .number {
-                    width: 45px;
-                    height: 45px;
-    
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-    
-                    border-radius: 50%;
-                    background-color: #27282B;
-    
-                    p {
-                        font-size: 14px;
-                        font-weight: 600;
-                        color: #FFFFFF;
-    
-                    }
-                }
-    
-                .data-client {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2px;
-                    h4 {
-                        font-size: 16px;
-                        font-weight: 500;
-                        color: #FFFFFF;
-                    }
-    
-                    p {
-                        font-size: 14px;
-                        font-weight: 500;
-                        color: #6E6E6E;
-                    }
-                }
-            }
+            height: 100%;
+
+            object-fit: cover;
+            border-radius: 50%;
         }
     }
 
     button {
-        width: 100%;
-        height: 34px;
+        margin-left: 30px;
 
-        border-radius: 5px;
-        border: 1px solid #4D4D4D;
-        background-color: #2E2E2E;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        width: 91px;
+        height: 43px;
+        
+        border-radius: 11px;
+        border: 1px solid #292929;
+        background-color: #141414;
 
         cursor: pointer;
 
-        font-size: 12px;
-        font-weight: 500;
-        color: #AEAEAE;
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            color: #B3B3B3;
+        }
     }
 `;

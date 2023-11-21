@@ -29,7 +29,7 @@ export function Login() {
     }, [])
 
     const toDashboard = () => {
-        navigation("/dashboard/overview")
+        navigation("/dashboard/schedule")
     }
 
     const {

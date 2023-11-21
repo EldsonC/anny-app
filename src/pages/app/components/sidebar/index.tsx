@@ -1,13 +1,19 @@
 import { SideBarStyle } from "./style";
 import { LogoIcon } from "../../assets/icons/sidebar/logo";
 import { SearchIcon } from "../../assets/icons/sidebar/search";
-import { OverviewIcon } from "../../assets/icons/sidebar/overview";
 import { ScheduleIcon } from "../../assets/icons/sidebar/schedule";
 import { RocketIcon } from "../../assets/icons/sidebar/rocket";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { BillingIcon } from "../../assets/icons/sidebar/billing";
+import { PayIcon } from "../../assets/icons/sidebar/Payment";
+import { SettingsIcon } from "../../assets/icons/sidebar/settings";
 
 export function SideBar() {
-
+    const navigate = useNavigate()
+    const Logout = () => {
+        localStorage.removeItem("@MRYTOKEN:token")
+        navigate("/")
+    }
     return (
         <>
             <SideBarStyle>
@@ -21,19 +27,29 @@ export function SideBar() {
 
                     <ul className="width">
                         <li className="width">
-                            <NavLink className={"width center cursor hight color"} to={"/dashboard/overview"}>
-                                <OverviewIcon/>
+                            <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
+                                <ScheduleIcon/>
                             </NavLink>
                         </li>
                         <li className="width">
                             <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
-                                <ScheduleIcon/>
+                                <BillingIcon/>
+                            </NavLink>
+                        </li>
+                        <li className="width">
+                            <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
+                                <PayIcon/>
+                            </NavLink>
+                        </li>
+                        <li className="width">
+                            <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
+                                <SettingsIcon/>
                             </NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="bottom_side width center">
-                    <button className="cursor">
+                    <button className="cursor" onClick={Logout}>
                         <RocketIcon/>
                     </button>
                 </div>

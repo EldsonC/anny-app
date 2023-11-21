@@ -7,7 +7,7 @@ import { HeaderMainStyle } from "./style";
 export function HeaderMain() {
     return (
         <HeaderMainStyle>
-            <div>
+            <div className="header">
                 <ul>
                     <li>
                         <button>
@@ -31,6 +31,17 @@ export function HeaderMain() {
                         <button>
                             <AdsIcon/>
                             <p>AnnyAds</p>
+                        </button>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <button>
+                            <div className="down">
+                                <p>August 22, 2023 - August 30, 2023</p>
+                                <DownIcon/>
+                            </div>
                         </button>
                     </li>
                 </ul>
