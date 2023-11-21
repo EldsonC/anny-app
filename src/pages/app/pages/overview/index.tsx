@@ -12,22 +12,14 @@ import { useEffect } from "react";
 import { InvoiceIcon } from "../../assets/icons/content/invoice";
 import { UserIcon } from "../../assets/icons/content/user";
 import { ChartIcon } from "../../assets/icons/content/chart";
+// import { QrCode } from "../../components/qrcode";
 
 export function Overview() {
-    // const buttonsData = [
-    //     {label: "24H", onClick: () => console.log("")},
-    //     {label: "2D", onClick: () => console.log("")},
-    //     {label: "2W", onClick: () => console.log("")},
-    //     {label: "2M", onClick: () => console.log("")},
-    //     {label: "2Y", onClick: () => console.log("")}
-    // ]
-
     const buttonsTransactions = [
         {label: "Newest", onClick: () => console.log("")},
         {label: "Oldest", onClick: () => console.log("")},
     ]
 
-    
     useEffect(() => {
         const ctx = document.querySelector("#myChart") as HTMLCanvasElement;
 
@@ -84,6 +76,7 @@ export function Overview() {
     }, [])
     return (
         <>
+            {/* <QrCode/> */}
             <MainStyle>
                 <div className="container_main">
                     <SideBar/>

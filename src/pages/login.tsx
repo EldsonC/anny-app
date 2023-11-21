@@ -10,6 +10,7 @@ import { zodSignIn } from "../services/zod";
 import { useAuth } from "../context/context";
 import { Loading } from "../components/loaging";
 import { useEffect, useState } from "react";
+import { LogoFooterIcon } from "../assets/icon/logoFooter";
 
 export function Login() {
     const navigation = useNavigate()
@@ -56,9 +57,9 @@ export function Login() {
     return (
         <LoginStyle>
             {loadState ? <Loading/> : false}
-            <div className="top-note">
+            {/* <div className="top-note">
                 <p>We are constantly improving our systems for your better experience.</p>
-            </div>
+            </div> */}
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
@@ -132,7 +133,8 @@ export function Login() {
                 </div>
 
                 <div className="container_right">
-                    <h1>Effortless and <span>precise</span> scheduling in just one <span>click</span>. Welcome to our scheduling <span>software</span>.</h1>
+                    <LogoFooterIcon/>
+                    <h1>Effortless and precise scheduling in just one click.</h1>
                 </div>
             </div>
         </LoginStyle>

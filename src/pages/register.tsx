@@ -7,6 +7,7 @@ import { EyeIcon } from "../assets/icon/eye";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { zodSchema } from "../services/zod";
+import { LogoFooterIcon } from "../assets/icon/logoFooter";
 
 export function Register() {
     const navigation = useNavigate()
@@ -40,9 +41,9 @@ export function Register() {
 
     return (
         <LoginStyle>
-            <div className="top-note">
+            {/* <div className="top-note">
                 <p>We are constantly improving our systems for your better experience.</p>
-            </div>
+            </div> */}
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
@@ -117,7 +118,8 @@ export function Register() {
                 </div>
 
                 <div className="container_right">
-                    <h1>Ready to take control of your schedule? <span>Sign up</span> now and <span>unlock</span> a world of seamless appointment <span>management</span>.</h1>
+                    <LogoFooterIcon/>
+                    <h1>Ready to take control of your schedule? Sign up now.</h1>
                 </div>
             </div>
         </LoginStyle>

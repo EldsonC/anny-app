@@ -16,12 +16,13 @@ export const LoginStyle = styled.main `
         }
     } 
     .content_main {
+        
         .left_container {
             width: 560px;
             height: auto;
-            min-height: calc(100vh - 50px);
+            min-height: 100vh;
 
-            background-color: #1C1C1C;
+            background-color: #222222;
             border-right: 1px solid #353535;
 
             .header_login {
@@ -37,13 +38,16 @@ export const LoginStyle = styled.main `
             height: calc(100vh - 50px);
 
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 20px;
 
             h1 {
                 max-width: 500px;
-                color: #bdbbbb;
+                color: #ffffff;
                 letter-spacing: 2px;
+                text-align: center;
 
                 span {
                     color: #707070;
