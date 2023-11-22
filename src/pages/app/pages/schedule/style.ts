@@ -5,9 +5,15 @@ export const Content = styled.div `
         padding: 20px 0px;
         width: 100%;
 
+        position: sticky;
+        top: 0px;
+
         display: flex;
         flex-direction: column;
         gap: 11px;
+
+        background-color: #111;
+        border-bottom: 1px solid #292929;
 
         h3 {
             font-size: 20px;
