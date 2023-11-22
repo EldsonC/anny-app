@@ -4,6 +4,17 @@ import { MainStyle } from "../../assets/style/gobal";
 import { HeaderMain } from "../../components/headerMain";
 import { Content } from "./style";
 import { Card } from "../../components/card";
+import { schedule } from "../../mocks/schedule";
+
+interface ScheduleSchema {
+    day: number;
+    date: string;
+    schedule: {
+        start: string,
+        end: string,
+    };
+    name: string;
+}
 
 export function Schedule() {
     return (
@@ -19,8 +30,22 @@ export function Schedule() {
                                     <p>See your scheduled events from your calendar events</p>
                                 </div>
                                 <div className="container_cards">
-                                    <Card/>
-                                    <Card/>
+                                    {schedule.map((data:ScheduleSchema, index) => {
+                                        return (
+                                            <Card
+                                                key={index}
+                                                name={data.name}
+                                                date={data.date}
+                                                day={data.day}
+                                                schedule={
+                                                    {
+                                                        start: data.schedule.start,
+                                                        end: data.schedule.end
+                                                    }
+                                                }
+                                            />
+                                        );
+                                    })}
                                 </div>
                             </Content>
                         </div>

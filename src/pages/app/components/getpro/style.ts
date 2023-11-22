@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const GetProStyle = styled.div `
     padding: 1rem;
-    width: calc(100% - 2rem);
+    width: calc(90% - 2rem);
     height: calc(9.1875rem - 2rem);
 
     display: flex;
@@ -10,8 +10,8 @@ export const GetProStyle = styled.div `
     justify-content: space-between;
 
     border-radius: 0.3125rem;
-    border: 1px solid #424242;
-    background-color: #2B2B2B;
+    border: 1px solid #000000;
+    background-color: #1C1C1C;
 
     .text_pro {
         h4 {

@@ -24,7 +24,7 @@ export function Login() {
 
     useEffect(() => {
         if(userLogged()) {
-            navigation("/dashboard/overview")
+            navigation("/dashboard/schedule")
         }
     }, [])
 

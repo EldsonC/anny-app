@@ -6,7 +6,7 @@ export function GetPro() {
         <GetProStyle>
             <div className="text_pro">
                 <h4>UPGRADE TO <span>PRO</span></h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and</p>
+                <p>Desbloqueie recursos avançados e benefícios exclusivos.</p>
             </div>
             <div className="button_container">
                 <Button
