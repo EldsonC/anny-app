@@ -62,7 +62,13 @@ export const SideBarStyle = styled.aside `
 
     .bottom_side {
         padding-bottom: 21px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
 
+        .back {
+            background-color: #2E2E2E;
+        }
         button {
             width: 44px;
             height: 44px;

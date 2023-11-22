@@ -10,6 +10,7 @@ import { SettingsIcon } from "../../assets/icons/sidebar/settings";
 import { MenuFloat } from "../menu-float";
 import { useSelector, useDispatch} from "react-redux";
 import { hide, show, stateMenu } from "../../../../redux/features/menu-float";
+import { HelpIcon } from "../../assets/icons/sidebar/help";
 
 export function SideBar() {
     const navigate = useNavigate()
@@ -41,22 +42,22 @@ export function SideBar() {
                     </div>
 
                     <ul className="width">
-                        <li className="width">
+                        <li title="Schedule" className="width">
                             <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <ScheduleIcon/>
                             </NavLink>
                         </li>
-                        <li className="width">
+                        <li title="AnnyBoard" className="width">
                             <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <BillingIcon/>
                             </NavLink>
                         </li>
-                        <li className="width">
+                        <li title="Payment" className="width">
                             <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <PayIcon/>
                             </NavLink>
                         </li>
-                        <li className="width">
+                        <li title="Settings" className="width">
                             <NavLink className={"width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <SettingsIcon/>
                             </NavLink>
@@ -64,7 +65,12 @@ export function SideBar() {
                     </ul>
                 </div>
                 <div className="bottom_side width center">
-                    <button className="cursor" onClick={Logout}>
+                    <button title="Help" className="cursor back" onClick={Logout}>
+                        <a href="https://www.instagram.com/ivy.soft/">
+                            <HelpIcon/>
+                        </a>
+                    </button>
+                    <button title="Logout" className="cursor" onClick={Logout}>
                         <RocketIcon/>
                     </button>
                 </div>
