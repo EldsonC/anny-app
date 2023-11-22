@@ -29,7 +29,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 30,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -39,7 +39,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 31,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -49,7 +49,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 1,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -59,7 +59,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 2,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -69,7 +69,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 3,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -79,7 +79,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 4,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -89,7 +89,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 5,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -99,7 +99,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 6,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -109,7 +109,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 7,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -119,7 +119,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 8,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -129,7 +129,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 9,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -139,7 +139,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 10,
         date: "Thu",
         schedule: {
             start: "09:30",
@@ -149,7 +149,7 @@ export const schedule:ScheduleSchema[] = [
             
     },
     {
-        day: 29,
+        day: 11,
         date: "Thu",
         schedule: {
             start: "09:30",
