@@ -12,7 +12,7 @@ import Iphone from "../assets/img/phone.png"
 import { CheckIcon } from "../assets/icon/check";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
 import { UserIcon } from "../assets/icon/user";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { DocIcon } from "../assets/icon/doc";
 import { IvyIcon } from "../assets/icon/logoIvy";
 import { Cookies } from "../components/cookies";
@@ -21,8 +21,9 @@ import { useEffect, useState } from "react";
 import { permissionState } from "../redux/features/cookies";
 
 export function Home() {
-    const cookiesPermission = useSelector(permissionState)
-    const [ cookies, setCookies ] = useState(false)
+    const cookiesPermission = useSelector(permissionState);
+    const navigateTo = useNavigate()
+    const [ cookies, setCookies ] = useState(false);
 
     const cookiesState = () => {
         if (cookies) {
@@ -106,22 +107,6 @@ export function Home() {
                     </NavLink>
                 </section>
 
-
-                {/* <section className="faqs">
-                    <div className="card_platform">
-                        <h2>One AI platform - over 30 industries leading lenders</h2>
-
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-
-                        <div className="platforms">
-                            <StripeIcon/>
-                            <StripeIcon/>
-                            <StripeIcon/>
-                            <StripeIcon/>
-                        </div>
-                    </div>
-                </section> */}
-
                 <section className="plans" id="plans">
                     <h2>Princing & plans</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -133,7 +118,7 @@ export function Home() {
                                     <p>Start</p>
                                 </div>
 
-                                <p className="description">Experimente antes de se comprometer com um plano pago e descubra como podemos ajudar você.</p>
+                                <p className="description">Experimente por 30 dias antes de se comprometer com um plano pago e descubra como podemos ajudar você.</p>
 
                                 <p className="price">
                                     <span>$0.00</span>
@@ -160,7 +145,7 @@ export function Home() {
                                 </div>
                             </div>
 
-                            <button>
+                            <button onClick={() => navigateTo("/dashboard/sign-up")}>
                                 Assinar agora
                             </button>
                         </div>

@@ -52,21 +52,30 @@ export const MenuProjectStyle = styled.div `
                     align-items: center;
                     gap: 10px;
 
+                    
                     .icon {
                         width: 40px;
                         height: 40px;
-
+                        
                         display: flex;
                         justify-content: center;
                         align-items: center;
-
+                        
                         border-radius: 10px;
                         border: 1px solid #292929;
                         background-color: #0A0A0A;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
                     }
 
                     .color {
-                        background-color: #FFFFFF;
+                        background-color: transparent;
                     }
 
                     p {

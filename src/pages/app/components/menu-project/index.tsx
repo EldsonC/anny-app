@@ -15,14 +15,14 @@ export function MenuProject() {
                             <div className="icon">
                                 <FolderIcon/>
                             </div>
-                            <p>My Project</p>
+                            <p>My Projects</p>
                         </div>
-                        <DownIcon/>
+                        <DownIcon/> 
                     </div>
                     <div className="button-show">
                         <div className="left_icon">
                             <div className="icon color">
-                                
+                                <img src="https://avatars.githubusercontent.com/u/111740948?s=200&v=4" alt="" />
                             </div>
                             <p>IVY Softwares</p>
                         </div>

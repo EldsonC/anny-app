@@ -6,7 +6,7 @@ export const LoadingStyle = styled.div `
 
     position: fixed;
 
-    background-color: #000000;
+    background-color: #111010;
 
     display: flex;
     justify-content: center;

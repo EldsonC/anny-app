@@ -36,8 +36,9 @@ export const RightBarStyle = styled.aside `
                     width: 65px;
                     height: 65px;
     
-                    background-color: #FFFFFF;
+                    background-color: transparent;
                     border-radius: 8px;
+                    border: 1px solid #292929;
                     
                     img {
                         width: 100%;
