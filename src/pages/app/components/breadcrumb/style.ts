@@ -6,8 +6,8 @@ export const BreadCrumbStyle = styled.div `
     display: flex;
     justify-content: space-between;
 
-
     .left_ {
+        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,9 +27,5 @@ export const BreadCrumbStyle = styled.div `
             font-weight: 500;
             color: #FFFFFF;
         }
-    }
-
-    @media screen and (max-width: 480px) {
-        display: none;
     }
 `;

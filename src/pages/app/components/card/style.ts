@@ -9,9 +9,9 @@ export const CardStyle = styled.div `
     justify-content: space-between;
     align-items: center;
 
-    border-radius: 18px;
+    border-radius: 10px;
     border: 1px solid #292929;
-    background-color: #202020;
+    background-color: #161616;
 
     .left_card {
         display: flex;
@@ -92,7 +92,7 @@ export const CardStyle = styled.div `
             
             border-radius: 11px;
             border: 1px solid #292929;
-            background-color: #2e2e2e;
+            background-color: #1d1d1d;
     
             cursor: pointer;
     

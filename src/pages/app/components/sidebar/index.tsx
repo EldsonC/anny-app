@@ -74,8 +74,8 @@ export function SideBar() {
                     </ul>
                 </div>
                 <div className="bottom_side width center">
-                    <button title="Help" className="cursor back" onClick={Logout}>
-                        <a href="https://www.instagram.com/ivy.soft/">
+                    <button title="Help" className="cursor back">
+                        <a href="https://www.instagram.com/ivy.soft/"target="_blank">
                             <HelpIcon/>
                         </a>
                     </button>

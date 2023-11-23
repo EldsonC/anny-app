@@ -7,6 +7,7 @@ interface ScheduleSchema {
     };
     name: string;
 }
+
 export const schedule:ScheduleSchema[] = [
     {
         day: 28,
@@ -25,7 +26,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "Vitor Lima"
             
     },
     {
@@ -35,7 +36,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "Marya Eduarda"
             
     },
     {
@@ -45,7 +46,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "Gorge Vilk"
             
     },
     {
@@ -55,7 +56,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "Marck Zuc"
             
     },
     {
@@ -65,7 +66,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "David Lins"
             
     },
     {
@@ -75,7 +76,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "Pedro Isaque"
             
     },
     {
@@ -85,7 +86,7 @@ export const schedule:ScheduleSchema[] = [
             start: "09:30",
             end: "10:00"
         },
-        name: "Pedro Ysaque"
+        name: "Lucas Albert"
             
     },
     {

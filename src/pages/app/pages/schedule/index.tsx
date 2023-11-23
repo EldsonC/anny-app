@@ -5,6 +5,8 @@ import { HeaderMain } from "../../components/headerMain";
 import { Content } from "./style";
 import { Card } from "../../components/card";
 import { schedule } from "../../mocks/schedule";
+import { Void } from "../../components/void";
+import { ScheduleIcon } from "../../assets/icons/content/schedule";
 
 interface ScheduleSchema {
     day: number;
@@ -41,6 +43,7 @@ export function Schedule() {
                                     <p>See your scheduled events from your calendar events</p>
                                 </div>
                                 <div className="container_cards">
+                                    {schedule.length <= 0 ? <Void icon={<ScheduleIcon/>} title="Nobody Schedule" description=""/> : null}
                                     {schedule.map((data:ScheduleSchema, index) => {
                                         return (
                                             <Card

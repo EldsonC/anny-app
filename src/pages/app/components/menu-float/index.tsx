@@ -11,7 +11,7 @@ export function MenuFloat() {
             <header>
                 <div className="left_float">
                     <div className="img_float">
-                        
+                        <img src="https://avatars.githubusercontent.com/u/111740948?s=200&v=4" alt="" />
                     </div>
                     <div className="left_data">
                         <h3>IVY Softwares</h3>

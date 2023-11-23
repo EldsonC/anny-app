@@ -1,6 +1,9 @@
 import { CloseIcon } from "../../assets/icons/rightbar/close";
 import { DownIcon } from "../../assets/icons/rightbar/down";
+import { EmployeeIcon } from "../../assets/icons/rightbar/employee";
 import { MenuIcon } from "../../assets/icons/rightbar/menu";
+import { ServiceIcon } from "../../assets/icons/rightbar/service";
+import { Void } from "../void";
 import { RightBarStyle } from "./style";
 
 export function RightBar() {
@@ -36,7 +39,7 @@ export function RightBar() {
                 <div className="top_right">
                     <div className="userdata">
                         <div className="profile_picture">
-                            
+                            <img src="https://avatars.githubusercontent.com/u/111740948?s=200&v=4" alt="picture" />
                         </div>
                         <div className="text_data_user">
                             <h4>IVY Softwares</h4>
@@ -56,7 +59,7 @@ export function RightBar() {
                     </div>
                 </div>
                 <ul id="menu">
-                    <li onClick={() => showContent("content_setting")} className="selected content_setting-btn">Employee</li>
+                    <li onClick={() => showContent("content_setting")} className="content_setting-btn selected">Employee</li>
                     <li onClick={() => showContent("content_resources")} className="content_resources-btn">Services</li>
                     <li onClick={() => showContent("content_notifications")} className="content_notifications-btn">Notifications</li>
                 </ul>
@@ -64,11 +67,21 @@ export function RightBar() {
             <div className="content_setting content-body">
                 <div className="header">
                     <h4>Employee</h4>
+                    <Void
+                        icon={<EmployeeIcon/>}
+                        title="Without Employee"
+                        description="create a new employee to your project"
+                    />
                 </div>
             </div>
             <div className="content_resources content-body">
                 <div className="header">
                     <h4>Services</h4>
+                    <Void
+                        icon={<ServiceIcon/>}
+                        title="Without Services"
+                        description="create a new service to your project"
+                    />
                 </div>
             </div>
             <div className="content_notifications content-body">

@@ -40,6 +40,14 @@ export const MenuFloatStyle = styled.div `
 
                 border-radius: 50%;
                 background-color: #FFFFFF;
+                border: 1px solid #33996B;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+
+                    border-radius: 50%;
+                }
             }
 
             .left_data {
@@ -104,7 +112,7 @@ export const MenuFloatStyle = styled.div `
                 gap: 6px;
 
                 border-radius: 6px;
-                background-color: #FFFFFF;
+                background-color: #c7c7c7;
 
                 cursor: pointer;
 

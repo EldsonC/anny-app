@@ -24,6 +24,8 @@ export const HeaderMainStyle = styled.header `
             gap: 9px;
     
             li {
+                display: flex;
+                flex-direction: column;
                 button {
                     padding: 12px 14px;
     
