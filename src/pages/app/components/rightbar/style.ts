@@ -91,20 +91,99 @@ export const RightBarStyle = styled.aside `
 
         ul {
             display: flex;
+            gap: 15px;
             
             li {
-                padding: 15px 15px;
+                padding: 15px 0px;
                 font-size: 14px;
                 font-weight: 500;
                 color: #7A7A7A;
 
                 cursor: pointer;
             }
+        }
 
-            :first-child {
-                padding-left: 0px;
+    }
+    .content_setting, .content_resources, .content_notifications {
+        display: none;
+    }
+
+    .content_setting {
+        display: block;
+    }
+
+    li {
+        cursor: pointer;
+    }
+
+    .selected {
+        color: #33996B;
+        border-bottom: 2px solid #33996B;
+    }
+
+    .content-body {
+        padding: 30px 27px;
+        width: calc(100% - 54px);
+        height: auto;
+
+        .header {
+            padding-bottom: 30px;
+            h4 {
+                font-size: 16px;
+                font-weight: 500;
+                color: #FFFFFF;
+            }
+        } 
+
+        .switch_container {
+            margin-bottom: 22px;
+            padding-bottom: 22px;
+            width: 100%;
+
+            border-bottom: 1px solid #292929;
+
+            &:nth-child(3) {
+                margin-bottom: 10px;
+                border-bottom: none;
+            }
+
+            .left_switch {
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                h4 {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #7A7A7A;
+                }
+            }
+        }
+
+        .container_card {
+            margin-bottom: 22px;
+            padding-bottom: 37px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            border-bottom: 1px solid #292929;
+
+            .card_notified {
+                width: 100%;
+                height: 63px;
+
+                background-color: #1A1A1A;
+                border-radius: 10px;
+                border: 1px solid #292929;
             }
         }
     }
-
 `;

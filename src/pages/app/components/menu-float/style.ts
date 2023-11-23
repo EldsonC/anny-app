@@ -11,8 +11,8 @@ export const MenuFloatStyle = styled.div `
     z-index: 1000;
 
     border-radius: 17px;
-    border: 1px solid #292929;
-    background-color: #0A0A0A;
+    border: 1px solid #3a3a3a;
+    background-color: #0f0f0f;
 
     animation: ShowMenu .5s ease-in-out forwards;
 
@@ -27,7 +27,7 @@ export const MenuFloatStyle = styled.div `
         align-items: center;
 
         border-radius: 17px 17px 0px 0px;
-        background-color: #141414;
+        background-color: #202020;
 
         .left_float {
             display: flex;

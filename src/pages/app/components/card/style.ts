@@ -10,7 +10,13 @@ export const CardStyle = styled.div `
 
     border-radius: 18px;
     border: 1px solid #292929;
-    background-color: #141414;
+    background-color: #181818;
+
+    &:hover {
+        background-color: #141414;
+
+        cursor: pointer;
+    }
 
     .date {
         padding-right: 30px;
@@ -24,7 +30,7 @@ export const CardStyle = styled.div `
         p {
             font-size: 14px;
             font-weight: 400;
-            color: #FFFFFF;
+            color: #EB4747;
         }
 
         h2 {
@@ -70,27 +76,32 @@ export const CardStyle = styled.div `
         }
     }
 
-    button {
-        margin-left: 30px;
-
+    .btns {
         display: flex;
-        justify-content: center;
-        align-items: center;
         gap: 5px;
 
-        width: 91px;
-        height: 43px;
-        
-        border-radius: 11px;
-        border: 1px solid #292929;
-        background-color: #141414;
-
-        cursor: pointer;
-
-        p {
-            font-size: 14px;
-            font-weight: 400;
-            color: #B3B3B3;
+        button {
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+    
+            width: 91px;
+            height: 43px;
+            
+            border-radius: 11px;
+            border: 1px solid #292929;
+            background-color: #141414;
+    
+            cursor: pointer;
+    
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                color: #B3B3B3;
+            }
         }
     }
+
 `;

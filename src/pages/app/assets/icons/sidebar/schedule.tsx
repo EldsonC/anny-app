@@ -1,4 +1,9 @@
-export function ScheduleIcon() {
+interface ButtonProps {
+  color: string;
+}
+
+export function ScheduleIcon({color}:ButtonProps) {
+  
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +13,7 @@ export function ScheduleIcon() {
       viewBox="0 0 24 24"
     >
       <path
-        stroke="#8C8C8C"
+        stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
