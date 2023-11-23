@@ -10,7 +10,8 @@ export const HeaderMainStyle = styled.header `
     position: sticky;
     top: 0px;
 
-    background-color: #0F1012;
+    background: rgba(13, 13, 13, 0.65);
+    backdrop-filter: blur(2px);
 
     .header {
         width: 100%;
