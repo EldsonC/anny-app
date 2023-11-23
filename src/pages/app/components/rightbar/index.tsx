@@ -3,6 +3,7 @@ import { DownIcon } from "../../assets/icons/rightbar/down";
 import { EmployeeIcon } from "../../assets/icons/rightbar/employee";
 import { MenuIcon } from "../../assets/icons/rightbar/menu";
 import { ServiceIcon } from "../../assets/icons/rightbar/service";
+import { Switch } from "../swich";
 import { Void } from "../void";
 import { RightBarStyle } from "./style";
 
@@ -72,6 +73,9 @@ export function RightBar() {
                         icon={<EmployeeIcon/>}
                         title="Without Employee"
                         description="create a new employee to your project"
+
+                        titleButtonOne="Create employee"
+                        titleButtonTwo="Add"
                     />
                 </div>
             </div>
@@ -82,6 +86,9 @@ export function RightBar() {
                         icon={<ServiceIcon/>}
                         title="Without Services"
                         description="create a new service to your project"
+
+                        titleButtonOne="Create service"
+                        titleButtonTwo=""
                     />
                 </div>
             </div>
@@ -106,6 +113,9 @@ export function RightBar() {
                         <h4>Issue notification</h4>
                         <p>You will be notified by email</p>
                     </div>
+                    <div className="right_switch">
+                        <Switch/>
+                    </div>
                 </div>
                 <div className="switch_container">
                     <div className="left_switch">
@@ -128,6 +138,9 @@ export function RightBar() {
                     <div className="left_switch">
                         <h4>Notification mobile</h4>
                         <p>You will be notified in your smartphone</p>
+                    </div>
+                    <div className="right_switch">
+                        <Switch/>
                     </div>
                 </div>
             </div>

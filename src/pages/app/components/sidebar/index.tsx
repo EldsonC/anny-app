@@ -12,6 +12,7 @@ import { useSelector, useDispatch} from "react-redux";
 import { hide, show, stateMenu } from "../../../../redux/features/menu-float";
 import { HelpIcon } from "../../assets/icons/sidebar/help";
 import { useState } from "react";
+import { ThemeIcon } from "../../assets/icons/sidebar/theme";
 
 export function SideBar() {
     const navigate = useNavigate()
@@ -55,7 +56,7 @@ export function SideBar() {
                             </NavLink>
                         </li>
                         <li title="AnnyBoard" className="width">
-                            <NavLink className={({isActive}) => isActive ? (setPayment("#FFFFFF"), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/overview"}>
+                            <NavLink className={({isActive}) => isActive ? (setPayment("#FFFFFF"), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/annyboard"}>
                                 <BillingIcon
                                     color={payment}
                                 />
@@ -74,6 +75,9 @@ export function SideBar() {
                     </ul>
                 </div>
                 <div className="bottom_side width center">
+                    <button title="Theme" className="cursor back">
+                        <ThemeIcon/>
+                    </button>
                     <button title="Help" className="cursor back">
                         <a href="https://www.instagram.com/ivy.soft/"target="_blank">
                             <HelpIcon/>

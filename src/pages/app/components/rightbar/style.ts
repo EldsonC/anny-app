@@ -141,6 +141,10 @@ export const RightBarStyle = styled.aside `
             padding-bottom: 22px;
             width: 100%;
 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
             border-bottom: 1px solid #292929;
 
             &:nth-child(3) {

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const VoidStyle = styled.div `
     margin-top: 20px;
     width: 100%;
-    height: 200px;
+    height: 250px;
 
     display: flex;
     flex-direction: column;
@@ -21,9 +21,11 @@ export const VoidStyle = styled.div `
     }
 
     .description {
+        max-width: 400px;
         margin-bottom: 10px;
         font-size: 12px;
         color: #919191;
+        text-align: center;
     }
 
     .btns {
