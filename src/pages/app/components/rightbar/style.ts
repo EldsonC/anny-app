@@ -104,7 +104,7 @@ export const RightBarStyle = styled.aside `
         }
 
     }
-    .content_setting, .content_resources, .content_notifications {
+    .content_setting, .content_resources, .content_notifications, .content_app {
         display: none;
     }
 
