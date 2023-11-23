@@ -26,7 +26,18 @@ export function Schedule() {
                         <div className="content_display">
                             <Content>
                                 <div className="header">
-                                    <h3>Bookings</h3>
+                                    <div className="up">
+                                        <h3>Bookings</h3>
+                                        <div className="users">
+                                            <p>28 users</p>
+                                        </div>
+                                        <div className="users done">
+                                            <p>23 done</p>
+                                        </div>
+                                        <div className="users todo">
+                                            <p>05 to do</p>
+                                        </div>
+                                    </div>
                                     <p>See your scheduled events from your calendar events</p>
                                 </div>
                                 <div className="container_cards">

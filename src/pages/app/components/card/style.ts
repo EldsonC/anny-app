@@ -10,7 +10,7 @@ export const CardStyle = styled.div `
 
     border-radius: 18px;
     border: 1px solid #292929;
-    background-color: #181818;
+    background-color: #202020;
 
     &:hover {
         background-color: #141414;
@@ -30,7 +30,7 @@ export const CardStyle = styled.div `
         p {
             font-size: 14px;
             font-weight: 400;
-            color: #EB4747;
+            color: #FFFFFF;
         }
 
         h2 {

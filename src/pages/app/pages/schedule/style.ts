@@ -15,10 +15,48 @@ export const Content = styled.div `
         background-color: #111;
         border-bottom: 1px solid #292929;
 
-        h3 {
-            font-size: 20px;
-            font-weight: 500;
-            color: #FFFFFF;
+        .up {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            h3 {
+                font-size: 20px;
+                font-weight: 500;
+                color: #FFFFFF;
+            }
+
+            .users {
+                padding: 8px 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #6D44E0;
+                border-radius: 50px;
+
+                cursor: pointer;
+
+                p {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                }
+
+            }
+
+            .done {
+                background-color: #5FD380;
+                p {
+
+                }
+            }
+            .todo {
+                background-color: #3E3E3E;
+                p {
+
+                }
+            } 
         }
 
         p {
