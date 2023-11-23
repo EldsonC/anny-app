@@ -6,75 +6,75 @@ export const CardStyle = styled.div `
     height: 113px;
 
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     border-radius: 18px;
     border: 1px solid #292929;
     background-color: #202020;
 
-    &:hover {
-        background-color: #141414;
-
-        cursor: pointer;
-    }
-
-    .date {
-        padding-right: 30px;
+    .left_card {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 5px;
-
-        border-right: 1px solid #292929;
-
-        p {
-            font-size: 14px;
-            font-weight: 400;
-            color: #FFFFFF;
+        .date {
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+    
+            border-right: 1px solid #292929;
+    
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                color: #FFFFFF;
+            }
+    
+            h2 {
+                font-size: 30px;
+                font-weight: 400;
+                color: #FFFFFF;
+            }
         }
-
-        h2 {
-            font-size: 30px;
-            font-weight: 400;
-            color: #FFFFFF;
+    
+        .data {
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+    
+            p {
+                font-size: 14px;
+                font-weight: 400;
+                color: #FFFFFF;
+            }
+    
+            h4 {
+                font-size: 16px;
+                font-weight: 400;
+                color: #FFFFFF;
+            }
         }
-    }
-
-    .data {
-        padding-left: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-
-        p {
-            font-size: 14px;
-            font-weight: 400;
-            color: #FFFFFF;
-        }
-
-        h4 {
-            font-size: 16px;
-            font-weight: 400;
-            color: #FFFFFF;
-        }
-    }
-
-    .employee {
-        margin-left: 58px;
-        width: 57px;
-        height: 57px;
-
-        border-radius: 50%;
-
-        img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
+    
+        .employee {
+            margin-left: 58px;
+            width: 57px;
+            height: 57px;
+    
             border-radius: 50%;
+    
+            img {
+                width: 100%;
+                height: 100%;
+    
+                object-fit: cover;
+                border-radius: 50%;
+            }
         }
     }
+
 
     .btns {
         display: flex;
@@ -92,7 +92,7 @@ export const CardStyle = styled.div `
             
             border-radius: 11px;
             border: 1px solid #292929;
-            background-color: #141414;
+            background-color: #2e2e2e;
     
             cursor: pointer;
     
