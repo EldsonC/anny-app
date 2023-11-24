@@ -5,6 +5,8 @@ export const LoadingStyle = styled.div `
     height: 100vh;
 
     position: fixed;
+    top: 0px;
+    left: 0px;
 
     background-color: #111010;
 

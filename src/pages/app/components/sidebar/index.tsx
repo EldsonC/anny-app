@@ -39,15 +39,10 @@ export function SideBar() {
 
     const switchTheme = () => {
         const newTheme = stateThemeStatus === "dark" ? "light" : "dark";
-    
         dispatch(newTheme === "light" ? setLight() : setDark());
         localStorage.setItem("theme", JSON.stringify(newTheme));
-    
-        setTimeout(() => {
-            location.reload();
-        }, 1000);
     };
-    
+
     const Logout = () => {
         localStorage.removeItem("@MRYTOKEN:token")
         navigate("/")
