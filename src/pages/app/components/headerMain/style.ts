@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgDarkBlur?: string;
+        colorText?: string
+        colorBgDark?: string;
+        colorBorderDark?: string;
+    };
+}
+
 export const HeaderMainStyle = styled.header `
     padding-bottom: 15px;
     width: 100%;
@@ -10,7 +19,7 @@ export const HeaderMainStyle = styled.header `
     position: sticky;
     top: 0px;
 
-    background: rgba(13, 13, 13, 0.65);
+    background: ${(props: ThemeProps) => props.theme.bgDarkBlur};
     backdrop-filter: blur(2px);
 
     .header {
@@ -34,8 +43,8 @@ export const HeaderMainStyle = styled.header `
                     align-items: center;
                     gap: 0.62rem;
     
-                    background-color: #141414;
-                    border: 1px solid #292929;
+                    background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
+                    border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
                     border-radius: 11px;
     
                     cursor: pointer;
@@ -47,7 +56,7 @@ export const HeaderMainStyle = styled.header `
                     p {
                         font-size: 0.875rem;
                         font-weight: 400;
-                        color: #B3B3B3;
+                        color: ${(props: ThemeProps) => props.theme.colorText};
                     }
                 }
             }

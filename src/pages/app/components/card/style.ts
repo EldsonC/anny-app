@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgColorDark?: string;
+        bgDarkBlur?: string;
+        colorText?: string
+        colorDestaque?: string;
+        colorBgDark?: string;
+        destaqueDark?: string;
+        colorBorderDark?: string;
+
+        colorBtnBg?: string;
+        searchSideBg?: string;
+        
+        isActiveColor?: string;
+    };
+}
+
 export const CardStyle = styled.div `
     padding: 0px 32px;
     width: calc(504px - 63px);
@@ -10,8 +27,8 @@ export const CardStyle = styled.div `
     align-items: center;
 
     border-radius: 10px;
-    border: 1px solid #292929;
-    background-color: #161616;
+    border: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
+    background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
 
     .left_card {
         display: flex;
@@ -23,18 +40,18 @@ export const CardStyle = styled.div `
             align-items: center;
             gap: 5px;
     
-            border-right: 1px solid #292929;
+            border-right: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
     
             p {
                 font-size: 14px;
                 font-weight: 400;
-                color: #FFFFFF;
+                color:  ${(props: ThemeProps) => props.theme.colorText};
             }
     
             h2 {
                 font-size: 30px;
                 font-weight: 400;
-                color: #FFFFFF;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
         }
     
@@ -48,13 +65,13 @@ export const CardStyle = styled.div `
             p {
                 font-size: 14px;
                 font-weight: 400;
-                color: #FFFFFF;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
     
             h4 {
                 font-size: 16px;
                 font-weight: 400;
-                color: #FFFFFF;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
         }
     
@@ -91,15 +108,15 @@ export const CardStyle = styled.div `
             height: 43px;
             
             border-radius: 11px;
-            border: 1px solid #292929;
-            background-color: #1d1d1d;
+            border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
+            background-color: ${(props: ThemeProps) => props.theme.colorBtnBg};
     
             cursor: pointer;
     
             p {
                 font-size: 14px;
                 font-weight: 400;
-                color: #B3B3B3;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
         }
     }

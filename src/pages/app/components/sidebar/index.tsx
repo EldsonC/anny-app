@@ -11,18 +11,23 @@ import { MenuFloat } from "../menu-float";
 import { useSelector, useDispatch} from "react-redux";
 import { hide, show, stateMenu } from "../../../../redux/features/menu-float";
 import { HelpIcon } from "../../assets/icons/sidebar/help";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ThemeIcon } from "../../assets/icons/sidebar/theme";
+import { ThemeContext } from "styled-components";
+import { darkTheme } from "../../../../App";
+import { setDark, setLight, stateTheme } from "../../../../redux/features/theme";
 
 export function SideBar() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const theme = useContext(ThemeContext) || darkTheme;
 
     const colorDefault = "#8C8C8C"
     const [ schedule, setSchedule ] = useState<string>(colorDefault)
     const [ payment, setPayment ] = useState<string>(colorDefault)
 
     const stateMenuStatus = useSelector(stateMenu)
+    const stateThemeStatus = useSelector(stateTheme)
 
     const showMenu = () => {
         if (stateMenuStatus) {
@@ -31,6 +36,18 @@ export function SideBar() {
             dispatch(show())
         }
     }
+
+    const switchTheme = () => {
+        const newTheme = stateThemeStatus === "dark" ? "light" : "dark";
+    
+        dispatch(newTheme === "light" ? setLight() : setDark());
+        localStorage.setItem("theme", JSON.stringify(newTheme));
+    
+        setTimeout(() => {
+            location.reload();
+        }, 1000);
+    };
+    
     const Logout = () => {
         localStorage.removeItem("@MRYTOKEN:token")
         navigate("/")
@@ -49,14 +66,14 @@ export function SideBar() {
 
                     <ul className="width">
                         <li title="Schedule" className="width">
-                            <NavLink className={({isActive}) => isActive ? (setSchedule("#FFFFFF"), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
+                            <NavLink className={({isActive}) => isActive ? (setSchedule(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <ScheduleIcon
                                     color={schedule}
                                 />
                             </NavLink>
                         </li>
                         <li title="AnnyBoard" className="width">
-                            <NavLink className={({isActive}) => isActive ? (setPayment("#FFFFFF"), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/annyboard"}>
+                            <NavLink className={({isActive}) => isActive ? (setPayment(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/annyboard"}>
                                 <BillingIcon
                                     color={payment}
                                 />
@@ -75,7 +92,7 @@ export function SideBar() {
                     </ul>
                 </div>
                 <div className="bottom_side width center">
-                    <button title="Theme" className="cursor back">
+                    <button onClick={switchTheme} title="Theme" className="cursor back">
                         <ThemeIcon/>
                     </button>
                     <button title="Help" className="cursor back">

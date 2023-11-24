@@ -1,5 +1,21 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgColorDark?: string;
+        bgDarkBlur?: string;
+        colorText?: string
+        colorDestaque?: string;
+        colorBgDark?: string;
+        destaqueDark?: string;
+        colorBorderDark?: string;
+
+        colorBtnBg?: string;
+        searchSideBg?: string;
+        
+        isActiveColor?: string;
+    };
+}
 export const MenuProjectStyle = styled.div `
     padding: 8px 9px;
     padding-bottom: 15px;
@@ -11,8 +27,8 @@ export const MenuProjectStyle = styled.div `
 
     z-index: 1000;
     
-    background-color: #141414;
-    border: 1px solid #292929;
+    background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
+    border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
     border-radius: 10px;
 
     animation: MenuFloat .5s;
@@ -22,10 +38,11 @@ export const MenuProjectStyle = styled.div `
         margin-bottom: 14px;
         width: 100%;
 
-        border-bottom: 1px solid #1F1F1F;
+        border-bottom: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
 
         .container_project {
             padding: 5px 15px;
+            padding-top: 10px;
             padding-bottom: 15px;
             width: calc(100% - 30px);
             height: auto;
@@ -34,7 +51,7 @@ export const MenuProjectStyle = styled.div `
             flex-direction: column;
             gap: 10px;
 
-            background-color: #1F1F1F;
+            background-color: ${(props: ThemeProps) => props.theme.colorBtnBg};
             border-radius: 9px;
 
             .button-show {
@@ -62,8 +79,8 @@ export const MenuProjectStyle = styled.div `
                         align-items: center;
                         
                         border-radius: 10px;
-                        border: 1px solid #292929;
-                        background-color: #0A0A0A;
+                        border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
+                        background-color: ${(props: ThemeProps) => props.theme.destaqueDark};
 
                         img {
                             width: 100%;
@@ -81,7 +98,7 @@ export const MenuProjectStyle = styled.div `
                     p {
                         font-size: 14px;
                         font-weight: 400;
-                        color: #B3B3B3;
+                        color: ${(props: ThemeProps) => props.theme.colorText};
                     }
                 }
             }
@@ -112,7 +129,7 @@ export const MenuProjectStyle = styled.div `
                 align-items: center;
 
                 border-radius: 10px;
-                border: 1px solid #292929;
+                border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
                 background-color: #0A0A0A;
             }
 
@@ -123,7 +140,7 @@ export const MenuProjectStyle = styled.div `
             p {
                 font-size: 14px;
                 font-weight: 400;
-                color: #B3B3B3;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
         }
 

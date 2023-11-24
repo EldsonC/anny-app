@@ -13,15 +13,20 @@ export default createGlobalStyle`
     }
 
     :root {
-        --primary: #473376;
-        --background-color: #111;
-        
+        --bg-color-dark: #111111;
+        --bg-dark-blur: rgba(13, 13, 13, 0.65);
+        --color-text: #F2F2F2;
+        --color-destaque: #33996B;
+        --color-bg-dark: #1A1A1A;
+        --destaque-dark: #141414;
+        --color-border-dark: #292929;
+
         --grey-1: #F7F7F7;
         --grey-2: #151515;
     }
 
     body {
-        background-color: var(--background-color);
+        background-color: #111;
         font-family: "Inter", sans-serif;
     }
 
@@ -34,7 +39,7 @@ export default createGlobalStyle`
     }
 
     ::-webkit-scrollbar-track {
-        background: #0c0c0c;
+        background: transparent;
     }
 
     ::-webkit-scrollbar-thumb {

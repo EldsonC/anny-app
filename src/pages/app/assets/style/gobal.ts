@@ -6,6 +6,7 @@ export const MainStyle = styled.main `
     display: flex;
     flex-direction: column;
 
+    
     .container_main {
         padding: 36px 21px;
         width: calc(100vw - 42px);
@@ -14,6 +15,8 @@ export const MainStyle = styled.main `
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+
+        background-color: ${(props) => props.theme.bgColorDark};
 
         .content_main {
             padding: 0px 22px;

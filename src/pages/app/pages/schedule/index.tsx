@@ -7,6 +7,9 @@ import { Card } from "../../components/card";
 import { schedule } from "../../mocks/schedule";
 import { Void } from "../../components/void";
 import { ScheduleIcon } from "../../assets/icons/content/schedule";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+import { darkTheme } from "../../../../App";
 
 interface ScheduleSchema {
     day: number;
@@ -19,6 +22,8 @@ interface ScheduleSchema {
 }
 
 export function Schedule() {
+    const theme = useContext(ThemeContext) || darkTheme;
+
     return (
         <MainStyle>
             <div className="container_main">
@@ -43,7 +48,7 @@ export function Schedule() {
                                     <p>See your scheduled events from your calendar events</p>
                                 </div>
                                 <div className="container_cards">
-                                    {schedule.length <= 0 ? <Void icon={<ScheduleIcon/>} title="Nobody Schedule" description=""/> : null}
+                                    {schedule.length <= 0 ? <Void titleButtonOne="" titleButtonTwo="" icon={<ScheduleIcon color={theme.colorText}/>} title="Nobody Schedule" description=""/> : null}
                                     {schedule.map((data:ScheduleSchema, index) => {
                                         return (
                                             <Card

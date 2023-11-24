@@ -1,13 +1,29 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgColorDark?: string;
+        bgDarkBlur?: string;
+        colorText?: string
+        colorDestaque?: string;
+        colorBgDark?: string;
+        destaqueDark?: string;
+        colorBorderDark?: string;
+
+        colorBtnBg?: string;
+        searchSideBg?: string;
+        
+        isActiveColor?: string;
+    };
+}
 export const RightBarStyle = styled.aside `
     width: 446px;
     min-width: 446px;
     height: 100%;
 
     border-radius: 17px;
-    background-color: #1A1A1A;
-    border: 1px solid #292929;
+    background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
+    border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
 
     header {
         padding: 0px 27px;
@@ -18,7 +34,7 @@ export const RightBarStyle = styled.aside `
         flex-direction: column;
         justify-content: space-between;
 
-        background-color: #141414;
+        background-color: var(--destaque-dark);
         border-radius: 17px 17px 0px 0px;
 
         .top_right {
@@ -38,7 +54,7 @@ export const RightBarStyle = styled.aside `
     
                     background-color: transparent;
                     border-radius: 8px;
-                    border: 1px solid #292929;
+                    border: 1px solid var(--color-border-dark);
                     
                     img {
                         width: 100%;
@@ -82,7 +98,7 @@ export const RightBarStyle = styled.aside `
                     align-items: center;
     
                     border-radius: 8px;
-                    background-color: #141414;
+                    background-color: var(--color-bg-dark);
                     border: 1px solid #2E2E2E;
     
                     cursor: pointer;
@@ -132,7 +148,7 @@ export const RightBarStyle = styled.aside `
             h4 {
                 font-size: 16px;
                 font-weight: 500;
-                color: #FFFFFF;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
         } 
 
@@ -145,7 +161,7 @@ export const RightBarStyle = styled.aside `
             justify-content: space-between;
             align-items: center;
 
-            border-bottom: 1px solid #292929;
+            border-bottom: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
 
             &:nth-child(3) {
                 margin-bottom: 10px;
@@ -156,10 +172,11 @@ export const RightBarStyle = styled.aside `
                 display: flex;
                 flex-direction: column;
                 gap: 7px;
+
                 h4 {
                     font-size: 14px;
                     font-weight: 500;
-                    color: #FFFFFF;
+                    color: ${(props: ThemeProps) => props.theme.colorText};
                 }
 
                 p {
@@ -179,15 +196,15 @@ export const RightBarStyle = styled.aside `
             flex-direction: column;
             gap: 10px;
 
-            border-bottom: 1px solid #292929;
+            border-bottom: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
 
             .card_notified {
                 width: 100%;
                 height: 63px;
 
-                background-color: #1A1A1A;
+                background-color: ${(props: ThemeProps) => props.theme.colorBtnBg};
                 border-radius: 10px;
-                border: 1px solid #292929;
+                border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
             }
         }
     }

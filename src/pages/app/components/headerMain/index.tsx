@@ -6,6 +6,7 @@ import { ProjectIcon } from "../../assets/icons/headermain/project";
 import { MenuProject } from "../menu-project";
 import { HeaderMainStyle } from "./style";
 import { hide, show, stateMenu } from "../../../../redux/features/menu-project";
+import { Calendar } from "../calendar/calendar";
 
 export function HeaderMain() {
     const dispatch = useDispatch();
@@ -67,6 +68,7 @@ export function HeaderMain() {
                                 <DownIcon/>
                             </div>
                         </button>
+                        <Calendar/>
                     </li>
                 </ul>
             </div>

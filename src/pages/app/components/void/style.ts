@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgColorDark?: string;
+        bgDarkBlur?: string;
+        colorText?: string
+        colorDestaque?: string;
+        colorBgDark?: string;
+        destaqueDark?: string;
+        colorBorderDark?: string;
+
+        colorBtnBg?: string;
+        searchSideBg?: string;
+        
+        isActiveColor?: string;
+    };
+}
+
 export const VoidStyle = styled.div `
     margin-top: 20px;
     width: 100%;
@@ -11,9 +28,9 @@ export const VoidStyle = styled.div `
     align-items: center;
     gap: 5px;
 
-    background-color: transparent;
+    background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
     border-radius: 10px;
-    border: 1px dashed #292929;
+    border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
 
     h3 {
         font-size: 14px;

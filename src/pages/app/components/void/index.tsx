@@ -9,6 +9,7 @@ interface VoidProps{
     titleButtonTwo: string;
     iconButton?: React.ReactNode;
 }
+
 export function Void({icon, title, description, titleButtonOne, titleButtonTwo, iconButton}:VoidProps) {
     return (
         <VoidStyle>

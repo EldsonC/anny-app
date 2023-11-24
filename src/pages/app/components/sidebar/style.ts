@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgColorDark?: string;
+        bgDarkBlur?: string;
+        colorText?: string
+        colorDestaque?: string;
+        colorBgDark?: string;
+        destaqueDark?: string;
+        colorBorderDark?: string;
+
+        colorBtnBg?: string;
+        searchSideBg?: string;
+        
+        isActiveColor?: string;
+    };
+}
+
 export const SideBarStyle = styled.aside `
     width: 70px;
     min-width: 70px;
@@ -11,8 +28,8 @@ export const SideBarStyle = styled.aside `
     justify-content: space-between;
 
     border-radius: 17px;
-    background-color: #1A1A1A;
-    border: 1px solid #292929;
+    background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
+    border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
 
     /* Globals */
         .width {
@@ -30,7 +47,7 @@ export const SideBarStyle = styled.aside `
         }
 
         .border {
-            border-bottom: 1px solid #1F1F1F;
+            border-bottom: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
         }
         
         .cursor {
@@ -38,7 +55,7 @@ export const SideBarStyle = styled.aside `
         }
 
         .color {
-            background-color: #010101;
+            background-color: ${(props: ThemeProps) => props.theme.colorBtnBg};
         }
 
     /* Code */
@@ -50,13 +67,13 @@ export const SideBarStyle = styled.aside `
         .header_side {
             height: 71px;
 
-            background-color: #191919;
+            background-color:  #191919;
             border-radius: 15.5px 15.5px 0px 0px;
         }
 
         .search_side {
             height: 58px;
-            background-color: #121212;
+            background-color: ${(props: ThemeProps) => props.theme.searchSideBg};
         }
     }
 

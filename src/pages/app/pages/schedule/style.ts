@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+interface ThemeProps {
+    theme: {
+        bgColorDark?: string;
+        bgDarkBlur?: string;
+        colorText?: string
+        colorDestaque?: string;
+        colorBgDark?: string;
+        destaqueDark?: string;
+        colorBorderDark?: string;
+
+        colorBtnBg?: string;
+        searchSideBg?: string;
+        
+        isActiveColor?: string;
+    };
+}
+
 export const Content = styled.div `
     .header {
         padding: 20px 0px;
@@ -12,8 +29,7 @@ export const Content = styled.div `
         flex-direction: column;
         gap: 11px;
 
-        background-color: #111;
-        /* border-bottom: 1px solid #292929; */
+        background-color: ${(props: ThemeProps) => props.theme.bgColorDark};
 
         .up {
             display: flex;
@@ -23,7 +39,7 @@ export const Content = styled.div `
             h3 {
                 font-size: 20px;
                 font-weight: 500;
-                color: #FFFFFF;
+                color: ${(props: ThemeProps) => props.theme.colorText};
             }
 
             .users {

@@ -11,8 +11,8 @@ export const MenuFloatStyle = styled.div `
     z-index: 1000;
 
     border-radius: 17px;
-    border: 1px solid #3a3a3a;
-    background-color: #0f0f0f;
+    border: 1px solid var(--color-border-dark);
+    background-color: var(--bg-color-dark);
 
     animation: ShowMenu .5s ease-in-out forwards;
 
@@ -27,7 +27,7 @@ export const MenuFloatStyle = styled.div `
         align-items: center;
 
         border-radius: 17px 17px 0px 0px;
-        background-color: #202020;
+        background-color: var(--destaque-dark);
 
         .left_float {
             display: flex;
@@ -74,7 +74,7 @@ export const MenuFloatStyle = styled.div `
         justify-content: center;
         align-items: center;
 
-        border-bottom: 1px solid #292929;
+        border-bottom: 1px solid var(--color-border-dark);
 
         .search {
             margin: 0px 15px;
