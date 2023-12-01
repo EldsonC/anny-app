@@ -75,12 +75,12 @@ export function SideBar() {
                             </NavLink>
                         </li>
                         <li title="Payment" className="width">
-                            <NavLink className={({isActive}) => isActive ? (setSchedule("#FFFFFF"), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
+                            <NavLink className={({isActive}) => isActive ? ("width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <PayIcon/>
                             </NavLink>
                         </li>
                         <li title="Settings" className="width">
-                            <NavLink className={({isActive}) => isActive ? (setSchedule("#FFFFFF"), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
+                            <NavLink className={({isActive}) => isActive ? ("width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <SettingsIcon/>
                             </NavLink>
                         </li>
@@ -88,11 +88,13 @@ export function SideBar() {
                 </div>
                 <div className="bottom_side width center">
                     <button onClick={switchTheme} title="Theme" className="cursor back">
-                        <ThemeIcon/>
+                        <ThemeIcon color={theme.colorText}/>
                     </button>
                     <button title="Help" className="cursor back">
                         <a href="https://www.instagram.com/ivy.soft/"target="_blank">
-                            <HelpIcon/>
+                            <HelpIcon
+                                color={theme.colorText}
+                            />
                         </a>
                     </button>
                     <button title="Logout" className="cursor" onClick={Logout}>

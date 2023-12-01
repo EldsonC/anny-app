@@ -84,8 +84,9 @@ export const SideBarStyle = styled.aside `
         gap: 15px;
 
         .back {
-            background-color: #2E2E2E;
+            background-color: ${(props: ThemeProps) => props.theme.colorBtnBg};
         }
+
         button {
             width: 44px;
             height: 44px;
