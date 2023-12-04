@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const zodSchema = z.object({
+    name: z.string().nonempty("Name is a required field").min(1),
     email: z.string().nonempty("Email is a required field").email("Must be a valid email"),
     password: z
         .string()

@@ -4,13 +4,19 @@ import { LogoIcon } from "../assets/icon/logo";
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import { EyeIcon } from "../assets/icon/eye";
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { zodSchema } from "../services/zod";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
+import { useAuth } from "../context/context";
+import { useState } from "react";
+import { Loading } from "../components/loading";
 
 export function Register() {
     const navigation = useNavigate()
+    const { userRegister } = useAuth()
+
+    const [loadind, setLoading] = useState(false)
 
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
@@ -25,8 +31,19 @@ export function Register() {
         resolver: zodResolver(zodSchema)
     })
 
-    const ApiSubmit = () => {
-
+    const ApiSubmit:SubmitHandler<FieldValues> = async (formData) => {
+        setLoading(true)
+        userRegister({
+            name: formData.name,
+            email: formData.email,
+            password: formData.password
+        })
+        .then(() => {  
+            setLoading(false)
+        })
+        .catch((error) => {
+            setLoading(false)
+        })
     }
 
     const revealPassword = () => {
@@ -41,9 +58,7 @@ export function Register() {
 
     return (
         <LoginStyle>
-            {/* <div className="top-note">
-                <p>We are constantly improving our systems for your better experience.</p>
-            </div> */}
+            {loadind? <Loading/>: null}
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
@@ -76,6 +91,18 @@ export function Register() {
                         </div>
 
                         <form onSubmit={handleSubmit(ApiSubmit)}>
+                        <div className="input_container">
+                                <label htmlFor="">Name</label>
+                                <input 
+                                    className={errors.name ? "error_field" : "verity"}
+                                    type="text" 
+                                    placeholder="your name"
+                                    {...register("name")}
+                                />
+                                {errors.name ? <p className="error_label">{typeof errors.name.message === "string" ? (
+                                    <span>{errors.name.message}</span>
+                                ) : null}</p> : null}
+                            </div>
                             <div className="input_container">
                                 <label htmlFor="">Email</label>
                                 <input 

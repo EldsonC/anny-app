@@ -5,9 +5,11 @@ interface AuthContextState {
     token: TokenState;
     signIn({ email, password }: UserData): Promise<void>;
     userLogged(): boolean;
+    userRegister({ name, email, password }: UserData): Promise<void>
 }
 
 interface UserData {
+    name?: string
     email: string;
     password: string;
 }
@@ -45,6 +47,18 @@ export const AuthProvider: React.FC<InputProps> = ({children}) => {
         localStorage.setItem('@MRYTOKEN:token', token)
     }, [])
 
+        const userRegister = useCallback(async ({name, password, email}: UserData) => {
+        try {
+            await api.post('/signup', {
+                name,
+                email,
+                password
+            })
+        } catch (error) {            
+            console.log(error);
+        }
+    }, [])
+
     const userLogged = useCallback(() => {
         const token = localStorage.getItem('@MRYTOKEN:token');
         if(token) {
@@ -59,6 +73,7 @@ export const AuthProvider: React.FC<InputProps> = ({children}) => {
                 token, 
                 signIn, 
                 userLogged,
+                userRegister
             }
         }>
 
