@@ -15,6 +15,7 @@ export const LoginStyle = styled.main `
             color: #f7f7f7;
         }
     } 
+
     .content_main {
         
         .left_container {
@@ -252,6 +253,22 @@ export const LoginStyle = styled.main `
                 }
 
 
+                .code {
+                    width: 40px;
+
+                    input {
+                        width: 100%;
+                        padding: 0px;
+                        text-align: center;
+                        font-size: 18px;
+                    }
+                }
+
+                .code-form {
+                    display: flex;
+                    gap: 20px;
+                }
+
                 a {
                     margin-top: 19px;
                     margin-bottom: 30px;
@@ -285,6 +302,13 @@ export const LoginStyle = styled.main `
                     cursor: pointer;
     
                     z-index: 1000;
+                }
+
+                .btn_disable {
+                    background-color: #2E2E2E;
+                    border-color: #4D4D4D;
+
+                    cursor: default;
                 }
 
                 .create-acc {

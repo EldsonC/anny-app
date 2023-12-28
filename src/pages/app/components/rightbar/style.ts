@@ -16,14 +16,43 @@ interface ThemeProps {
         isActiveColor?: string;
     };
 }
+export const ModalBarStyle = styled.aside `
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+
+    background-color: #0000009a;
+    animation: rightBarModal 0.5s;
+
+    @keyframes rightBarModal {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+`;
 export const RightBarStyle = styled.aside `
-    width: 446px;
-    min-width: 446px;
+    width: 500px;
     height: 100%;
 
-    border-radius: 17px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+
+    z-index: 1000;
+
+    border-radius: 0px;
     background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
     border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
+
+    animation: rightBar 0.5s;
 
     header {
         padding: 0px 27px;
@@ -34,7 +63,7 @@ export const RightBarStyle = styled.aside `
         flex-direction: column;
         justify-content: space-between;
 
-        background-color: var(--destaque-dark);
+        background-color: #1f1f1f;
         border-radius: 17px 17px 0px 0px;
 
         .top_right {
@@ -206,6 +235,17 @@ export const RightBarStyle = styled.aside `
                 border-radius: 10px;
                 border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
             }
+        }
+    }
+
+    @keyframes rightBar {
+        from {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+
+        to {
+            opacity: 1;
         }
     }
 `;

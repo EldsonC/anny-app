@@ -1,26 +1,35 @@
-export function LogoIcon() {
+interface LogoProps {
+  size?: number;
+}
+
+export function LogoIcon({size}:LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width={size ? size : 40}
+      height={size ? size : 40}
       fill="none"
-      viewBox="0 0 40 40"
+      viewBox="0 0 365 365"
     >
-      <circle cx="20" cy="20" r="20" fill="#0D0D0D"></circle>
-      <g clipPath="url(#clip0_386_614)">
+      <rect
+        width="364"
+        height="364"
+        x="0.5"
+        y="0.5"
+        fill="#111"
+        stroke="#242424"
+        rx="52.5"
+      ></rect>
+      <g clipPath="url(#clip0_1_1039)">
         <path
-          fill="#33996B"
-          d="M14 24.417h6V22.5h-6v1.917zm3-3.834h6v-1.916h-6v1.916zm3-3.833h6v-1.917h-6v1.917zm-7 11.5a1.97 1.97 0 01-1.413-.564A1.804 1.804 0 0111 26.333V12.917c0-.527.196-.979.588-1.354A1.965 1.965 0 0113 11h14c.55 0 1.021.188 1.413.563.392.376.588.827.587 1.354v13.416c0 .527-.196.979-.588 1.355A1.965 1.965 0 0127 28.25H13z"
+          fill="#1ED760"
+          d="M116.667 236.444H182v-21.777h-65.333v21.777zm32.666-43.555h65.334v-21.778h-65.334v21.778zM182 149.333h65.333v-21.777H182v21.777zM105.778 280c-5.99 0-11.118-2.134-15.386-6.403-4.269-4.268-6.4-9.393-6.392-15.375V105.778c0-5.99 2.134-11.118 6.403-15.386 4.268-4.269 9.393-6.4 15.375-6.392h152.444c5.989 0 11.118 2.134 15.386 6.403 4.269 4.268 6.399 9.393 6.392 15.375v152.444c0 5.989-2.134 11.118-6.403 15.386-4.268 4.269-9.393 6.399-15.375 6.392H105.778z"
         ></path>
       </g>
+      <path stroke="#000" d="M84.5 84.5H279.5V279.5H84.5z"></path>
       <defs>
-        <clipPath id="clip0_386_614">
-          <path
-            fill="#fff"
-            d="M0 0H18V17.25H0z"
-            transform="translate(11 11)"
-          ></path>
+        <clipPath id="clip0_1_1039">
+          <path fill="#fff" d="M84 84H280V280H84z"></path>
         </clipPath>
       </defs>
     </svg>

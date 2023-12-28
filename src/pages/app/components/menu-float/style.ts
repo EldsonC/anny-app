@@ -5,10 +5,10 @@ export const MenuFloatStyle = styled.div `
     height: 300px;
 
     position: fixed;
-    top: 35px;
+    top: 65px;
     left: 105px;
 
-    z-index: 1000;
+    z-index: 2000;
 
     border-radius: 17px;
     border: 1px solid var(--color-border-dark);
@@ -27,7 +27,7 @@ export const MenuFloatStyle = styled.div `
         align-items: center;
 
         border-radius: 17px 17px 0px 0px;
-        background-color: var(--destaque-dark);
+        background-color: #1f1f1f;
 
         .left_float {
             display: flex;
@@ -94,7 +94,7 @@ export const MenuFloatStyle = styled.div `
 
                 input {
                     padding-left: 10px;
-                    width: 90%;
+                    width: 100%;
                     height: calc(100% - 30px);
                     background-color: transparent;
                     color: #FFFFFF;

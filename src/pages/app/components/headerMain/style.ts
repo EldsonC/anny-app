@@ -19,6 +19,8 @@ export const HeaderMainStyle = styled.header `
     position: sticky;
     top: 0px;
 
+    z-index: 1000;
+
     background: ${(props: ThemeProps) => props.theme.bgDarkBlur};
     backdrop-filter: blur(2px);
 
@@ -52,6 +54,9 @@ export const HeaderMainStyle = styled.header `
                     .down {
                         display: flex;
                         gap: 5px;
+                    }
+                    .rightbar {
+                        rotate: 90deg;
                     }
                     p {
                         font-size: 0.875rem;

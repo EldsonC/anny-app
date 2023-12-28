@@ -19,8 +19,7 @@ interface ThemeProps {
 
 export const VoidStyle = styled.div `
     margin-top: 20px;
-    width: 100%;
-    height: 250px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;

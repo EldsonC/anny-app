@@ -1,8 +1,8 @@
 import { FileIcon } from "../../assets/icons/float/file";
 import { FolderIcon } from "../../assets/icons/float/folder";
 import { DownIcon } from "../../assets/icons/headermain/down";
-import { MenuProjectStyle } from "./style";
-import logo from "../../assets/img/logoIvy.jpg"
+import { MenuTeamstStyle } from "./style";
+import logo from "../../assets/img/man.jpg"
 import logo2 from "../../assets/img/Eldson.jpeg"
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ interface CardState {
     expanded: boolean;
 }
 
-export function MenuProject() {
+export function MenuTeams() {
     const [ state, setState ] = useState<CardState>({ expanded: false });
 
     const toggleExpand = () => {
@@ -18,7 +18,7 @@ export function MenuProject() {
     }
 
     return (
-        <MenuProjectStyle>
+        <MenuTeamstStyle>
             <div className="projects">
                 <div className="container_project">
                     <div className="button-show" onClick={toggleExpand}>
@@ -26,7 +26,7 @@ export function MenuProject() {
                             <div className="icon">
                                 <FolderIcon/>
                             </div>
-                            <p>My Projects</p>
+                            <p>Employees</p>
                         </div>
                         <DownIcon/> 
                     </div>
@@ -37,7 +37,7 @@ export function MenuProject() {
                                     <div className="icon color">
                                         <img src={logo} alt="" />
                                     </div>
-                                    <p>IVY Softwares</p>
+                                    <p>Lucas Albert</p>
                                 </div>
                             </div>
 
@@ -46,7 +46,25 @@ export function MenuProject() {
                                     <div className="icon color">
                                         <img src={logo2} alt="" />
                                     </div>
-                                    <p>Pizzaria</p>
+                                    <p>Eldson</p>
+                                </div>
+                            </div>
+
+                            <div className="button-show">
+                                <div className="left_icon">
+                                    <div className="icon color">
+                                        <img src={logo2} alt="" />
+                                    </div>
+                                    <p>Aline</p>
+                                </div>
+                            </div>
+
+                            <div className="button-show">
+                                <div className="left_icon">
+                                    <div className="icon color">
+                                        <img src={logo2} alt="" />
+                                    </div>
+                                    <p>Marya</p>
                                 </div>
                             </div>
                         </>
@@ -59,13 +77,13 @@ export function MenuProject() {
                     <div className="icon">
                         <FileIcon/>
                     </div>
-                    <p>New Project</p>
+                    <p>New Employees</p>
                 </div>
                 <div className="left">
                     <DownIcon/>
                 </div>
             </div>
             
-        </MenuProjectStyle>
+        </MenuTeamstStyle>
     );
 }

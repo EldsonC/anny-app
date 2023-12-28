@@ -3,7 +3,7 @@ import { MenuIcon } from "../../assets/icons/float/menu";
 import { SearchIcon } from "../../assets/icons/float/search";
 import { GetPro } from "../getpro";
 import { MenuFloatStyle } from "./style";
-
+import logo from "../../assets/img/logoIvy.jpg";
 
 export function MenuFloat() {
     return (
@@ -11,7 +11,7 @@ export function MenuFloat() {
             <header>
                 <div className="left_float">
                     <div className="img_float">
-                        <img src="https://avatars.githubusercontent.com/u/111740948?s=200&v=4" alt="" />
+                        <img src={logo} alt="" />
                     </div>
                     <div className="left_data">
                         <h3>IVY Softwares</h3>

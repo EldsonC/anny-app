@@ -8,13 +8,11 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { zodSchema } from "../services/zod";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
-import { useAuth } from "../context/context";
 import { useState } from "react";
 import { Loading } from "../components/loading";
 
 export function Register() {
-    const navigation = useNavigate()
-    const { userRegister } = useAuth()
+    const navigation = useNavigate();
 
     const [loadind, setLoading] = useState(false)
 
@@ -33,20 +31,20 @@ export function Register() {
 
     const ApiSubmit:SubmitHandler<FieldValues> = async (formData) => {
         setLoading(true)
-        userRegister({
+        const data = {
             name: formData.name,
             email: formData.email,
             password: formData.password
-        })
-        .then(() => {  
-            setLoading(false)
-        })
-        .catch((error) => {
-            setLoading(false)
-        })
+        }
+
+        await localStorage.setItem("@MRY:register", JSON.stringify(data));
+        setTimeout(() => {
+            navigation("/sign-up/code")
+        }, 1000)
     }
 
-    const revealPassword = () => {
+    const revealPassword = (e: any) => {
+        e.preventDefault()
         const passwordField = document.querySelector("#passwordField") as HTMLInputElement;
 
         if (passwordField.type === "password") {
@@ -126,7 +124,7 @@ export function Register() {
                                         placeholder="********"
                                     {...register("password")}
                                     />
-                                    <button onClick={revealPassword}>
+                                    <button onClick={(e) => revealPassword(e)}>
                                         <EyeIcon/>
                                     </button>
                                 </div>
@@ -135,7 +133,7 @@ export function Register() {
                                 ) : null}</p> : null}
 
                             </div>
-                            <button className="btn_login">
+                            <button className="btn_login" onClick={() => handleSubmit(ApiSubmit)}>
                                 <p>Sign Up</p>
                             </button>
 

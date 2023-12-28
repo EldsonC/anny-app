@@ -10,8 +10,8 @@ interface AuthContextState {
 
 interface UserData {
     name?: string
-    email: string;
-    password: string;
+    email?: string;
+    password?: string;
 }
 
 interface TokenState {

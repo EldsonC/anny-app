@@ -67,7 +67,7 @@ export const SideBarStyle = styled.aside `
         .header_side {
             height: 71px;
 
-            background-color:  #191919;
+            background-color:#1f1f1f;
             border-radius: 15.5px 15.5px 0px 0px;
         }
 

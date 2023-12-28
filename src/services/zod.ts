@@ -20,3 +20,8 @@ export const zodSignIn = z.object({
         .nonempty("Password is a required field")
 })
 
+export const zodCode = z.object({
+    code: z.string().nonempty("code is riquired").min(1),
+
+})
+

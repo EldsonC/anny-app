@@ -24,4 +24,21 @@ export const ButtonStyle = styled.button `
         cursor: pointer;
 
     }
+
+    &.waring {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+
+        background-color: #fa0e0ebb;
+        border: 1px solid #db3737bb;
+        
+        p {
+            color: #ffacacff;
+        }
+
+        cursor: pointer;
+
+    }
 `;

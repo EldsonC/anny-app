@@ -6,11 +6,75 @@ export const MainStyle = styled.main `
     display: flex;
     flex-direction: column;
 
-    
+    user-select: none;
+
+    .markStyle {
+        padding: 0px 30px;
+        width: calc(100% - 60px);
+        height: 45px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+
+        position: fixed;
+        z-index: 100;
+
+        background-color: #1f1f1f;
+        border-bottom: 2px solid #222222;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            p {
+                font-size: 14px;
+                color: white;
+                font-weight: 600;
+
+                span {
+                    color: #5d5e61;
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+                width: 20px;
+                height: 20px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 50%;
+
+                cursor: pointer;
+
+            }
+            
+            .minimize {
+                background-color: #3c3d3f;
+            }
+
+            .maximize {
+                background-color: #5d5e61;
+            }
+        }
+
+    }
+
     .container_main {
+        margin-top: 30px;
         padding: 36px 21px;
         width: calc(100vw - 42px);
-        height: calc(100vh - 72px);
+        height: calc(100vh - 112px);
 
         display: flex;
         justify-content: space-between;
@@ -45,6 +109,29 @@ export const MainStyle = styled.main `
                     background-color: #0F1012;
                 }
             }
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: 2px;
+
+        position: absolute;
+        bottom: 0px;
+
+        background-color: #747474;
+
+        animation: footer 2s;
+    }
+
+    @keyframes footer {
+        from {
+            width: 0%;
+        }
+
+        to {
+            width: 100%;
+            background-color: #fff;
         }
     }
 
