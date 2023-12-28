@@ -5,11 +5,13 @@ import { ThemeProvider } from "styled-components"
 import Global from "./assets/styles/global"
 import { stateTheme } from "./redux/features/theme"
 import { useSelector } from "react-redux"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import io from 'socket.io-client';
 import { api } from "./services/api"
 
-import notificationSound from "./assets/sounds/IPHONE NOTIFICATION SOUND EFFECT (PING_DING)(MP3_160K).mp3"
+import notificationSound from "./assets/sounds/IPHONE NOTIFICATION SOUND EFFECT (PING_DING)(MP3_160K).mp3";
+import { Notify } from "./pages/app/components/notify"
+import { AppStyle } from "./appstyle"
 
 export const lightTheme = {
   bgColorDark: "#EBEBEB",
@@ -40,9 +42,15 @@ export const darkTheme = {
 
 }
 
+interface NotifyProps {
+  message?: string;
+  className?: string;
+}
+
 function App() {
   const themeState = useSelector(stateTheme);
-  const serverUrl = 'http://192.168.43.127:3001';
+  const serverUrl = 'http://192.168.43.59:3001';
+  const [arrayNotify, setArrayNotify] = useState<NotifyProps[]>([]);
 
   useEffect(() => {
     // Conecte-se ao servidor Socket.IO
@@ -67,13 +75,20 @@ function App() {
       console.log('Notificação de nova conexão:', data.message);
       // Aqui você pode atualizar o estado do componente, exibir uma notificação, etc.
     });
-    
-    socket.on('visit', (data:string) => {
+
+    socket.on('visit', (data: string) => {
       console.log('Notificação de nova conexão:', data);
       // Aqui você pode atualizar o estado do componente, exibir uma notificação, etc.
       const sound = document.querySelector("#sound") as HTMLAudioElement;
       sound.play()
-      alert(`New user: ${data}`)
+
+      const newNotification = { message: "Parabens um novo visitante" };
+      setArrayNotify((prevArrayNotify) => [...prevArrayNotify, newNotification])
+
+      setTimeout(() => {
+        // Remover a notificação após 10 segundos
+        setArrayNotify((prevArrayNotify) => [...prevArrayNotify.slice(1), { message: '', className: 'removeNotify' }]);
+      }, 10000);
     });
 
     // Lembre-se de desconectar o socket quando o componente for desmontado
@@ -84,10 +99,26 @@ function App() {
 
   return (
     <ThemeProvider theme={themeState === "dark" ? darkTheme : lightTheme}>
-      <audio src={notificationSound} id="sound"/>
+      <audio src={notificationSound} id="sound" />
       <AuthProvider>
         <Router>
           <Global />
+          <AppStyle>
+            {arrayNotify.map((notification, index) => {
+              return (
+                <Notify
+                  key={index}
+                  className={notification.className}
+                  message={notification.message}
+                  onAnimationEnd={() => {
+                    setTimeout(() => {
+                      setArrayNotify((prevArrayNotify) => prevArrayNotify.slice(0, index).concat(prevArrayNotify.slice(index + 1)));
+                    }, 10000)
+                  }}
+                />
+              );
+            })}
+          </AppStyle>
           <Routers />
         </Router>
       </AuthProvider>

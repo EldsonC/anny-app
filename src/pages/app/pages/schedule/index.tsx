@@ -15,6 +15,7 @@ import { LogoIcon } from "../../assets/icons/sidebar/logo";
 import { QrCode } from "../../components/qrcode";
 import { useSelector } from "react-redux";
 import { stateQrcode } from "../../../../redux/features/qrcode";
+// import { Notify } from "../../components/notify";
 
 interface ScheduleSchema {
     day: number;

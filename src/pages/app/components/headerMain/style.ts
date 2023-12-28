@@ -21,7 +21,7 @@ export const HeaderMainStyle = styled.header `
 
     z-index: 1000;
 
-    background: ${(props: ThemeProps) => props.theme.bgDarkBlur};
+    background: #111111;
     backdrop-filter: blur(2px);
 
     .header {
