@@ -1,8 +1,6 @@
 import { LoginStyle } from "../assets/styles/login";
 import { useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { zodCode } from "../services/zod";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
 import { useAuth } from "../context/context";
 import { useEffect, useRef, useState } from "react";
