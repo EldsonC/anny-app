@@ -30,6 +30,8 @@ export const CardStyle = styled.div`
     border: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
     background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
 
+    user-select: text;
+
     .card-null {
         padding: 0px 32px;
         width: calc(300px - 63px);
@@ -70,13 +72,35 @@ export const CardStyle = styled.div`
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
+
+                .top_data {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .images {
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+
+                        z-index: 500;
+
+                        .status {
+                            width: 10px;
+                            height: 10px;
+
+                            border-radius: 50%;
+                            background-color: #3E3E3E;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: ${(props: ThemeProps) => props.theme.colorText};
+                    }
         
-                p {
-                    font-size: 14px;
-                    font-weight: 400;
-                    color: ${(props: ThemeProps) => props.theme.colorText};
                 }
-    
                 h4 {
                     white-space: nowrap;
                     overflow: hidden;
@@ -86,6 +110,7 @@ export const CardStyle = styled.div`
                     font-weight: 400;
                     color: ${(props: ThemeProps) => props.theme.colorText};
                 }
+        
             }
         }
     
@@ -100,8 +125,8 @@ export const CardStyle = styled.div`
                 align-items: center;
                 gap: 5px;
         
-                width: 43px;
-                height: 43px;
+                width: 35px;
+                height: 35px;
                 
                 border-radius: 11px;
                 border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
@@ -135,33 +160,39 @@ export const CardStyle = styled.div`
         border-bottom: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
         background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
 
-        .images {
-            padding-left: 30px;
-            width: calc(100% - 30px);
+        .container_details {
+            width: 90%;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            gap: 5px;
 
-            z-index: 500;
-            
+            .details {
+                padding: 8px 16px;
+    
+                border-radius: 40px;
+                border: 1px solid #2b2b2b;
+                background-color: #1f1f1f;
+    
+                p {
+                    font-size: 14px;
+                    color: #8d8d8d;
+                }
 
-            .image-1 {
-                border: 2px solid ${(props: ThemeProps) => props.theme.colorBgDark};
+                &:hover {
+                    border: 1px solid #5a5a5a;
+                    cursor: pointer;
+                    p {
+                        color: white;
+                    }
+                }
             }
-
-            .image-2 {
-                position: relative;
-                left: -30px;
-
-                border: 2px solid ${(props: ThemeProps) => props.theme.colorBgDark};
-            }
-        }
-        .details {
-            color: white;
         }
 
         img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
 
             border-radius: 50%;
             object-fit: cover;

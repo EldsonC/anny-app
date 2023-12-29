@@ -16,6 +16,12 @@ export const LoginStyle = styled.main `
         }
     } 
 
+    .notification {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
     .content_main {
         
         .left_container {

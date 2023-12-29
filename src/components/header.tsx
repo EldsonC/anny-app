@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { LogoIcon } from "../assets/icon/logo";
 import { MobileMenuIcon } from "../assets/icon/mobileMenu";
 import { HeaderStyle } from "../assets/styles/style_components/header";
 import { useEffect, useState } from "react";
+
+import newLogo from "../assets/img/newLogo.png"
 
 export function HeaderComponent() {
     const [ scrollY, setScrollY ] = useState<number>(0); 
@@ -32,7 +33,7 @@ export function HeaderComponent() {
             <div className="container_header" id="container_header">
                 <div className="left_container">
                     <NavLink to={"/"}>
-                        <LogoIcon/>
+                        <img src={newLogo} width={100} alt="logo anny" />
                     </NavLink>
                     <ul className="ul-hide">
                         <li>
@@ -45,11 +46,7 @@ export function HeaderComponent() {
                                 Download
                             </a>
                         </li>
-                        <li>
-                            <a href="#faqs">
-                                FAQs
-                            </a>
-                        </li>
+                        
                         <li>
                             <a href="#plans">
                                 Planos

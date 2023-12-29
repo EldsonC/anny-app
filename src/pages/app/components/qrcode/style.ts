@@ -36,7 +36,7 @@ export const QRCodeStyle = styled.div `
             justify-content: center;
             align-items: center;
     
-            background-color: #4CAF50;
+            background-color: #33996B;
             border-radius: 10px;
     
             cursor: pointer;

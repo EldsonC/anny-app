@@ -86,57 +86,77 @@ export const Content = styled.div `
             }
         }
 
-        .search {
-            width: calc(340px - 30px);
-            height: 40px;
-            border-radius: 10px;
-
+        .container_filters {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
 
-            background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
-            border: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
-
-
-            .input {
+            .button_filter {
                 padding: 0px 10px;
+                height: 40px;
+                border-radius: 10px;
+    
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
-
-                input {
-                    padding-left: 10px;
-                    width: 100%;
-                    height: calc(100% - 30px);
-                    background-color: transparent;
-                    color: #FFFFFF;
-                }
-            }
-
-            .tip_search {
-                width: 60px;
-                min-width: 60px;
-                height: 33px;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 6px;
-
-                border-radius: 6px;
-                background-color: #c7c7c7;
+    
+                background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
+                border: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
 
                 cursor: pointer;
-
-                p {
-                    font-size: 16px;
-                    font-weight: 600;
-                    color: #000000;
+            }
+            .search {
+                width: calc(340px - 30px);
+                height: 40px;
+                border-radius: 10px;
+    
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
+                border: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
+    
+    
+                .input {
+                    padding: 0px 10px;
+                    display: flex;
+                    align-items: center;
+    
+                    input {
+                        padding-left: 10px;
+                        width: 100%;
+                        height: calc(100% - 30px);
+                        background-color: transparent;
+                        color: #FFFFFF;
+                    }
+                }
+    
+                .tip_search {
+                    width: 60px;
+                    min-width: 60px;
+                    height: 33px;
+    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 6px;
+    
+                    border-radius: 6px;
+                    background-color: #c7c7c7;
+    
+                    cursor: pointer;
+    
+                    p {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #000000;
+                    }
                 }
             }
         }
-    }
 
+    }
 
     .container_cards {
         padding-top: 29px;

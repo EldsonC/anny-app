@@ -2,28 +2,34 @@ import { LoginStyle } from "../assets/styles/login";
 import { GoogleIcon } from "../assets/icon/google";
 import { AppleIcon } from "../assets/icon/apple";
 import GoogleLogin from "react-google-login";
-import { LogoIcon } from "../assets/icon/logo";
+// import { LogoIcon } from "../assets/icon/logo";
 import { useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { zodSignIn } from "../services/zod";
 import { useAuth } from "../context/context";
-import { Loading } from "../components/loading";
+// import { Loading } from "../components/loading";
 import { useEffect, useState } from "react";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
+
+import logo from "../assets/img/newLogo.png";
+import { EyeIcon } from "../assets/icon/eye";
+import { Notify } from "./app/components/notify";
 
 export function Login() {
     const navigation = useNavigate()
     const { signIn, userLogged } = useAuth()
-    const [ loadState, setLoadState ] = useState(false)
-    
+    // const [loadState, setLoadState] = useState(false)
+    const [notify, setNotify] = useState(false);
+    const [notifyMessage, setNotifyMessage] = useState("");
+
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
         console.log(response)
     }
 
     useEffect(() => {
-        if(userLogged()) {
+        if (userLogged()) {
             navigation("/dashboard/schedule")
         }
     }, [])
@@ -35,32 +41,51 @@ export function Login() {
     const {
         register,
         handleSubmit,
-        formState: {errors}
+        formState: { errors }
     } = useForm({
         resolver: zodResolver(zodSignIn)
     })
 
     const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
-        setLoadState(true)
+        // setLoadState(true)
         await signIn({
             email: data.email,
             password: data.password
         })
-        .then(() => {
-            toDashboard();
-            setLoadState(false)
-        })
-        .catch(() => {
-            setLoadState(false)
-        })
+            .then(() => {
+               toDashboard();
+                // setLoadState(false)
+                setNotify(true)
+                setNotifyMessage("Seja bem vindo(a)!")
+            })
+            .catch((err) => {
+                // setLoadState(false)
+                setNotify(true)
+                setNotifyMessage(`${err.response.data.error}`)
+            })
     }
+
+    const revealPassword = (e: any) => {
+        e.preventDefault()
+        const passwordField = document.querySelector("#passwordField") as HTMLInputElement;
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+
     return (
         <LoginStyle>
-            {loadState ? <Loading/> : false}
+            {/* {loadState ? <Loading /> : false} */}
+            <div className="notification">
+                {notify ? <Notify message={notifyMessage} /> : null}
+            </div>
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
-                        <LogoIcon/>
+                        <img src={logo} width={110} alt="logo anny" />
                     </div>
                     <section className="hiro">
                         <h1>Welcome back</h1>
@@ -70,7 +95,7 @@ export function Login() {
                                 clientId={clientId}
                                 render={renderProps => (
                                     <button className="focu-login" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                                        <GoogleIcon/>
+                                        <GoogleIcon />
                                         <p>Continue with Google</p>
                                     </button>
                                 )}
@@ -81,7 +106,7 @@ export function Login() {
                                 cookiePolicy="single_host_origin"
                             />
                             <button>
-                                <AppleIcon/>
+                                <AppleIcon />
                                 <p>Continue with Apple</p>
                             </button>
                         </div>
@@ -95,9 +120,9 @@ export function Login() {
                         <form onSubmit={handleSubmit(ApiSubmit)}>
                             <div className="input_container">
                                 <label htmlFor="">Email</label>
-                                <input 
+                                <input
                                     className={errors.email ? "error_field" : "verity"}
-                                    type="email" 
+                                    type="email"
                                     placeholder="you@example.com"
                                     {...register("email")}
                                 />
@@ -108,17 +133,22 @@ export function Login() {
                             <div className="input_container">
                                 <div className="label_container">
                                     <label htmlFor="">Password</label>
-                                    <a href="">Forgot Password?</a>
                                 </div>
-                                <input 
-                                    className={errors.email ? "error_field" : "verity"}
-                                    type="password" 
-                                    placeholder="********"
-                                    {...register("password")}
-                                />
+                                <div className={errors.password ? "error_field input-eye" : "input-eye"}>
+                                    <input
+                                        id="passwordField"
+                                        type="password"
+                                        placeholder="********"
+                                        {...register("password")}
+                                    />
+                                    <button onClick={(e) => revealPassword(e)}>
+                                        <EyeIcon />
+                                    </button>
+                                </div>
                                 {errors.password ? <p className="error_label">{typeof errors.password.message === "string" ? (
                                     <span>{errors.password.message}</span>
                                 ) : null}</p> : null}
+
                             </div>
                             <button className="btn_login">
                                 <p>Sign In</p>
@@ -130,7 +160,7 @@ export function Login() {
                 </div>
 
                 <div className="container_right">
-                    <LogoFooterIcon/>
+                    <LogoFooterIcon />
                     <h1>Effortless and precise scheduling in just one click.</h1>
                 </div>
             </div>

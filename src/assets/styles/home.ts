@@ -59,7 +59,7 @@ export const HomeStyle = styled.main `
                 text-align: center;
 
                 span {
-                    color: #33996B;
+                    color: #3bcc8b;
                 }
 
                 z-index: 1000;
@@ -136,8 +136,24 @@ export const HomeStyle = styled.main `
 
         }
 
+        .pay-hiro {
+            margin-top: 0px;
+
+            h2 {
+                margin-bottom: 25px;
+                max-width: 43rem;
+                font-size: 40px;
+                font-weight: 500;
+
+                color: #EEEEEF;
+                text-align: center;
+
+                z-index: 1000;
+            }
+        }
+
         .about {
-            padding-top: 150px;
+            padding-top: 100px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -227,7 +243,7 @@ export const HomeStyle = styled.main `
             }
 
             button {
-                margin-bottom: 174px;
+                margin-bottom: 104px;
                 padding: 8px 20px;
 
                 display: flex;

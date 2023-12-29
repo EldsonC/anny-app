@@ -8,11 +8,12 @@ interface ButtonProps {
     radius?: number;
     clickAction?: () => void;
 }
-export function Button({ title, type, clickAction, radius }:ButtonProps) {
+export function Button({ title, type, clickAction, radius, icon }:ButtonProps) {
 
     return (
         <ButtonStyle className={type} onClick={clickAction} style={{borderRadius: `${radius}px`}}>
             <p className="headline-regular">{title}</p>
+            {icon}
         </ButtonStyle>
     );
 }

@@ -1,6 +1,6 @@
 import { LoginStyle } from "../assets/styles/login";
 import { GoogleIcon } from "../assets/icon/google";
-import { LogoIcon } from "../assets/icon/logo";
+// import { LogoIcon } from "../assets/icon/logo";
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import { EyeIcon } from "../assets/icon/eye";
@@ -8,14 +8,14 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { zodSchema } from "../services/zod";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
-import { useState } from "react";
-import { Loading } from "../components/loading";
+// import { Loading } from "../components/loading";
+import { api } from "../services/api";
+import logo from "../assets/img/newLogo.png";
 
 export function Register() {
     const navigation = useNavigate();
 
-    const [loadind, setLoading] = useState(false)
-
+    // const [loadind, setLoading] = useState(false);
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
         console.log(response)
@@ -24,23 +24,26 @@ export function Register() {
     const {
         register,
         handleSubmit,
-        formState: {errors}
+        formState: { errors }
     } = useForm({
         resolver: zodResolver(zodSchema)
     })
 
-    const ApiSubmit:SubmitHandler<FieldValues> = async (formData) => {
-        setLoading(true)
+    const ApiSubmit: SubmitHandler<FieldValues> = async (formData) => {
+
         const data = {
             name: formData.name,
             email: formData.email,
             password: formData.password
         }
 
-        await localStorage.setItem("@MRY:register", JSON.stringify(data));
-        setTimeout(() => {
-            navigation("/sign-up/code")
-        }, 1000)
+        localStorage.setItem("@MRY:register", JSON.stringify(data));
+        await api.post("/code")
+            .then(() => {
+                navigation("/sign-up/code");
+            }).catch((err) => {
+                console.log(err)
+            })
     }
 
     const revealPassword = (e: any) => {
@@ -56,11 +59,11 @@ export function Register() {
 
     return (
         <LoginStyle>
-            {loadind? <Loading/>: null}
+            {/* {loadind ? <Loading /> : null} */}
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
-                        <LogoIcon/>
+                        <img src={logo} width={110} alt="logo anny" />
                     </div>
                     <section className="hiro">
                         <h1>Get started</h1>
@@ -70,7 +73,7 @@ export function Register() {
                                 clientId={clientId}
                                 render={renderProps => (
                                     <button className="focu-login" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                                        <GoogleIcon/>
+                                        <GoogleIcon />
                                         <p>Continue with Google</p>
                                     </button>
                                 )}
@@ -89,11 +92,11 @@ export function Register() {
                         </div>
 
                         <form onSubmit={handleSubmit(ApiSubmit)}>
-                        <div className="input_container">
+                            <div className="input_container">
                                 <label htmlFor="">Name</label>
-                                <input 
+                                <input
                                     className={errors.name ? "error_field" : "verity"}
-                                    type="text" 
+                                    type="text"
                                     placeholder="your name"
                                     {...register("name")}
                                 />
@@ -103,9 +106,9 @@ export function Register() {
                             </div>
                             <div className="input_container">
                                 <label htmlFor="">Email</label>
-                                <input 
+                                <input
                                     className={errors.email ? "error_field" : "verity"}
-                                    type="text" 
+                                    type="text"
                                     placeholder="you@example.com"
                                     {...register("email")}
                                 />
@@ -118,14 +121,14 @@ export function Register() {
                                     <label htmlFor="">Password</label>
                                 </div>
                                 <div className={errors.password ? "error_field input-eye" : "input-eye"}>
-                                    <input 
+                                    <input
                                         id="passwordField"
-                                        type="password" 
+                                        type="password"
                                         placeholder="********"
-                                    {...register("password")}
+                                        {...register("password")}
                                     />
                                     <button onClick={(e) => revealPassword(e)}>
-                                        <EyeIcon/>
+                                        <EyeIcon />
                                     </button>
                                 </div>
                                 {errors.password ? <p className="error_label">{typeof errors.password.message === "string" ? (
@@ -143,7 +146,7 @@ export function Register() {
                 </div>
 
                 <div className="container_right">
-                    <LogoFooterIcon/>
+                    <LogoFooterIcon />
                     <h1>Ready to take control of your schedule? Sign up now.</h1>
                 </div>
             </div>

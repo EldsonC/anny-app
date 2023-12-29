@@ -21,7 +21,9 @@ export const zodSignIn = z.object({
 })
 
 export const zodCode = z.object({
-    code: z.string().nonempty("code is riquired").min(1),
-
+    number1: z.string().nonempty("code is riquired").max(1),
+    number2: z.string().nonempty("code is riquired").max(1),
+    number3: z.string().nonempty("code is riquired").max(1),
+    number4: z.string().nonempty("code is riquired").max(1),
 })
 

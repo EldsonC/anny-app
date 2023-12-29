@@ -1,13 +1,13 @@
 import { LoginStyle } from "../assets/styles/login";
-import { LogoIcon } from "../assets/icon/logo";
 import { useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod"
+import { zodResolver } from "@hookform/resolvers/zod";
 import { zodCode } from "../services/zod";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
 import { useAuth } from "../context/context";
 import { useEffect, useState } from "react";
-import { Loading } from "../components/loading";
+import { Notify } from "./app/components/notify";
+import logo from "../assets/img/newLogo.png"
 
 interface Data {
     name: string;
@@ -18,9 +18,9 @@ interface Data {
 export function Code() {
     const navigation = useNavigate();
     const { userRegister } = useAuth();
-    const [ dataRegister, setDataRegister ] = useState<Data>();
-
-    const [loadind, setLoading] = useState(false);
+    const [dataRegister, setDataRegister] = useState<Data>();
+    const [notify, setNotify] = useState(false);
+    const [notifyMessage, setNotifyMessage] = useState("");
 
     const {
         register,
@@ -35,28 +35,37 @@ export function Code() {
         data ? setDataRegister(data) : null
     }, [])
 
-    const ApiSubmit: SubmitHandler<FieldValues> = async () => {
-        setLoading(true)
+    const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
+        const codeDone = `${data.number1}${data.number2}${data.number3}${data.number4}`
         userRegister({
             name: dataRegister?.name,
             email: dataRegister?.email,
-            password: dataRegister?.password
+            password: dataRegister?.password,
+            code: parseInt(codeDone)
         })
             .then(() => {
-                setLoading(false)
+                setNotify(true)
+                setNotifyMessage("Conta criada com sucesso! Voce sera redirecionado para fazer o login.")
+
+                setTimeout(() => {
+                    navigation("/dashboard/sign-in");
+                }, 5000)
             })
-            .catch(() => {
-                setLoading(false)
+            .catch((err) => {
+                setNotify(true);
+                setNotifyMessage(`${err.response.data.error}`);
             })
     }
 
     return (
         <LoginStyle>
-            {loadind ? <Loading /> : null}
+            <div className="notification">
+                {notify ? <Notify message={notifyMessage} /> : null}
+            </div>
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
-                        <LogoIcon />
+                        <img src={logo} width={110} alt="logo anny" />
                     </div>
                     <section className="hiro">
                         <h1>Code</h1>
@@ -66,33 +75,33 @@ export function Code() {
                             <div className="code-form">
                                 <div className="input_container code">
                                     <input
-                                        className={errors.code ? "error_field" : "verity"}
+                                        className={errors.number1 ? "error_field" : "verity"}
                                         type="text"
-                                        {...register("name")}
+                                        {...register("number1")}
                                     />
                                 </div>
 
                                 <div className="input_container code">
                                     <input
-                                        className={errors.code ? "error_field" : "verity"}
+                                        className={errors.number2 ? "error_field" : "verity"}
                                         type="text"
-                                        {...register("name")}
+                                        {...register("number2")}
                                     />
                                 </div>
 
                                 <div className="input_container code">
                                     <input
-                                        className={errors.code ? "error_field" : "verity"}
+                                        className={errors.number3 ? "error_field" : "verity"}
                                         type="text"
-                                        {...register("name")}
+                                        {...register("number3")}
                                     />
                                 </div>
 
                                 <div className="input_container code">
                                     <input
-                                        className={errors.code ? "error_field" : "verity"}
+                                        className={errors.number4 ? "error_field" : "verity"}
                                         type="text"
-                                        {...register("name")}
+                                        {...register("number4")}
                                     />
                                 </div>
                             </div>

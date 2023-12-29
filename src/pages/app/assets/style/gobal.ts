@@ -114,12 +114,12 @@ export const MainStyle = styled.main `
 
     footer {
         width: 100%;
-        height: 2px;
+        height: 1px;
 
         position: absolute;
         bottom: 0px;
 
-        background-color: #747474;
+        background-color: #424242;
 
         animation: footer 2s;
     }
@@ -131,7 +131,7 @@ export const MainStyle = styled.main `
 
         to {
             width: 100%;
-            background-color: #fff;
+            background-color: #33996B;
         }
     }
 

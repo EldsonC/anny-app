@@ -15,6 +15,8 @@ import { LogoIcon } from "../../assets/icons/sidebar/logo";
 import { QrCode } from "../../components/qrcode";
 import { useSelector } from "react-redux";
 import { stateQrcode } from "../../../../redux/features/qrcode";
+import { FilterIcon } from "../../assets/icons/content/filter";
+import { ChatIcon } from "../../assets/icons/content/chat";
 // import { Notify } from "../../components/notify";
 
 interface ScheduleSchema {
@@ -40,7 +42,7 @@ export function Schedule() {
     )
     return (
         <>
-            {stateQR ? <QrCode/> : null}
+            {stateQR ? <QrCode /> : null}
             <MainStyle>
                 <div className="markStyle">
                     <div className="left">
@@ -79,14 +81,22 @@ export function Schedule() {
                                         <p>See your scheduled events from your calendar events</p>
                                     </div>
 
-                                    <div className="search">
-                                        <div className="input">
-                                            <SearchIcon />
-                                            <input
-                                                type="text"
-                                                placeholder="Search..."
-                                                onChange={(e) => setSearch(e.target.value)}
-                                            />
+                                    <div className="container_filters">
+                                        <button className="button_filter">
+                                            <ChatIcon/>
+                                        </button>
+                                        <button className="button_filter">
+                                            <FilterIcon/>
+                                        </button>
+                                        <div className="search">
+                                            <div className="input">
+                                                <SearchIcon />
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search..."
+                                                    onChange={(e) => setSearch(e.target.value)}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

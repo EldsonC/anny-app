@@ -5,13 +5,14 @@ interface AuthContextState {
     token: TokenState;
     signIn({ email, password }: UserData): Promise<void>;
     userLogged(): boolean;
-    userRegister({ name, email, password }: UserData): Promise<void>
+    userRegister({ name, email, password, code }: UserData): Promise<void>
 }
 
 interface UserData {
     name?: string
     email?: string;
     password?: string;
+    code?: number;
 }
 
 interface TokenState {
@@ -24,18 +25,18 @@ interface InputProps {
 
 const AuthContext = createContext<AuthContextState>({} as AuthContextState)
 
-export const AuthProvider: React.FC<InputProps> = ({children}) => {
+export const AuthProvider: React.FC<InputProps> = ({ children }) => {
     const [token, setToken] = useState<TokenState>(() => {
         const token = localStorage.getItem("@PermissionMRY:token");
 
-        if(token) {
+        if (token) {
             return { token }
         }
 
-        return { } as TokenState
+        return {} as TokenState
     })
 
-    const signIn = useCallback(async ({email, password}:UserData) => {
+    const signIn = useCallback(async ({ email, password }: UserData) => {
         const response = await api.post('/session', {
             email,
             password
@@ -47,21 +48,20 @@ export const AuthProvider: React.FC<InputProps> = ({children}) => {
         localStorage.setItem('@MRYTOKEN:token', token)
     }, [])
 
-        const userRegister = useCallback(async ({name, password, email}: UserData) => {
-        try {
-            await api.post('/signup', {
-                name,
-                email,
-                password
-            })
-        } catch (error) {            
-            console.log(error);
-        }
+    const userRegister = useCallback(async ({ name, password, email, code }: UserData) => {
+
+        await api.post('/signup', {
+            name,
+            email,
+            password,
+            code
+        })
+
     }, [])
 
     const userLogged = useCallback(() => {
         const token = localStorage.getItem('@MRYTOKEN:token');
-        if(token) {
+        if (token) {
             return true;
         }
         return false
@@ -70,8 +70,8 @@ export const AuthProvider: React.FC<InputProps> = ({children}) => {
     return (
         <AuthContext.Provider value={
             {
-                token, 
-                signIn, 
+                token,
+                signIn,
                 userLogged,
                 userRegister
             }

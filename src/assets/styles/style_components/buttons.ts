@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ButtonStyle = styled.button `
+export const ButtonStyle = styled.button`
     padding: 9px 20px;
     background-color: #33996B;
     border-radius: 6px;
@@ -10,6 +10,32 @@ export const ButtonStyle = styled.button `
 
     p {
         color: #F7F7F7;
+    }
+
+    &.icon-button {
+        padding: 5px 10px;
+        background-color: #33996B;
+        border-radius: 6px;
+        color: #F7F7F7;
+
+        cursor: pointer;
+
+        p {
+            display: none;
+        }
+    }
+
+    &.icon-button {
+        padding: 5px 10px;
+        background-color: #33996B;
+        border-radius: 6px;
+        color: #F7F7F7;
+
+        cursor: pointer;
+
+        p {
+            display: none;
+        }
     }
 
     &.void-button {
@@ -31,7 +57,7 @@ export const ButtonStyle = styled.button `
         align-items: center;
         gap: 10px;
 
-        background-color: #fa0e0ebb;
+        background-color: #fa0e0e42;
         border: 1px solid #db3737bb;
         
         p {
@@ -39,6 +65,5 @@ export const ButtonStyle = styled.button `
         }
 
         cursor: pointer;
-
     }
 `;

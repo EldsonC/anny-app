@@ -7,6 +7,7 @@ import { FlashIcon } from "../assets/icon/flash";
 import { DigitalIcon } from "../assets/icon/digital";
 
 import MockupPc from "../assets/img/pc-mockup.png";
+import finance from "../assets/img/finance.png";
 import Iphone from "../assets/img/phone.png"
 
 import { CheckIcon } from "../assets/icon/check";
@@ -78,8 +79,8 @@ export function Home() {
                     </section>
 
                     <section className="about" id="about">
-                        <h2>Seus horários eficientes com o AnnyApp.</h2>
-                        <p>Maximize sua eficiência diária com o AnnyA. Simplifique o gerenciamento do tempo e concentre-se no que realmente importa. Comece agora!</p>
+                        <h2>Seus horários eficientes com o AnnyApp</h2>
+                        <p>Maximize sua eficiência diária com o AnnyApp. Simplifique o gerenciamento do tempo e concentre-se no que realmente importa. Comece agora!</p>
 
                         <div className="container_about_text cards">
                             <div className="card">
@@ -106,6 +107,15 @@ export function Home() {
                                 <p>Teste por 15 dias</p>
                             </button>
                         </NavLink>
+                    </section>
+
+                    <section className="hiro pay-hiro">
+                        <h2>Finace in your hands</h2>
+                        <p>Tenha o controle de suas entradas na palma de sua mao. Gerencie, receba pagamentos diretamente pelo app, e crie planos de assinatura mensal para seus clientes. Melhor que isso impossivel.</p>
+                        <div className="images">
+                            <img src={finance} alt="mockup" className="pc-mockup" id="pc" />
+                            <img src={Iphone} alt="phone" className="iphone-mockup" />
+                        </div>
                     </section>
 
                     <section className="plans" id="plans">
