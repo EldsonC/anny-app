@@ -1,21 +1,18 @@
 import { LoginStyle } from "../assets/styles/login";
 import { GoogleIcon } from "../assets/icon/google";
-// import { LogoIcon } from "../assets/icon/logo";
 import GoogleLogin from "react-google-login";
 import { useNavigate } from "react-router-dom";
 import { EyeIcon } from "../assets/icon/eye";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { zodSchema } from "../services/zod";
-import { LogoFooterIcon } from "../assets/icon/logoFooter";
-// import { Loading } from "../components/loading";
+
 import { api } from "../services/api";
 import logo from "../assets/img/newLogo.png";
 
 export function Register() {
     const navigation = useNavigate();
 
-    // const [loadind, setLoading] = useState(false);
     const clientId = "20314289349-bh0a7m9t7fca7d5s7b73lkpn5m3tcnu0.apps.googleusercontent.com"
     const responseGoogle = (response: {}) => {
         console.log(response)
@@ -38,7 +35,9 @@ export function Register() {
         }
 
         localStorage.setItem("@MRY:register", JSON.stringify(data));
-        await api.post("/code")
+        await api.post("/code", {
+            email: formData.email
+        })
             .then(() => {
                 navigation("/sign-up/code");
             }).catch((err) => {
@@ -59,14 +58,13 @@ export function Register() {
 
     return (
         <LoginStyle>
-            {/* {loadind ? <Loading /> : null} */}
             <div className="content_main">
                 <div className="left_container">
                     <div className="header_login" onClick={() => navigation("/")}>
                         <img src={logo} width={110} alt="logo anny" />
                     </div>
                     <section className="hiro">
-                        <h1>Get started</h1>
+                        <h1>Sign Up</h1>
                         <p>Create  a new account</p>
                         <div className="buttons_login">
                             <GoogleLogin
@@ -146,7 +144,7 @@ export function Register() {
                 </div>
 
                 <div className="container_right">
-                    <LogoFooterIcon />
+                    <img src={logo} width={150} alt="" />
                     <h1>Ready to take control of your schedule? Sign up now.</h1>
                 </div>
             </div>

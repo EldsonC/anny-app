@@ -2,15 +2,12 @@ import { LoginStyle } from "../assets/styles/login";
 import { GoogleIcon } from "../assets/icon/google";
 import { AppleIcon } from "../assets/icon/apple";
 import GoogleLogin from "react-google-login";
-// import { LogoIcon } from "../assets/icon/logo";
 import { useNavigate } from "react-router-dom";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { zodSignIn } from "../services/zod";
 import { useAuth } from "../context/context";
-// import { Loading } from "../components/loading";
 import { useEffect, useState } from "react";
-import { LogoFooterIcon } from "../assets/icon/logoFooter";
 
 import logo from "../assets/img/newLogo.png";
 import { EyeIcon } from "../assets/icon/eye";
@@ -19,7 +16,6 @@ import { Notify } from "./app/components/notify";
 export function Login() {
     const navigation = useNavigate()
     const { signIn, userLogged } = useAuth()
-    // const [loadState, setLoadState] = useState(false)
     const [notify, setNotify] = useState(false);
     const [notifyMessage, setNotifyMessage] = useState("");
 
@@ -47,19 +43,16 @@ export function Login() {
     })
 
     const ApiSubmit: SubmitHandler<FieldValues> = async (data) => {
-        // setLoadState(true)
         await signIn({
             email: data.email,
             password: data.password
         })
             .then(() => {
                toDashboard();
-                // setLoadState(false)
                 setNotify(true)
                 setNotifyMessage("Seja bem vindo(a)!")
             })
             .catch((err) => {
-                // setLoadState(false)
                 setNotify(true)
                 setNotifyMessage(`${err.response.data.error}`)
             })
@@ -78,7 +71,6 @@ export function Login() {
 
     return (
         <LoginStyle>
-            {/* {loadState ? <Loading /> : false} */}
             <div className="notification">
                 {notify ? <Notify message={notifyMessage} /> : null}
             </div>
@@ -88,7 +80,7 @@ export function Login() {
                         <img src={logo} width={110} alt="logo anny" />
                     </div>
                     <section className="hiro">
-                        <h1>Welcome back</h1>
+                        <h1>Sign In</h1>
                         <p>Sign in to your account</p>
                         <div className="buttons_login">
                             <GoogleLogin
@@ -160,7 +152,7 @@ export function Login() {
                 </div>
 
                 <div className="container_right">
-                    <LogoFooterIcon />
+                    <img src={logo} width={150} alt="" />
                     <h1>Effortless and precise scheduling in just one click.</h1>
                 </div>
             </div>
