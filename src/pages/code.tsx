@@ -51,11 +51,12 @@ export function Code() {
     }, [])
 
     const ApiSubmit: SubmitHandler<FieldValues> = async () => {
+        console.log(code)
         userRegister({
             name: dataRegister?.name,
             email: dataRegister?.email,
             password: dataRegister?.password,
-            code: parseInt(code)
+            code: parseInt(code.substring(0, 4))
         })
             .then(() => {
                 setNotify(true);
