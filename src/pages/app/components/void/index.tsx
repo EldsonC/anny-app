@@ -8,9 +8,10 @@ interface VoidProps{
     titleButtonOne: string;
     titleButtonTwo: string;
     iconButton?: React.ReactNode;
+    actionButton?: () => void;
 }
 
-export function Void({icon, title, description, titleButtonOne, titleButtonTwo, iconButton}:VoidProps) {
+export function Void({icon, title, description, titleButtonOne, titleButtonTwo, iconButton, actionButton}:VoidProps) {
     return (
         <VoidStyle>
             {icon}
@@ -18,6 +19,7 @@ export function Void({icon, title, description, titleButtonOne, titleButtonTwo, 
             <p className="description">{description}</p>
             <div className="btns">
                 <Button
+                    clickAction={actionButton}
                     title={titleButtonOne}
                 />
                 <Button

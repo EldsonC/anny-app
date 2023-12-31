@@ -9,6 +9,7 @@ import { RightBarStyle, ModalBarStyle } from "./style";
 import logo from "../../assets/img/logoIvy.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { hide, stateRightbar } from "../../../../redux/features/rightbar";
+import { show } from "../../../../redux/features/addEmployee";
 
 export function RightBar() {
     const dispacth = useDispatch();
@@ -41,6 +42,10 @@ export function RightBar() {
 
     const hideBar = () => {
         dispacth(hide())
+    }
+
+    const showAddEmployee = () => {
+        dispacth(show())
     }
     return (
         <>
@@ -91,6 +96,11 @@ export function RightBar() {
 
                                         titleButtonOne="Create employee"
                                         titleButtonTwo="Add"
+                                        actionButton={() => {
+                                            showAddEmployee()
+                                            hideBar()
+                                        }}
+                                        
                                     />
                                 </div>
                             </div>

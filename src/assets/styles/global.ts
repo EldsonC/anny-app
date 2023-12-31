@@ -47,4 +47,9 @@ export default createGlobalStyle`
         border-radius: 5px;
         border: 3px solid transparent;
     }
+
+    ::selection {
+        background-color: #52d399; /* Cor de fundo da seleção */
+        color: #333; /* Cor do texto selecionado */
+    }
 `;

@@ -25,9 +25,10 @@ export const ButtonStyle = styled.button`
         }
     }
 
-    &.icon-button {
+    &.void-button-icon {
         padding: 5px 10px;
-        background-color: #33996B;
+        background-color: #2E2E2E;
+        border: 1px solid #4D4D4D;
         border-radius: 6px;
         color: #F7F7F7;
 
