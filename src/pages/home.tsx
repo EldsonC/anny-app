@@ -8,7 +8,8 @@ import { DigitalIcon } from "../assets/icon/digital";
 
 import MockupPc from "../assets/img/pc-mockup.png";
 import finance from "../assets/img/finance.png";
-import Iphone from "../assets/img/phone.png"
+import Iphone from "../assets/img/phone.png";
+import home from "../assets/img/one-mobile.png";
 
 import { CheckIcon } from "../assets/icon/check";
 import { LogoFooterIcon } from "../assets/icon/logoFooter";
@@ -64,7 +65,7 @@ export function Home() {
                             </a>
                             <button className="doc_btn">
                                 <DocIcon/>
-                                <p>Docs for devs</p>
+                                <p>Aprenda a Utilizar</p>
                             </button>
                             <NavLink to={"/dashboard/sign-in"}>
                                 <button className="login-hiro">
@@ -74,7 +75,7 @@ export function Home() {
                         </div>
                         <div className="images">
                             <img src={MockupPc} alt="mockup" className="pc-mockup" id="pc" />
-                            <img src={Iphone} alt="phone" className="iphone-mockup" />
+                            <img src={home} alt="phone" className="iphone-mockup" />
                         </div>
                     </section>
 
@@ -104,23 +105,23 @@ export function Home() {
 
                         <NavLink to={"/dashboard/sign-up"}>
                             <button>
-                                <p>Teste por 15 dias</p>
+                                <p>Teste por 15 dias gratis</p>
                             </button>
                         </NavLink>
                     </section>
 
                     <section className="hiro pay-hiro">
-                        <h2>Finace in your hands</h2>
-                        <p>Tenha o controle de suas entradas na palma de sua mao. Gerencie, receba pagamentos diretamente pelo app, e crie planos de assinatura mensal para seus clientes. Melhor que isso impossivel.</p>
+                        <h2>Controle financeiro</h2>
+                        <p>Tenha o controle de suas entradas na palma de sua mao. Gerencie, receba pagamentos diretamente pelo app, e crie planos de assinatura mensal para seus clientes, alem de gerenciar o pagamento de seus funcionarios.</p>
                         <div className="images">
                             <img src={finance} alt="mockup" className="pc-mockup" id="pc" />
-                            <img src={Iphone} alt="phone" className="iphone-mockup" />
+                            <img src={Iphone} alt="phone" className="iphone-mockup" /> 
                         </div>
                     </section>
 
                     <section className="plans" id="plans">
-                        <h2>Princing & plans</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h2>Planos</h2>
+                        <p></p>
 
                         <div className="card_plan">
                             <div className="card">
@@ -129,17 +130,17 @@ export function Home() {
                                         <p>Start</p>
                                     </div>
 
-                                    <p className="description">Experimente por 30 dias antes de se comprometer com um plano pago e descubra como podemos ajudar você.</p>
+                                    <p className="description">Experimente por 15 dias antes de se comprometer com um plano pago e descubra como podemos ajudar você.</p>
 
                                     <p className="price">
-                                        <span>$0.00</span>
+                                        <span>$29.99</span>
                                         <span className="size_date">/month</span>
                                     </p>
 
                                     <div className="container_tips">
                                         <div className="tip">
                                             <CheckIcon/>
-                                            <p>Calendar</p>
+                                            <p>Two Employees</p>
                                         </div>
                                         <div className="tip">
                                             <CheckIcon/>
@@ -147,7 +148,7 @@ export function Home() {
                                         </div>
                                         <div className="tip">
                                             <CheckIcon/>
-                                            <p>Basic Reports</p>
+                                            <p> Reports</p>
                                         </div>
                                         <div className="tip">
                                             <CheckIcon/>
@@ -164,15 +165,14 @@ export function Home() {
                             <div className="card hight_card">
                                 <div className="text_plan">
                                     <div className="header_plan">
-                                        <p>Pro</p>
+                                        <p>Premium</p>
                                     </div>
 
                                     <p className="description">Desbloqueie recursos avançados e benefícios exclusivos para aprimorar sua eficiência.</p>
 
                                     <p className="price">
-                                        <span>$29</span>
+                                        <span>$45.99</span>
                                         <span className="size_date">/month</span>
-                                        
                                     </p>
 
                                     <div className="container_tips">
@@ -210,13 +210,13 @@ export function Home() {
                             <div className="card">
                                 <div className="text_plan">
                                     <div className="header_plan">
-                                        <p>Plus</p>
+                                        <p>Interprise</p>
                                     </div>
 
                                     <p className="description">Experimente o Pro Plus agora e eleve sua experiência para o próximo nível!</p>
 
                                     <p className="price">
-                                        <span>$243</span>
+                                        <span>$97.89</span>
                                         <span className="size_date">/year</span>
                                         
                                     </p>

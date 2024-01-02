@@ -615,8 +615,6 @@ export const HomeStyle = styled.main `
                     justify-content: center;
 
                     img {
-                        position: relative;
-                        bottom: 135px;
                         width: 400px;
                     }
                     .pc-mockup {
