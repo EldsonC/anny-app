@@ -42,10 +42,11 @@ export const AuthProvider: React.FC<InputProps> = ({ children }) => {
             password
         })
 
-        const { token } = response.data
+        const { token, userData } = response.data
         setToken(token)
 
         localStorage.setItem('@MRYTOKEN:token', token)
+        localStorage.setItem('@USER:token', JSON.stringify(userData))
     }, [])
 
     const userRegister = useCallback(async ({ name, password, email, code }: UserData) => {

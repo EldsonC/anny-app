@@ -214,4 +214,12 @@ export const CardStyle = styled.div`
             opacity: 1;
         }
     }
+
+    @media screen and (max-width: 750px) {
+        width: calc(100% - 63px);
+
+        .card-null {
+            width: 100%;
+        }
+    }
 `;

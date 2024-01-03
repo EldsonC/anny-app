@@ -49,7 +49,7 @@ interface NotifyProps {
 
 function App() {
   const themeState = useSelector(stateTheme);
-  const serverUrl = 'http://192.168.43.59:3001';
+  const serverUrl = 'http://192.168.43.59:3002';
   const [arrayNotify, setArrayNotify] = useState<NotifyProps[]>([]);
 
   useEffect(() => {

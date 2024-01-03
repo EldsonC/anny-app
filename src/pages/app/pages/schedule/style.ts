@@ -12,12 +12,12 @@ interface ThemeProps {
 
         colorBtnBg?: string;
         searchSideBg?: string;
-        
+
         isActiveColor?: string;
     };
 }
 
-export const Content = styled.div `
+export const Content = styled.div`
     .header {
         padding: 20px 0px;
         width: 100%;
@@ -164,7 +164,31 @@ export const Content = styled.div `
         height: auto;
 
         display: flex;
+        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 10px;
+    }
+
+    @media screen and (max-width: 750px) {
+        .header {
+            flex-direction: column;
+            gap: 20px;
+
+            .container_filters {
+                .search {
+                    width: 200px;
+                }
+            }
+        }
+
+        .container_cards {
+            padding-top: 29px;
+            width: 100%;
+            height: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 `;

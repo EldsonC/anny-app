@@ -7,6 +7,7 @@ import menuTeams from "./features/menu-teams";
 import rightbar from "./features/rightbar";
 import qrcode from "./features/qrcode";
 import addEmployee from "./features/addEmployee";
+import calendar from "./features/calendar";
 
 export default configureStore({
     reducer: {
@@ -17,6 +18,7 @@ export default configureStore({
         themeapp: theme,
         rightbar: rightbar,
         qrcode: qrcode,
-        employeeadd: addEmployee
+        employeeadd: addEmployee,
+        calendar: calendar
     }
 })

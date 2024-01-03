@@ -91,11 +91,11 @@ export function Register() {
 
                         <form onSubmit={handleSubmit(ApiSubmit)}>
                             <div className="input_container">
-                                <label htmlFor="">Name</label>
+                                <label htmlFor="">Company</label>
                                 <input
                                     className={errors.name ? "error_field" : "verity"}
                                     type="text"
-                                    placeholder="your name"
+                                    placeholder="Name your company"
                                     {...register("name")}
                                 />
                                 {errors.name ? <p className="error_label">{typeof errors.name.message === "string" ? (

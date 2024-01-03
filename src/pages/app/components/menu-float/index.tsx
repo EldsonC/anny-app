@@ -3,19 +3,32 @@ import { MenuIcon } from "../../assets/icons/float/menu";
 import { SearchIcon } from "../../assets/icons/float/search";
 import { GetPro } from "../getpro";
 import { MenuFloatStyle } from "./style";
-import logo from "../../assets/img/logoIvy.jpg";
+import { useEffect, useState } from "react";
 
+interface UserData {
+    email: string,
+    name: string;
+    profile_picture: string;
+}
 export function MenuFloat() {
+    const [ userData, setUserData ] = useState<UserData | null>()
+
+    useEffect(() => {
+        const data  = JSON.parse(localStorage.getItem("@USER:token") || "[]");
+        console.log(data)
+        data ? setUserData(data) : null
+    },[])
+
     return (
         <MenuFloatStyle >
             <header>
                 <div className="left_float">
                     <div className="img_float">
-                        <img src={logo} alt="" />
+                        <img src={userData ? userData.profile_picture : ""} alt="" />
                     </div>
                     <div className="left_data">
-                        <h3>IVY Softwares</h3>
-                        <p>ivysoftwares@gmail.com</p>
+                        <h3>{userData ? userData.name : "Undefiened"}</h3>
+                        <p>{userData ? userData.email : "Undefiened"}</p>
                     </div>
                 </div>
                 <div className="right">

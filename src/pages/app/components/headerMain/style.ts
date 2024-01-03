@@ -21,8 +21,8 @@ export const HeaderMainStyle = styled.header `
 
     z-index: 1000;
 
-    background: #111111;
-    backdrop-filter: blur(2px);
+    background: #111111a4;
+    backdrop-filter: blur(5px);
 
     .header {
         width: 100%;
@@ -66,6 +66,10 @@ export const HeaderMainStyle = styled.header `
                 }
             }
         }
+    }
+
+    @media screen and (max-width: 750px) {
+        display: none;
     }
 
 `;

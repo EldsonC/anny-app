@@ -17,6 +17,8 @@ import { useSelector } from "react-redux";
 import { stateQrcode } from "../../../../redux/features/qrcode";
 import { FilterIcon } from "../../assets/icons/content/filter";
 import { ChatIcon } from "../../assets/icons/content/chat";
+import { Calendar } from "../../components/calendarModal";
+import { stateCalendar } from "../../../../redux/features/calendar";
 
 interface ScheduleSchema {
     day: number;
@@ -33,6 +35,7 @@ export function Schedule() {
     const theme = useContext(ThemeContext) || darkTheme;
     const [search, setSearch] = useState("");
     const stateQR = useSelector(stateQrcode);
+    const calendarState = useSelector(stateCalendar);
 
     const bookingFilter = schedule.filter((booking) =>
         Object.values(booking).some((value) =>
@@ -42,6 +45,7 @@ export function Schedule() {
     return (
         <>
             {stateQR ? <QrCode /> : null}
+            {calendarState ? <Calendar/> : null}
             <MainStyle>
                 <div className="markStyle">
                     <div className="left">

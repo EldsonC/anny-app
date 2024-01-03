@@ -248,32 +248,6 @@ export function Home() {
                         </div>
                     </section>
 
-                    {/* <section className="faqs" id="faqs">
-                        <h2>FAQs</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-                        <div className="cards_faqs">
-                            <div className="card_faqs">
-                                <p>Lorem Ipsum is simply dummy text of the?</p>
-                            </div>
-
-                            <div className="card_faqs">
-                                <p>Lorem Ipsum is simply dummy text?</p>
-                            </div>
-
-                            <div className="card_faqs">
-                                <p>Lorem Ipsum is simply dummy text of the?</p>
-                            </div>
-
-                            <div className="card_faqs">
-                                <p>Lorem Ipsum is simply?</p>
-                            </div>
-
-                            <div className="card_faqs">
-                                <p>Lorem Ipsum is simply?</p>
-                            </div>
-                        </div>
-                    </section> */}
                 </div>
 
                 <footer>

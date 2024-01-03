@@ -135,4 +135,11 @@ export const MainStyle = styled.main `
         }
     }
 
+    @media screen and (max-width: 750px) {
+        .container_main {
+            padding: 36px 5px;
+            width: calc(100% - 10px);
+        }
+    }
+
 `;

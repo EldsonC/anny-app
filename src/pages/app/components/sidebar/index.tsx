@@ -47,6 +47,7 @@ export function SideBar() {
 
     const Logout = () => {
         localStorage.removeItem("@MRYTOKEN:token")
+        localStorage.removeItem("@USER:token")
         navigate("/dashboard/sign-in")
     }
     return (

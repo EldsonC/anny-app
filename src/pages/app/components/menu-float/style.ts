@@ -47,6 +47,8 @@ export const MenuFloatStyle = styled.div `
                     height: 100%;
 
                     border-radius: 50%;
+
+                    object-fit: cover;
                 }
             }
 

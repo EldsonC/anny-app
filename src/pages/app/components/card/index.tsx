@@ -3,8 +3,6 @@ import { DownIcon } from "../../assets/icons/headermain/down";
 import { CardStyle } from "./style";
 import { Button } from "../../../../components/buttons";
 import { DoneIcon } from "../../assets/icons/content/done";
-// import img1 from "../../assets/img/Eldson.jpeg";
-// import logo from "../../assets/img/logoIvy.jpg";
 
 interface ScheduleSchema {
     day: string;
@@ -22,7 +20,7 @@ interface CardState {
 }
 
 export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
-    const [state, setState] = useState<CardState>({ expanded: false });
+    const [state, setState] = useState<CardState>({ expanded: true });
 
     const toggleExpand = () => {
         setState((prevState) => ({ expanded: !prevState.expanded }))
@@ -39,8 +37,6 @@ export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
                         <div className="top_data">
                             <p>{schedule.start}</p>
                             <div className="images">
-                                {/* <img className="image-1" src={logo} alt="" /> */}
-                                {/* <img className="image-2" src={logo} alt="" /> */}
                                 <div className="status"></div>
                             </div>
                         </div>
@@ -78,10 +74,6 @@ export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
                             title=""
                             icon={<DoneIcon/>}
                         />
-                        {/* <Button
-                            type="waring"
-                            title="del"
-                        /> */}
                         <Button
                             type="void-button"
                             title="..."

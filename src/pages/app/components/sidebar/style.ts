@@ -95,4 +95,8 @@ export const SideBarStyle = styled.aside `
             border-radius: 7px;
         }
     }
+
+    @media screen and (max-width: 750px) {
+        display: none;
+    }
 `;
