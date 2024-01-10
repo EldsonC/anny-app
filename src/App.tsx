@@ -10,8 +10,8 @@ import io from 'socket.io-client';
 import { api } from "./services/api"
 
 import notificationSound from "./assets/sounds/IPHONE NOTIFICATION SOUND EFFECT (PING_DING)(MP3_160K).mp3";
-import { Notify } from "./pages/app/components/notify"
-import { AppStyle } from "./appstyle"
+import { Notify } from "./pages/app/components/notify";
+import { AppStyle } from "./appstyle";
 
 export const lightTheme = {
   bgColorDark: "#EBEBEB",
@@ -49,7 +49,7 @@ interface NotifyProps {
 
 function App() {
   const themeState = useSelector(stateTheme);
-  const serverUrl = 'http://192.168.43.59:3002';
+  const serverUrl = 'https://api-anny-29x8m4epr-edsons-projects-8235e0cd.vercel.app';
   const [arrayNotify, setArrayNotify] = useState<NotifyProps[]>([]);
 
   useEffect(() => {

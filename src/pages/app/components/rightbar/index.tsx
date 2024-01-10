@@ -82,7 +82,7 @@ export function RightBar() {
                                 <ul id="menu">
                                     <li onClick={() => showContent("content_setting")} className="content_setting-btn selected">Employee</li>
                                     <li onClick={() => showContent("content_resources")} className="content_resources-btn">Services</li>
-                                    <li onClick={() => showContent("content_app")} className="content_app-btn">App</li>
+                                    <li onClick={() => showContent("content_app")} className="content_app-btn">Settings</li>
                                     <li onClick={() => showContent("content_notifications")} className="content_notifications-btn">Notifications</li>
                                 </ul>
                             </header>
@@ -119,15 +119,19 @@ export function RightBar() {
                             </div>
                             <div className="content_app content-body">
                                 <div className="header">
-                                    <h4>App</h4>
+                                    <h4>Settings</h4>
                                 </div>
                                 
                                 <div className="switch_container">
                                     <div className="left_switch">
-                                        <h4>Status app</h4>
+                                        <h4>Horario de abertura</h4>
                                         <p>You will be notified in your smartphone</p>
                                     </div>
+                                    <div className="right_switch">
+                                        
+                                    </div>
                                 </div>
+
                             </div>
                             <div className="content_notifications content-body">
                                 <div className="header">

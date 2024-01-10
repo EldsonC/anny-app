@@ -2,11 +2,11 @@ import { Button } from "../../../../components/buttons";
 import { VoidStyle } from "./style";
 
 interface VoidProps{
-    icon: React.ReactNode;
-    title: string;
-    description: string;
-    titleButtonOne: string;
-    titleButtonTwo: string;
+    icon?: React.ReactNode;
+    title?: string;
+    description?: string;
+    titleButtonOne?: string;
+    titleButtonTwo?: string;
     iconButton?: React.ReactNode;
     actionButton?: () => void;
 }

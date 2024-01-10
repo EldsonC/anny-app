@@ -5,6 +5,8 @@ import { MenuTeamstStyle } from "./style";
 import logo from "../../assets/img/man.jpg"
 import logo2 from "../../assets/img/Eldson.jpeg"
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { show } from "../../../../redux/features/addEmployee";
 
 interface CardState {
     expanded: boolean;
@@ -12,6 +14,11 @@ interface CardState {
 
 export function MenuTeams() {
     const [ state, setState ] = useState<CardState>({ expanded: false });
+    const dispatch = useDispatch();
+
+    const createEmployee = () => {
+        dispatch(show());
+    };
 
     const toggleExpand = () => {
         setState((prevState) => ({ expanded: !prevState.expanded }))
@@ -72,7 +79,7 @@ export function MenuTeams() {
                     )}
                 </div>
             </div>
-            <div className="button-add">
+            <div className="button-add" onClick={createEmployee}>
                 <div className="left_icon">
                     <div className="icon">
                         <FileIcon/>

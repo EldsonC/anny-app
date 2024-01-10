@@ -13,6 +13,7 @@ export const QRCodeStyle = styled.div `
     top: 0px;
 
     background-color: #0000009a;
+    backdrop-filter: blur(5px);
     z-index: 2000;
 
     animation: qrcode 0.5s;

@@ -15,7 +15,7 @@ export const StyleEmployeeModal = styled.div`
     z-index: 1500;
 
     background-color: #0000009a;
-
+    backdrop-filter: blur(5px);
     animation: animationEmployee 0.5s;
 
     .container_form {

@@ -12,10 +12,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { hide, show, stateMenu } from "../../../../redux/features/menu-float";
 import { HelpIcon } from "../../assets/icons/sidebar/help";
 import { useContext, useState } from "react";
-import { ThemeIcon } from "../../assets/icons/sidebar/theme";
+// import { ThemeIcon } from "../../assets/icons/sidebar/theme";
 import { ThemeContext } from "styled-components";
 import { darkTheme } from "../../../../App";
-import { setDark, setLight, stateTheme } from "../../../../redux/features/theme";
+// import { setDark, setLight, stateTheme } from "../../../../redux/features/theme";
 import { OverviewIcon } from "../../assets/icons/sidebar/overview";
 
 export function SideBar() {
@@ -29,7 +29,7 @@ export function SideBar() {
     const [overview, setOverview] = useState<string>(colorDefault)
 
     const stateMenuStatus = useSelector(stateMenu)
-    const stateThemeStatus = useSelector(stateTheme)
+    // const stateThemeStatus = useSelector(stateTheme)
 
     const showMenu = () => {
         if (stateMenuStatus) {
@@ -39,11 +39,11 @@ export function SideBar() {
         }
     }
 
-    const switchTheme = () => {
-        const newTheme = stateThemeStatus === "dark" ? "light" : "dark";
-        dispatch(newTheme === "light" ? setLight() : setDark());
-        localStorage.setItem("theme", JSON.stringify(newTheme));
-    };
+    // const switchTheme = () => {
+    //     const newTheme = stateThemeStatus === "dark" ? "light" : "dark";
+    //     dispatch(newTheme === "light" ? setLight() : setDark());
+    //     localStorage.setItem("theme", JSON.stringify(newTheme));
+    // };
 
     const Logout = () => {
         localStorage.removeItem("@MRYTOKEN:token")
@@ -97,9 +97,9 @@ export function SideBar() {
                     </ul>
                 </div>
                 <div className="bottom_side width center">
-                    <button onClick={switchTheme} title="Theme" className="cursor back">
+                    {/* <button onClick={switchTheme} title="Theme" className="cursor back">
                         <ThemeIcon color={theme.colorText} />
-                    </button>
+                    </button> */}
                     <button title="Help" className="cursor back">
                         <a href="https://www.instagram.com/ivy.soft/" target="_blank">
                             <HelpIcon

@@ -8,6 +8,7 @@ import rightbar from "./features/rightbar";
 import qrcode from "./features/qrcode";
 import addEmployee from "./features/addEmployee";
 import calendar from "./features/calendar";
+import dataDaySettings from "./features/dataDaySettings";
 
 export default configureStore({
     reducer: {
@@ -19,6 +20,7 @@ export default configureStore({
         rightbar: rightbar,
         qrcode: qrcode,
         employeeadd: addEmployee,
-        calendar: calendar
+        calendar: calendar,
+        daysettings: dataDaySettings
     }
 })

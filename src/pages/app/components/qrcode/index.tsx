@@ -13,7 +13,7 @@ export function QrCode() {
     return (
         <QRCodeStyle>
             <div className="container_qr">
-                <QRCode value={"http://192.168.43.59:3001/"} size={250}/>
+                <QRCode value={"http://192.168.43.59:3002/"} size={250}/>
             </div>
             <div className="buttons">
                 <div className="input_container">

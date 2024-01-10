@@ -98,8 +98,8 @@ export function Home() {
 
                             <div className="card">
                                 <DigitalIcon/>
-                                <p className="title">Estilização</p>
-                                <p>Adicione estilo à sua produtividade. O AnnyA não apenas otimiza o seu tempo, mas também oferece uma interface elegante e personalizável, tornando sua experiência de gerenciamento de tempo eficiente e visualmente agradável.</p>
+                                <p className="title">Seguranca</p>
+                                <p>Total seguranca em suas transacoes e nos planos para seus clientes</p>
                             </div>
                         </div>
 
@@ -217,7 +217,7 @@ export function Home() {
 
                                     <p className="price">
                                         <span>$97.89</span>
-                                        <span className="size_date">/year</span>
+                                        <span className="size_date">/month</span>
                                         
                                     </p>
 

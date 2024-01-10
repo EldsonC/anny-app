@@ -76,7 +76,7 @@ export function HeaderMain() {
                         <li>
                             <button onClick={showCalendarModal}>
                                 <div className="down">
-                                    <p>August 22, 2023 - August 30, 2023</p>
+                                    <p>Calendario</p>
                                     <DownIcon />
                                 </div>
                             </button>

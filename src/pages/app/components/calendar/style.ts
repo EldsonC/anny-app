@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CalendarStyle = styled.div`
+    padding-bottom: 30px;
     width: 100%;
     padding: 10px 20px;
     background-color: #1f1f1f;

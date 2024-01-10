@@ -26,6 +26,7 @@ export const ModalBarStyle = styled.aside `
     z-index: 1000;
 
     background-color: #0000009a;
+    backdrop-filter: blur(5px);
     animation: rightBarModal 0.5s;
 
     @keyframes rightBarModal {
@@ -212,6 +213,12 @@ export const RightBarStyle = styled.aside `
                     font-size: 14px;
                     font-weight: 500;
                     color: #7A7A7A;
+                }
+            }
+
+            .right_switch {
+                input {
+                    background-color: #2E2E2E;
                 }
             }
         }

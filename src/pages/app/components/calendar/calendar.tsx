@@ -4,7 +4,6 @@ import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, en
 import { CalendarStyle } from './style';
 import { DownIcon } from '../../assets/icons/headermain/down';
 
-
 interface CalendarProps {
     onSelectDate: (date: Date) => void;
 }

@@ -11,7 +11,8 @@ interface UserData {
     profile_picture: string;
 }
 export function MenuFloat() {
-    const [ userData, setUserData ] = useState<UserData | null>()
+    const [ userData, setUserData ] = useState<UserData | null>();
+    
 
     useEffect(() => {
         const data  = JSON.parse(localStorage.getItem("@USER:token") || "[]");
