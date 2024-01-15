@@ -46,8 +46,8 @@ export const MainStyle = styled.main `
             gap: 10px;
 
             button {
-                width: 20px;
-                height: 20px;
+                width: 15px;
+                height: 15px;
 
                 display: flex;
                 justify-content: center;
@@ -58,13 +58,18 @@ export const MainStyle = styled.main `
                 cursor: pointer;
 
             }
+
+            .mlose {
+                background-color: #33996bff;
+
+            }
             
             .minimize {
-                background-color: #3c3d3f;
+                background-color: #33996b3d;
             }
 
             .maximize {
-                background-color: #5d5e61;
+                background-color: #33996b86;
             }
         }
 

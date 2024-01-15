@@ -38,15 +38,15 @@ export const HeaderMainStyle = styled.header `
             li {
                 display: flex;
                 flex-direction: column;
+
                 button {
-                    padding: 12px 14px;
-    
+                    padding: 0px 14px;
+                    height: 41px;
                     display: flex;
                     align-items: center;
                     gap: 0.62rem;
     
                     background-color: ${(props: ThemeProps) => props.theme.colorBgDark};
-                    border: 1px solid ${(props: ThemeProps) => props.theme.colorBorderDark};
                     border-radius: 11px;
     
                     cursor: pointer;
@@ -58,13 +58,77 @@ export const HeaderMainStyle = styled.header `
                     .rightbar {
                         rotate: 90deg;
                     }
+
                     p {
                         font-size: 0.875rem;
                         font-weight: 400;
                         color: ${(props: ThemeProps) => props.theme.colorText};
                     }
+
+                    &:hover {
+                        background-color: #33996B;
+                    }
                 }
             }
+        }
+
+
+        .left {
+            padding: 5px 20px;
+            background-color: #1A1A1A;
+            border-radius: 10px;
+            border: 1px solid #292929;
+
+            .up {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+    
+                h3 {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: ${(props: ThemeProps) => props.theme.colorText};
+                }
+    
+                .users {
+                    padding: 8px 15px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    background-color: #6D44E0;
+                    border-radius: 50px;
+    
+                    cursor: pointer;
+    
+                    p {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #FFFFFF;
+                    }
+    
+                }
+    
+                .done {
+                    background-color: #33996B;
+                    p {
+    
+                    }
+                }
+                .todo {
+                    background-color: #3E3E3E;
+                    p {
+    
+                    }
+                } 
+            }
+        }
+
+        .right {
+            padding: 5px 20px;
+            background-color: #1A1A1A;
+            border-radius: 10px;
+            border: 1px solid #292929;
         }
     }
 

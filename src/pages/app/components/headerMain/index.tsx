@@ -11,6 +11,11 @@ import { show as showCalendar } from "../../../../redux/features/calendar";
 import { NoteIcon } from "../../assets/icons/rightbar/note";
 import { stateEmployee } from "../../../../redux/features/addEmployee";
 import { EmployeeModalAdd } from "../addModalApp";
+import { FilterIcon } from "../../assets/icons/content/filter";
+import { ChatIcon } from "../../assets/icons/content/chat";
+import { SearchIcon } from "../../assets/icons/sidebar/search";
+import { ProjectIcon } from "../../assets/icons/headermain/project";
+import { OverviewIcon } from "../../assets/icons/sidebar/overview";
 
 export function HeaderMain() {
     const dispatch = useDispatch();
@@ -51,33 +56,45 @@ export function HeaderMain() {
             <HeaderMainStyle>
 
                 <div className="header">
-                    <ul>
+                    <ul className="left">
+                        <li>
+                            <div className="up">
+                                <div className="users">
+                                    <p></p>
+                                </div>
+                                <div className="users done">
+                                    <p></p>
+                                </div>
+                                <div className="users todo">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </li>
                         <li>
                             <button onClick={showMenuTeams}>
                                 <LayerIcon />
-                                <div className="down">
-                                    <p>My Teams</p>
-                                    <div id="down-p1">
-                                        <DownIcon />
-                                    </div>
-                                </div>
                             </button>
                             {stateTeamsMenu ? <MenuTeams /> : null}
                         </li>
                         <li>
                             <button>
+                                <ProjectIcon />
+                                {/* <p>Plans</p> */}
+                            </button>
+                        </li>
+                        <li>
+                            <button>
                                 <AdsIcon />
-                                <p>AnnyAds</p>
+                                {/* <p>AnnyAds</p> */}
                             </button>
                         </li>
                     </ul>
 
-                    <ul>
+                    <ul className="right">
                         <li>
                             <button onClick={showCalendarModal}>
                                 <div className="down">
-                                    <p>Calendario</p>
-                                    <DownIcon />
+                                    <OverviewIcon color="#f7f4f4" />
                                 </div>
                             </button>
 
@@ -86,6 +103,27 @@ export function HeaderMain() {
                             <button onClick={showQrcode}>
                                 <div title="Company" className="down rightbar">
                                     <NoteIcon />
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onClick={showQrcode}>
+                                <div title="Company" className="down">
+                                    <SearchIcon />
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onClick={showQrcode}>
+                                <div title="Company" className="down">
+                                    <ChatIcon />
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button onClick={showQrcode}>
+                                <div title="Company" className="down">
+                                    <FilterIcon />
                                 </div>
                             </button>
                         </li>

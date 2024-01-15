@@ -7,6 +7,7 @@ import { Privates } from "./privates";
 import { AnnyBoard } from "../pages/app/pages/annyboard";
 import { Schedule } from "../pages/app/pages/schedule";
 import { Code } from "../pages/code";
+import { Payment } from "../pages/app/pages/payment";
 
 export function Routers() {
     return (
@@ -19,6 +20,7 @@ export function Routers() {
             <Route path="/" element={<Privates />}>
                 <Route path="/dashboard/annyboard" element={<AnnyBoard />} />
                 <Route path="/dashboard/schedule" element={<Schedule />} />
+                <Route path="/dashboard/payment" element={<Payment />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />

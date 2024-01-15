@@ -5,8 +5,10 @@ import { Button } from "../../../../components/buttons";
 import { DoneIcon } from "../../assets/icons/content/done";
 
 interface ScheduleSchema {
+    status_global: number;
     day: string;
     date: string;
+    plan: boolean;
     schedule: {
         start: string,
         end?: string,
@@ -19,7 +21,7 @@ interface CardState {
     expanded: boolean;
 }
 
-export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
+export function Card({ day, date, schedule, name, details, status_global, plan }: ScheduleSchema) {
     const [state, setState] = useState<CardState>({ expanded: true });
 
     const toggleExpand = () => {
@@ -27,6 +29,11 @@ export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
     }
     return (
         <CardStyle>
+            {plan ? 
+                <div className="vip">
+                    Vip
+                </div>
+            : null}
             <div className="card-null" style={!state.expanded ? { minHeight: "113px" } : {}}>
                 <div className="left_card">
                     <div className="date">
@@ -37,7 +44,7 @@ export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
                         <div className="top_data">
                             <p>{schedule.start}</p>
                             <div className="images">
-                                <div className="status"></div>
+                                <div className={status_global === 0 ? "status" : status_global === 1 ? "status violet" : "status green"}></div>
                             </div>
                         </div>
                         <h4>{name}</h4>
@@ -72,7 +79,7 @@ export function Card({ day, date, schedule, name, details }: ScheduleSchema) {
                         <Button
                             type="icon-button"
                             title=""
-                            icon={<DoneIcon/>}
+                            icon={<DoneIcon />}
                         />
                         <Button
                             type="void-button"

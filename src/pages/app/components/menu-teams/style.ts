@@ -23,7 +23,7 @@ export const MenuTeamstStyle = styled.div `
     height: auto;
 
     position: absolute;
-    top: 50px;
+    top: 60px;
 
     z-index: 1000;
     

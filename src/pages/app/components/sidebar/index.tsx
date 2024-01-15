@@ -16,7 +16,6 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "styled-components";
 import { darkTheme } from "../../../../App";
 // import { setDark, setLight, stateTheme } from "../../../../redux/features/theme";
-import { OverviewIcon } from "../../assets/icons/sidebar/overview";
 
 export function SideBar() {
     const navigate = useNavigate()
@@ -26,7 +25,7 @@ export function SideBar() {
     const colorDefault = "#8C8C8C"
     const [schedule, setSchedule] = useState<string>(colorDefault)
     const [payment, setPayment] = useState<string>(colorDefault)
-    const [overview, setOverview] = useState<string>(colorDefault)
+    const [annyboard, setAnnyBoard] = useState<string>(colorDefault)
 
     const stateMenuStatus = useSelector(stateMenu)
     // const stateThemeStatus = useSelector(stateTheme)
@@ -50,6 +49,7 @@ export function SideBar() {
         localStorage.removeItem("@USER:token")
         navigate("/dashboard/sign-in")
     }
+
     return (
         <>
             {stateMenuStatus ? <MenuFloat /> : null}
@@ -63,13 +63,6 @@ export function SideBar() {
                     </div>
 
                     <ul className="width">
-                        <li title="Overview" className="width">
-                            <NavLink className={({ isActive }) => isActive ? (setOverview(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/overview"}>
-                                <OverviewIcon
-                                    color={overview}
-                                />
-                            </NavLink>
-                        </li>
                         <li title="Schedule" className="width">
                             <NavLink className={({ isActive }) => isActive ? (setSchedule(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
                                 <ScheduleIcon
@@ -78,15 +71,17 @@ export function SideBar() {
                             </NavLink>
                         </li>
                         <li title="AnnyBoard" className="width">
-                            <NavLink className={({ isActive }) => isActive ? (setPayment(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/annyboard"}>
+                            <NavLink className={({ isActive }) => isActive ? (setAnnyBoard(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/annyboard"}>
                                 <BillingIcon
-                                    color={payment}
+                                    color={annyboard}
                                 />
                             </NavLink>
                         </li>
                         <li title="Payment" className="width">
-                            <NavLink className={({ isActive }) => isActive ? ("width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/schedule"}>
-                                <PayIcon />
+                            <NavLink className={({ isActive }) => isActive ? (setPayment(theme.isActiveColor), "width center cursor hight color") : "width center cursor hight color"} to={"/dashboard/payment"}>
+                                <PayIcon 
+                                    color={payment}
+                                />
                             </NavLink>
                         </li>
                         <li title="Settings" className="width">

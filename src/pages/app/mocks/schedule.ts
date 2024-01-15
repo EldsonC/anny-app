@@ -1,6 +1,8 @@
 interface ScheduleSchema {
+    status_global: number;
     day: number;
     date: string;
+    plan: boolean;
     schedule: {
         start: string,
         end: string,
@@ -11,8 +13,49 @@ interface ScheduleSchema {
 
 export const schedule:ScheduleSchema[] = [
     {
+        status_global: 0,
         day: 28,
         date: "wed",
+        plan: false,
+        schedule: {
+            start: "09:00",
+            end: "09:30"
+        },
+        name: "Anna Paula",
+        details: "corte na tesoura"
+    },
+
+    {
+        status_global: 1,
+        day: 28,
+        date: "wed",
+        plan: true,
+        schedule: {
+            start: "09:00",
+            end: "09:30"
+        },
+        name: "Anna Paula",
+        details: "corte na tesoura"
+    },
+
+    {
+        status_global: 2,
+        day: 28,
+        date: "wed",
+        plan: false,
+        schedule: {
+            start: "09:00",
+            end: "09:30"
+        },
+        name: "Anna Paula",
+        details: "corte na tesoura"
+    },
+
+    {
+        status_global: 1,
+        day: 28,
+        date: "wed",
+        plan: false,
         schedule: {
             start: "09:00",
             end: "09:30"
@@ -21,233 +64,29 @@ export const schedule:ScheduleSchema[] = [
         details: "corte na tesoura"
     },
     {
-        day: 29,
-        date: "Thu",
+        status_global: 0,
+        day: 28,
+        date: "wed",
+        plan: true,
         schedule: {
-            start: "09:30",
-            end: "10:00"
+            start: "09:00",
+            end: "09:30"
         },
-        name: "Vitor Lima",
+        name: "Anna Paula",
         details: "corte na tesoura"
     },
+
     {
-        day: 30,
-        date: "Thu",
+        status_global: 0,
+        day: 28,
+        date: "wed",
+        plan: false,
         schedule: {
-            start: "10:00",
-            end: "10:00"
+            start: "09:00",
+            end: "09:30"
         },
-        name: "Marya Eduarda",
+        name: "Anna Paula",
         details: "corte na tesoura"
     },
-    {
-        day: 31,
-        date: "Thu",
-        schedule: {
-            start: "10:30",
-            end: "10:00"
-        },
-        name: "Gorge Vilk",
-        details: "corte na tesoura"
-    },
-    {
-        day: 1,
-        date: "Thu",
-        schedule: {
-            start: "11:00",
-            end: "10:00"
-        },
-        name: "Marck Zuc",
-        details: "corte na tesoura"
-    },
-    {
-        day: 2,
-        date: "Thu",
-        schedule: {
-            start: "11:30",
-            end: "10:00"
-        },
-        name: "David Lins",
-        details: "corte na tesoura" 
-    },
-    {
-        day: 3,
-        date: "Thu",
-        schedule: {
-            start: "12:00",
-            end: "10:00"
-        },
-        name: "Pedro Isaque",
-        details: "corte na tesoura"
-    },
-    {
-        day: 4,
-        date: "Thu",
-        schedule: {
-            start: "12:30",
-            end: "10:00"
-        },
-        name: "Lucas Albert",
-        details: "corte na tesoura"
-    },
-    {
-        day: 5,
-        date: "Thu",
-        schedule: {
-            start: "13:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"    
-    },
-    {
-        day: 6,
-        date: "Thu",
-        schedule: {
-            start: "13:30",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"
-    },
-    {
-        day: 7,
-        date: "Thu",
-        schedule: {
-            start: "14:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"
-    },
-    {
-        day: 8,
-        date: "Thu",
-        schedule: {
-            start: "14:30",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"
-    },
-    {
-        day: 9,
-        date: "Thu",
-        schedule: {
-            start: "15:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"
-    },
-    {
-        day: 10,
-        date: "Thu",
-        schedule: {
-            start: "15:30",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
-    {
-        day: 11,
-        date: "Thu",
-        schedule: {
-            start: "16:00",
-            end: "10:00"
-        },
-        name: "Pedro Ysaque",
-        details: "corte na tesoura"     
-    },
+    
 ]

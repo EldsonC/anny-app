@@ -8,7 +8,7 @@ export function LayerIcon() {
       viewBox="0 0 16 16"
     >
       <g
-        stroke="#B3B3B3"
+        stroke="#f7f4f4"
         strokeLinecap="round"
         strokeLinejoin="round"
         clipPath="url(#clip0_151_3)"

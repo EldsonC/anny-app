@@ -19,7 +19,7 @@ interface ThemeProps {
 
 export const CardStyle = styled.div`
     padding: 0px 32px;
-    width: calc(300px - 63px);
+    width: calc(360px - 63px);
     max-height: auto;
 
     display: flex;
@@ -31,6 +31,30 @@ export const CardStyle = styled.div`
     background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
 
     user-select: text;
+
+    @media screen and (min-width: 1501px) {
+        width: calc(340px - 63px);
+        
+    }
+
+    .vip {
+        padding: 5px 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #d3c64ea2;
+        border: 1px solid #fce300;
+        position: relative;
+        top: 10px;
+        right: -100px;
+
+        border-radius: 10px;
+        color: white;
+
+        font-size: 14px;
+    }
 
     .card-null {
         padding: 0px 32px;
@@ -91,6 +115,14 @@ export const CardStyle = styled.div`
 
                             border-radius: 50%;
                             background-color: #3E3E3E;
+                        }
+
+                        .violet {
+                            background-color: #6D44E0;
+                        }
+
+                        .green {
+                            background-color: #33996B;
                         }
                     }
 
@@ -157,7 +189,6 @@ export const CardStyle = styled.div`
         animation: expand 1s;
         
         border-radius: 10px;
-        border-bottom: 1px solid  ${(props: ThemeProps) => props.theme.colorBorderDark};
         background-color:  ${(props: ThemeProps) => props.theme.colorBgDark};
 
         .container_details {
